@@ -6,7 +6,7 @@ import { DesktopHeader, MobileHeader } from "./header";
 import { Footer } from "./footer";
 import { Helmet } from "react-helmet-async";
 
-import headerLinks from "../../data/header-footer-links.json"
+import headerLinks from "../../data/header-footer-links.json";
 
 export interface PageRouteProps extends RouteProps {
   pageData?: PageDataProps;
@@ -41,8 +41,8 @@ const withLayout = <P extends Record<string, unknown>>(
     });
 
     const pageData: PageDataProps = {
-      title: helmetData.title || "This website",
-      metaDescription: helmetData.metaDescription || "This website",
+      title: `${helmetData.title || "Oops"} - Equippr`,
+      metaDescription: `${helmetData.metaDescription || "Oops"} - Equippr`,
       meta: helmetData.meta || [],
     };
 

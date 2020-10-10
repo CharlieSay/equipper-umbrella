@@ -1,12 +1,12 @@
-import React from 'react'
-import { BrowserRouter, Switch } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter, Switch } from "react-router-dom";
 
-import PageRoute from './core/components/layout/with-layout'
-import HomePage from './pages/homepage/homepage'
-import NotFound from './pages/utility-pages/error/not-found'
+import PageRoute from "./core/components/layout/with-layout";
+import HomePage from "./pages/homepage/homepage";
+import NotFound from "./pages/utility-pages/error/not-found";
 
-export const HomePageComponent = HomePage
-export const ErrorPageComponent = NotFound
+export const HomePageComponent = HomePage;
+export const ErrorPageComponent = NotFound;
 
 const Routes = () => (
   <BrowserRouter>
@@ -15,14 +15,14 @@ const Routes = () => (
         exact
         path="/"
         component={HomePageComponent}
-        pageData={{ title: 'homepage' }}
+        pageData={{ title: "Home" }}
       />
-    <PageRoute
+      <PageRoute
         component={ErrorPageComponent}
-        pageData={{ title: 'Not Found' }}
+        pageData={{ title: "Not Found" }}
       />
     </Switch>
   </BrowserRouter>
-)
+);
 
-export default Routes
+export default Routes;
