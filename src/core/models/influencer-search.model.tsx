@@ -1,7 +1,7 @@
-export type InfluencerSearchModel = {
+export interface InfluencerSearchModel {
   name: string;
   description: string;
   link: string;
   imgUrl: string;
   lastUpdatedBlurb: string;
-};
+}

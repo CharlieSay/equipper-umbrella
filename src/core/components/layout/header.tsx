@@ -25,7 +25,7 @@ export const DesktopHeader = (links: HeaderFooterLinks) => {
     <Headroom>
       <Navbar bg="primary" variant="dark">
         <div className="container--fixed-wide header-footer-restrictor">
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="/">Equippr</Navbar.Brand>
           <Nav className="mr-auto">
             {links.links.map((key, i) => (
               <Nav.Link key={i} href={key.url}>

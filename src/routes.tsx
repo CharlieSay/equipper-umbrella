@@ -4,9 +4,7 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import PageRoute from "./core/components/layout/with-layout";
 import HomePage from "./pages/homepage/homepage";
 import NotFound from "./pages/utility-pages/error/not-found";
-
-export const HomePageComponent = HomePage;
-export const ErrorPageComponent = NotFound;
+import InfluencerPageUsingParams from "./pages/influencer-page/influencer-page";
 
 const Routes = () => (
   <BrowserRouter>
@@ -14,13 +12,16 @@ const Routes = () => (
       <PageRoute
         exact
         path="/"
-        component={HomePageComponent}
+        component={HomePage}
         pageData={{ title: "Home" }}
       />
       <PageRoute
-        component={ErrorPageComponent}
-        pageData={{ title: "Not Found" }}
+        exact
+        path="/influencers/:id"
+        component={InfluencerPageUsingParams}
+        pageData={{ title: "Influencer", id: "/influencers/:id" }}
       />
+      <PageRoute component={NotFound} pageData={{ title: "Not Found" }} />
     </Switch>
   </BrowserRouter>
 );

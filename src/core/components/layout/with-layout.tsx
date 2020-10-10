@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 import headerLinks from "../../data/header-footer-links.json";
 
 export interface PageRouteProps extends RouteProps {
-  pageData?: PageDataProps;
+  pageData: PageDataProps;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component: FC<any>;
 }
@@ -18,6 +18,7 @@ export interface PageDataProps {
   title?: string;
   metaDescription?: string;
   meta?: Array<Meta>;
+  id?: string;
 }
 
 export interface Meta {
@@ -70,7 +71,12 @@ const withLayout = <P extends Record<string, unknown>>(
 
 const PageRoute = (props: PageRouteProps) => {
   const pageData = props.pageData || {};
-  return <Route component={withLayout(props.component, pageData)} />;
+  return (
+    <Route
+      path={props.pageData.id}
+      component={withLayout(props.component, pageData)}
+    />
+  );
 };
 
 export default PageRoute;

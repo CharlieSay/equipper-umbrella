@@ -1,0 +1,55 @@
+{
+    "personalFacts": {
+        "name": "Wroteoshaw (W2S)",
+        "realName": "Harry Shaw",
+        "description": "lorem ipsum decorum sit amet.",
+        "dob": "24/08/96",
+        "thumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "keyFacts": {
+        "activeSince": "Jan 2010",
+        "creatorType": "Vlogger"
+    },
+    "usedEquipment": [
+        {
+            "friendlySectionName": "Cameras",
+            "equipment": [
+                {
+                    "friendlyName": "Canon Powershot G7X",
+                    "part": "Vlogging Camera",
+                    "thumbnail": "https://i.jessops.com/ce-images/PRODUCT/PRODUCT_REGULAR/ACANOCM095298480_003.jpg?image=600&blur",
+                    "affiliate": [
+                        {
+                            "vendor": "Amazon",
+                            "affiliateUrl": "https://www.amazon.co.uk/dp/B01BUYK04A?psc=1&th=1&linkCode=gs2&tag=21-iequk-21"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "friendlySectionName": "Desktop / Computer",
+            "equipment": [
+                {
+                    "friendlyName": "Intel Core i5-9400F 2.9 GHz 6-Core Processor",
+                    "part": "CPU",
+                    "thumbnail": "https://www.bhphotovideo.com/images/images150x150/1545154836000_1356633.jpg",
+                    "affiliate": [
+                        {
+                            "vendor": "Amazon",
+                            "affiliateUrl": "https://www.amazon.co.uk/dp/B01BUYK04A?psc=1&th=1&linkCode=gs2&tag=21-iequk-21"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "similarCreators": [
+        {
+            "creatorName": "KSI",
+            "creatorType": "Gamer",
+            "link": "/influencer/ksi",
+            "thumbnail": "https://yt3.ggpht.com/-yp9RTevUEk0/AAAAAAAAAAI/AAAAAAAAAAA/lCVbT0EdxZA/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        }
+    ]
+}
