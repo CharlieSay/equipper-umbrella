@@ -1,0 +1,65 @@
+@import "./.container.scss";
+@import "./.global-variables.scss";
+@import "./.typography.scss";
+
+body {
+    margin: 0px;
+    font-family: $font-stack;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    -webkit-padding-start: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+input,
+button,
+select,
+option,
+textarea {
+    font-size: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: $font-stack;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+li {
+    margin: 0 0 0.3em;
+}
+
+p,
+ul,
+ol {
+    margin: 0 0 1em;
+}

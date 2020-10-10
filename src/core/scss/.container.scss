@@ -1,0 +1,48 @@
+@import "./.global-variables.scss";
+
+.container {
+  display: block;
+  margin: 0 0 72px;
+  max-width: auto;
+  position: relative;
+
+  &--fixed-wide {
+    margin: 0 auto 72px;
+    padding: 0 $baseUnit * 10 0 $baseUnit * 10;
+    max-width: $maxWidth;
+
+    @media (min-width: pxtoem(640px)) {
+      margin: 0 auto 48px;
+    }
+
+    @media (min-width: (360px) + 16px*2) {
+      margin: 0 auto 48px;
+    }
+
+    @media (max-width: $mobileMax) {
+      padding: 0 $baseUnit * 1 0 $baseUnit * 1;
+    }
+  }
+
+  &--constrained {
+    margin: 0 24px 72px;
+    padding: 0 $baseUnit * 10 0 $baseUnit * 10;
+    max-width: $maxWidth;
+
+    @media (min-width: pxtoem(640px)) {
+      margin: 0 16px 48px;
+    }
+
+    @media (min-width: (360px) + 16px*2) {
+      margin: 0 auto 48px;
+    }
+    @media (max-width: $mobileMax) {
+      padding: 0 $baseUnit * 1 0 $baseUnit * 1;
+    }
+  }
+
+  &--scrollable {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+}
