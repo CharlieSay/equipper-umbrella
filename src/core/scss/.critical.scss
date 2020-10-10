@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 @import "./.container.scss";
 @import "./.global-variables.scss";
 @import "./.typography.scss";
@@ -14,6 +15,13 @@ a {
 }
 
 a:hover {
+}
+
+.header-footer-restrictor{
+    display: flex;
+    width: 100%;
+    margin-bottom: $baseUnit;
+    margin-top: $baseUnit;
 }
 
 ul {

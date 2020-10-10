@@ -1,15 +1,14 @@
-import React from "react";
+import React from 'react'
+import Spinner from 'react-bootstrap/Spinner'
 
-import "./loading.scss";
+import './loading.scss'
 
 function Loading() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Loading.</p>
-      </header>
-    </div>
-  );
+    <Spinner animation="border" role="status">
+      <span className="sr-only">Loading...</span>
+    </Spinner>
+  )
 }
 
-export default Loading;
+export default Loading
