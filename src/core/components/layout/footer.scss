@@ -1,0 +1,15 @@
+.footer-root {
+    background-color: rgb(247, 247, 247) !important;
+    border-top: 1px solid rgb(221, 221, 221) !important;
+    box-sizing: border-box;
+}
+
+.footer-spacing {
+    -moz-box-direction: normal !important;
+    -moz-box-orient: horizontal !important;
+    flex-direction: row !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+}
