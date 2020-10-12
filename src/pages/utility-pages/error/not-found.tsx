@@ -11,9 +11,6 @@ const NotFound = () => {
           paddingTop: `32px`,
         }}
       >
-        <h1>
-          <span role="img">⚠️⚠️⚠️</span>
-        </h1>
         <h2>This page doesnt exist!</h2>
       </div>
     </div>
