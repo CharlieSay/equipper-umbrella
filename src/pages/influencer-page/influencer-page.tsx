@@ -6,12 +6,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import Carousel from "react-bootstrap/Carousel";
+import { Link } from "react-router-dom";
 
 import { InfluencerPageProps } from "../../core/models/influencer-page.model";
 import InfluencerTestData from "../../core/data/influencer-page-data.json";
 
 import "./influencer-page.scss";
-import Carousel from "react-bootstrap/esm/Carousel";
 
 const InfluencerPageUsingParams = () => {
   return <InfluencerPageInternal {...InfluencerTestData} />;
@@ -24,9 +25,9 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         <Col>
           <Row>
             <Col>
-              <a href={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
+              <Link to={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
                 <Badge variant="primary">{props.keyFacts.creatorType}</Badge>
-              </a>
+              </Link>
             </Col>
           </Row>
           <Table striped bordered hover size="sm">
