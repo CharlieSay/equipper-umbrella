@@ -18,7 +18,7 @@ const InfluencerGroup = (props: InfluencerGroupProps) => {
       <CardDeck>
         {props.popularInfluencers.map((influencer, i) => (
           <Card key={i}>
-            <Link className="influencer-group-link" to={influencer.link}>
+            <a className="influencer-group-link" href={influencer.link}>
               <Card.Img variant="top" src={influencer.imgUrl} />
               <Card.Body>
                 <Card.Title>{influencer.name}</Card.Title>
@@ -29,7 +29,7 @@ const InfluencerGroup = (props: InfluencerGroupProps) => {
                   Last updated {influencer.lastUpdatedBlurb}
                 </small>
               </Card.Footer>
-            </Link>
+            </a>
           </Card>
         ))}
       </CardDeck>

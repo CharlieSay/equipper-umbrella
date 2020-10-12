@@ -25,9 +25,9 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         <Col>
           <Row>
             <Col>
-              <Link to={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
+              <a href={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
                 <Badge variant="primary">{props.keyFacts.creatorType}</Badge>
-              </Link>
+              </a>
             </Col>
           </Row>
           <Table striped bordered hover size="sm">
