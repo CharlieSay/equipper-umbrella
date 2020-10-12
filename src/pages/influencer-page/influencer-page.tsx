@@ -11,6 +11,7 @@ import { InfluencerPageProps } from "../../core/models/influencer-page.model";
 import InfluencerTestData from "../../core/data/influencer-page-data.json";
 
 import "./influencer-page.scss";
+import Carousel from "react-bootstrap/esm/Carousel";
 
 const InfluencerPageUsingParams = () => {
   return <InfluencerPageInternal {...InfluencerTestData} />;
@@ -23,7 +24,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         <Col>
           <Row>
             <Col>
-              <a href={`/${props.keyFacts.creatorType.toLowerCase()}`}>
+              <a href={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
                 <Badge variant="primary">{props.keyFacts.creatorType}</Badge>
               </a>
             </Col>
@@ -55,7 +56,22 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         </Col>
         <Col>
           <div className="image-aligner">
-            <Image src={props.personalFacts.thumbnail} rounded />
+            <Carousel activeIndex={0}>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={props.personalFacts.ytTumbnail}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={props.personalFacts.faceThumbnail}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+            </Carousel>
           </div>
         </Col>
       </Row>
@@ -73,16 +89,16 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                     fluid
                     bsPrefix={"image-limiter"}
                   />
-                  <Row>
+                  <Row style={{ paddingTop: `16px` }}>
                     {equipmentDetail.affiliate.map((affiliateSingular, i) => (
-                      <Col key={i}>
-                        <Button
-                          href={affiliateSingular.affiliateUrl}
-                          variant="warning"
-                        >
-                          Click to buy from {affiliateSingular.vendor}
-                        </Button>
-                      </Col>
+                      <Button
+                        key={i}
+                        href={affiliateSingular.affiliateUrl}
+                        variant="warning"
+                        target="_blank"
+                      >
+                        Click to buy from {affiliateSingular.vendor}
+                      </Button>
                     ))}
                   </Row>
                 </div>

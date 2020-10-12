@@ -15,7 +15,8 @@ export interface PersonalFacts {
   realName: string;
   description: string;
   dob: string;
-  thumbnail: string;
+  ytTumbnail: string;
+  faceThumbnail: string;
 }
 
 export interface SimilarCreator {

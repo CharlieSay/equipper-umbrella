@@ -1,6 +1,58 @@
-[
-    {
-        "displayText": "Home",
-        "url": "/"
-    }
-]
+{
+    "header": [
+        {
+            "displayText": "Home",
+            "url": "/"
+        }
+    ],
+    "footer": [
+        {
+            "displayText": "Popular Influencers",
+            "url": "/",
+            "subHeaders": [
+                {
+                    "displayText": "Logan Paul",
+                    "url": "/influencers/jake-paul"
+                },
+                {
+                    "displayText": "KSI",
+                    "url": "/influencers/ksi"
+                },
+                {
+                    "displayText": "Pewdiepie",
+                    "url": "/influencers/pewdiepie"
+                },
+                {
+                    "displayText": "James Charles",
+                    "url": "/influencers/james-charles"
+                }
+            ]
+        },
+        {
+            "displayText": "Categories",
+            "url": "/categories",
+            "subHeaders": [
+                {
+                    "displayText": "Vloggers",
+                    "url": "/category/vloggers"
+                },
+                {
+                    "displayText": "Gamers",
+                    "url": "/category/gamers"
+                },
+                {
+                    "displayText": "Beauty",
+                    "url": "/category/beauty"
+                },
+                {
+                    "displayText": "Lifestyle",
+                    "url": "/category/lifestyle"
+                },
+                {
+                    "displayText": "Podcasts",
+                    "url": "/category/podcasts"
+                }
+            ]
+        }
+    ]
+}

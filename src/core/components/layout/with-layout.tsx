@@ -6,7 +6,7 @@ import { DesktopHeader, MobileHeader } from "./header";
 import { Footer } from "./footer";
 import { Helmet } from "react-helmet-async";
 
-import headerLinks from "../../data/header-footer-links.json";
+import navigationLinks from "../../data/header-footer-links.json";
 
 export interface PageRouteProps extends RouteProps {
   pageData: PageDataProps;
@@ -56,12 +56,12 @@ const withLayout = <P extends Record<string, unknown>>(
           ))}
           <meta name="description" content={pageData.metaDescription}></meta>
         </Helmet>
-        {isDesktop && <DesktopHeader links={headerLinks} />}
-        {isMobile && <MobileHeader links={headerLinks} />}
+        {isDesktop && <DesktopHeader links={navigationLinks.header} />}
+        {isMobile && <MobileHeader links={navigationLinks.header} />}
         <main id="content">
           <ContentComponent {...props} />
         </main>
-        {Footer && <Footer links={headerLinks} />}
+        {Footer && <Footer links={navigationLinks.footer} />}
       </>
     );
   };

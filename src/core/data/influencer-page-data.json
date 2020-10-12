@@ -4,7 +4,8 @@
         "realName": "Harry Shaw",
         "description": "lorem ipsum decorum sit amet.",
         "dob": "24/08/96",
-        "thumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj"
+        "ytTumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj",
+        "faceThumbnail":"https://static.wikia.nocookie.net/theultimatesidemen/images/7/7a/W2S.png/revision/latest/scale-to-width-down/310?cb=20200927112457"
     },
     "keyFacts": {
         "activeSince": "Jan 2010",
@@ -21,7 +22,7 @@
                     "affiliate": [
                         {
                             "vendor": "Amazon",
-                            "affiliateUrl": "https://www.amazon.co.uk/dp/B01BUYK04A?psc=1&th=1&linkCode=gs2&tag=21-iequk-21"
+                            "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
                         }
                     ]
                 }
@@ -37,7 +38,7 @@
                     "affiliate": [
                         {
                             "vendor": "Amazon",
-                            "affiliateUrl": "https://www.amazon.co.uk/dp/B01BUYK04A?psc=1&th=1&linkCode=gs2&tag=21-iequk-21"
+                            "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
                         }
                     ]
                 }
