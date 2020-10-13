@@ -53,6 +53,29 @@
                     "url": "/category/podcasts"
                 }
             ]
+        },
+{
+            "displayText": "Help",
+            "url": "/help",
+            "subHeaders": [
+                {
+                    "displayText": "Contact us",
+                    "url": "/help/contact"
+                },
+                {
+                    "displayText": "FAQ",
+                    "url": "/help/faq"
+                },
+                {
+                    "displayText": "Privacy Policy",
+                    "url": "/privacy-policy"
+                },
+                {
+                    "displayText": "About us",
+                    "url": "/about-us"
+                }
+               
+            ]
         }
     ]
 }
