@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Headroom from "react-headroom";
+import Logo from "../../../assets/logo.svg";
 
 import "./header.scss";
 
@@ -25,7 +26,14 @@ export const DesktopHeader = (links: HeaderFooterLinks) => {
     <Headroom>
       <Navbar bg="primary" variant="dark">
         <div className="container--fixed-wide header-footer-restrictor">
-          <Navbar.Brand href="/">Equippr</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              src={Logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />
+          </Navbar.Brand>
           <Nav className="mr-auto">
             {links.links.map((key, i) => (
               <Nav.Link key={i} href={key.url}>
@@ -46,7 +54,14 @@ export const MobileHeader = (links: HeaderFooterLinks) => {
   return (
     <Headroom>
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img
+            src={Logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />
+        </Navbar.Brand>
         {links.links.map((key, i) => (
           <Nav.Link key={i} href={key.url}>
             <span className="mobile-header-link">{key.displayText}</span>
