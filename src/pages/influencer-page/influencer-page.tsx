@@ -7,7 +7,6 @@ import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import Carousel from "react-bootstrap/Carousel";
-import { Link } from "react-router-dom";
 
 import { InfluencerPageProps } from "../../core/models/influencer-page.model";
 import InfluencerTestData from "../../core/data/influencer-page-data.json";

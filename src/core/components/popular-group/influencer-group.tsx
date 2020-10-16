@@ -2,7 +2,6 @@ import React from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import { InfluencerSearchModel } from "../../models/influencer-search.model";
-import { Link } from "react-router-dom";
 
 import "./influencer-group.scss";
 
@@ -16,8 +15,8 @@ const InfluencerGroup = (props: InfluencerGroupProps) => {
     <>
       <h1>{props.groupTitle}</h1>
       <CardDeck>
-        {props.popularInfluencers.map((influencer, i) => (
-          <Card key={i}>
+        {props.popularInfluencers.map((influencer, idx) => (
+          <Card key={idx} className="mb-2">
             <a className="influencer-group-link" href={influencer.link}>
               <Card.Img variant="top" src={influencer.imgUrl} />
               <Card.Body>
