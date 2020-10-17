@@ -5,6 +5,7 @@ import PageRoute from "./core/components/layout/with-layout";
 import HomePage from "./pages/homepage/homepage";
 import NotFound from "./pages/utility-pages/error/not-found";
 import InfluencerPageUsingParams from "./pages/influencer-page/influencer-page";
+import CategoryPage from "./pages/category-page/category-page";
 
 const Routes = () => (
   <BrowserRouter>
@@ -20,6 +21,12 @@ const Routes = () => (
         path="/influencers/:id"
         component={InfluencerPageUsingParams}
         pageData={{ title: "Influencer", id: "/influencers/:id" }}
+      />
+      <PageRoute
+        exact
+        path="/category/:influencerCategory"
+        component={CategoryPage}
+        pageData={{ title: "Category", id: "/category/:influencerCategory" }}
       />
       <PageRoute component={NotFound} pageData={{ title: "Not Found" }} />
     </Switch>
