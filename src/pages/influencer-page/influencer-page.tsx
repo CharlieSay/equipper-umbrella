@@ -1,16 +1,14 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
-import ListGroup from "react-bootstrap/ListGroup";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
-import Table from "react-bootstrap/Table";
 import Carousel from "react-bootstrap/Carousel";
-
-import { InfluencerPageProps } from "../../core/models/influencer-page.model";
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
+import ListGroup from "react-bootstrap/ListGroup";
+import Row from "react-bootstrap/Row";
+import Table from "react-bootstrap/Table";
 import InfluencerTestData from "../../core/data/influencer-page-data.json";
-
+import { InfluencerPageProps } from "../../core/models/influencer-page.model";
 import "./influencer-page.scss";
 
 const InfluencerPageUsingParams = () => {
@@ -25,7 +23,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
           <Row>
             <Col>
               <a href={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
-                <Badge variant="primary">{props.keyFacts.creatorType}</Badge>
+                <Badge variant="red">{props.keyFacts.creatorType}</Badge>
               </a>
             </Col>
           </Row>
@@ -76,36 +74,38 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         </Col>
       </Row>
       <Row>
-        <ListGroup variant="flush">
-          {props.usedEquipment.map((equipmentVal, i) => (
-            <ListGroup.Item key={i}>
-              <h1>{equipmentVal.friendlySectionName}</h1>
-              {equipmentVal.equipment.map((equipmentDetail, i) => (
-                <div key={i}>
-                  <span>{equipmentDetail.part}</span>
-                  <h2>{equipmentDetail.friendlyName}</h2>
-                  <Image
-                    src={`${equipmentDetail.thumbnail}`}
-                    fluid
-                    bsPrefix={"image-limiter"}
-                  />
-                  <Row style={{ paddingTop: `16px` }}>
-                    {equipmentDetail.affiliate.map((affiliateSingular, i) => (
-                      <Button
-                        key={i}
-                        href={affiliateSingular.affiliateUrl}
-                        variant="warning"
-                        target="_blank"
-                      >
-                        Click to buy from {affiliateSingular.vendor}
-                      </Button>
-                    ))}
-                  </Row>
-                </div>
-              ))}
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
+        <Col>
+          <ListGroup variant="flush">
+            {props.usedEquipment.map((equipmentVal, i) => (
+              <ListGroup.Item key={i} variant="gray">
+                <h1>{equipmentVal.friendlySectionName}</h1>
+                {equipmentVal.equipment.map((equipmentDetail, i) => (
+                  <div key={i}>
+                    <span>{equipmentDetail.part}</span>
+                    <h2>{equipmentDetail.friendlyName}</h2>
+                    <Image
+                      src={`${equipmentDetail.thumbnail}`}
+                      fluid
+                      bsPrefix={"image-limiter"}
+                    />
+                    <Row style={{ paddingTop: `16px` }}>
+                      {equipmentDetail.affiliate.map((affiliateSingular, i) => (
+                        <Button
+                          key={i}
+                          href={affiliateSingular.affiliateUrl}
+                          variant="gray"
+                          target="_blank"
+                        >
+                          Click to buy from {affiliateSingular.vendor}
+                        </Button>
+                      ))}
+                    </Row>
+                  </div>
+                ))}
+              </ListGroup.Item>
+            ))}
+          </ListGroup>
+        </Col>
       </Row>
     </div>
   );

@@ -13,18 +13,18 @@ interface InfluencerGroupProps {
 const InfluencerGroup = (props: InfluencerGroupProps) => {
   return (
     <>
-      <h1>{props.groupTitle}</h1>
+      <h1 className="">{props.groupTitle}</h1>
       <CardDeck>
         {props.popularInfluencers.map((influencer, idx) => (
-          <Card key={idx} className="mb-2">
+          <Card key={idx} className="mb-2" bg="dark-red">
             <a className="influencer-group-link" href={influencer.link}>
-              <Card.Img variant="top" src={influencer.imgUrl} />
-              <Card.Body>
+              <Card.Img src={influencer.imgUrl} />
+              <Card.Body className="card-text">
                 <Card.Title>{influencer.name}</Card.Title>
                 <Card.Text>{influencer.description}</Card.Text>
               </Card.Body>
               <Card.Footer>
-                <small className="text-muted">
+                <small className="card-text">
                   Last updated {influencer.lastUpdatedBlurb}
                 </small>
               </Card.Footer>

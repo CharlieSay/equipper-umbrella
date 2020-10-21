@@ -1,0 +1,12 @@
+@import "./.global-variables.scss";
+
+/* make the customizations */
+$theme-colors: (
+        "primary": $white,
+        "red": $light-red,
+        "purple": $purple,
+        "gray": $gray
+);
+
+/* import bootstrap to set changes */
+@import "../../../node_modules/bootstrap/scss/bootstrap";

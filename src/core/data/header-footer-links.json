@@ -3,6 +3,10 @@
         {
             "displayText": "Home",
             "url": "/"
+        },
+        {
+            "displayText": "Library",
+            "url": "/"
         }
     ],
     "footer": [
@@ -54,7 +58,7 @@
                 }
             ]
         },
-{
+        {
             "displayText": "Help",
             "url": "/help",
             "subHeaders": [
@@ -74,7 +78,6 @@
                     "displayText": "About us",
                     "url": "/about-us"
                 }
-               
             ]
         }
     ]

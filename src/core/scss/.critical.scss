@@ -2,6 +2,7 @@
 @import "./.container.scss";
 @import "./.global-variables.scss";
 @import "./.typography.scss";
+@import "./.custom.scss";
 
 body {
     margin: 0px;
@@ -18,9 +19,6 @@ a {
 main {
     background-color: $white;
     padding-bottom: $baseUnit * 2;
-}
-
-a:hover {
 }
 
 .header-footer-restrictor {

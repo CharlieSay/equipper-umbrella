@@ -1,5 +1,12 @@
 @import "../../scss/.critical.scss";
 
-.mobile-header-link {
-    color: $white;
+.header {
+  text-align: center;
+}
+
+span {
+  &.red-header-text {
+    color: $light-red;
+    font-weight: 600;
+  }
 }

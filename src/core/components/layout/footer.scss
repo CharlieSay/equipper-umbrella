@@ -1,6 +1,29 @@
+@import '../../scss/.critical.scss';
+
 .footer-root {
-    border-top: 1px solid rgb(221, 221, 221) !important;
+    border-top: 1px solid $white  !important;
     box-sizing: border-box;
+}
+
+.footer-link {
+    color: $light-red;
+    font-weight: 600;
+}
+
+.footer-sub-link {
+    color: $light-red;
+    font-weight: 400;
+}
+
+.footer-equippr{
+    color: $white;
+    font-weight: 700;
+}
+
+.footer-email-small{
+    color: $white;
+    font-weight: 400;
+    
 }
 
 .footer-spacing {

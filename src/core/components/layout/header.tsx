@@ -37,13 +37,13 @@ export const DesktopHeader = (links: HeaderFooterLinks) => {
           <Nav className="mr-auto">
             {links.links.map((key, i) => (
               <Nav.Link key={i} href={key.url}>
-                {key.displayText}
+                <span className="red-header-text">{key.displayText}</span>
               </Nav.Link>
             ))}
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-light">Search</Button>
+            <Button variant="red">Search</Button>
           </Form>
         </div>
       </Navbar>
@@ -64,7 +64,7 @@ export const MobileHeader = (links: HeaderFooterLinks) => {
         </Navbar.Brand>
         {links.links.map((key, i) => (
           <Nav.Link key={i} href={key.url}>
-            <span className="mobile-header-link">{key.displayText}</span>
+            <span className="red-header-text">{key.displayText}</span>
           </Nav.Link>
         ))}
       </Navbar>

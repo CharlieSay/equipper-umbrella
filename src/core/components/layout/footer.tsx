@@ -12,21 +12,34 @@ export const Footer = (links: HeaderFooterLinks) => {
         <div className="footer-spacing">
           <Row>
             <Col>
-              <h3>Equippr</h3>
+              <Col>
+                <Row>
+                  <h3 className="footer-equippr">Equippr</h3>
+                </Row>
+                <Row>
+                  <span className="footer-email-small">hello@equippr.io</span>
+                </Row>
+              </Col>
             </Col>
             {links.links.map((link, i) => (
               <Col key={i}>
                 <ul>
                   <li>
                     <h5>
-                      <a href={link.url}>{link.displayText}</a>
+                      <a href={link.url}>
+                        <span className="footer-link">{link.displayText}</span>
+                      </a>
                     </h5>
                   </li>
                   {link.subHeaders &&
                     link.subHeaders.map((subLinks, i) => (
                       <li key={i}>
                         <h6>
-                          <a href={subLinks.url}>{subLinks.displayText}</a>
+                          <a href={subLinks.url}>
+                            <span className="footer-sub-link">
+                              {subLinks.displayText}
+                            </span>
+                          </a>
                         </h6>
                       </li>
                     ))}

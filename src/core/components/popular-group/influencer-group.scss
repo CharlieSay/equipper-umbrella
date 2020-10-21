@@ -1,3 +1,9 @@
+@import '../../scss/.critical.scss';
+
 .influencer-group-link:hover{
   text-decoration: none;
+}
+
+.card-text{
+  color: $red;
 }
