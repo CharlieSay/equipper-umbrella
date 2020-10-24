@@ -43,13 +43,21 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
             ))}
           </Nav>
           {links.isDesktop && (
-            <Form inline>
+            <Form onSubmit={() => console.log("sure")} inline>
               <FormControl
                 type="text"
                 placeholder="Search"
                 className="mr-sm-2"
+                onChange={(event) =>
+                  localStorage.setItem(
+                    "searchQuery",
+                    (event.target as any).value
+                  )
+                }
               />
-              <Button variant="red">Search</Button>
+              <Button variant="red" type="submit">
+                Search
+              </Button>
             </Form>
           )}
         </div>

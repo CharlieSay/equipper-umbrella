@@ -21,7 +21,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
       <Row>
         <Col>
           <Row>
-            <Col style={{ marginBottom: `16px` }}>
+            <Col style={{ marginBottom: `8px`, paddingLeft: `0` }}>
               <a href={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
                 <Badge variant="red">{props.keyFacts.creatorType}</Badge>
               </a>
@@ -58,43 +58,47 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
               src={props.personalFacts.ytTumbnail}
               alt="First slide"
               rounded
+              thumbnail
             />
           </div>
         </Col>
       </Row>
       <Row>
-        <Col>
-          <ListGroup variant="flush">
-            {props.usedEquipment.map((equipmentVal, i) => (
-              <ListGroup.Item key={i} variant="gray">
-                <h1>{equipmentVal.friendlySectionName}</h1>
-                {equipmentVal.equipment.map((equipmentDetail, i) => (
-                  <div key={i}>
-                    <span>{equipmentDetail.part}</span>
-                    <h2>{equipmentDetail.friendlyName}</h2>
+        <ListGroup variant="flush">
+          {props.usedEquipment.map((equipmentVal, i) => (
+            <ListGroup.Item key={i} style={{ backgroundColor: ` #f3f3f3` }}>
+              <h1 style={{ fontWeight: `bold`, color: `#de354c` }}>
+                {equipmentVal.friendlySectionName}
+              </h1>
+              {equipmentVal.equipment.map((equipmentDetail, i) => (
+                <div key={i}>
+                  <h4>{equipmentDetail.part}</h4>
+                  <h2>{equipmentDetail.friendlyName}</h2>
+                  <div style={{ maxWidth: `170px`, maxHeight: `170px` }}>
                     <Image
                       src={`${equipmentDetail.thumbnail}`}
                       fluid
-                      bsPrefix={"image-limiter"}
+                      thumbnail
+                      rounded
                     />
-                    <Row style={{ paddingTop: `16px` }}>
-                      {equipmentDetail.affiliate.map((affiliateSingular, i) => (
-                        <Button
-                          key={i}
-                          href={affiliateSingular.affiliateUrl}
-                          variant="gray"
-                          target="_blank"
-                        >
-                          Click to buy from {affiliateSingular.vendor}
-                        </Button>
-                      ))}
-                    </Row>
                   </div>
-                ))}
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-        </Col>
+                  <Row style={{ paddingTop: `16px` }}>
+                    {equipmentDetail.affiliate.map((affiliateSingular, i) => (
+                      <Button
+                        key={i}
+                        href={affiliateSingular.affiliateUrl}
+                        variant="gray"
+                        target="_blank"
+                      >
+                        Click to buy from {affiliateSingular.vendor}
+                      </Button>
+                    ))}
+                  </Row>
+                </div>
+              ))}
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
       </Row>
     </div>
   );
