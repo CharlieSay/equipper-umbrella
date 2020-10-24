@@ -1,8 +1,10 @@
 .image-aligner {
    display: flex;
    justify-content: flex-end;
+   margin-top: 32px;
 
    @media (max-width: 434px) {
       justify-content: center;
+      margin: 0 0 16px 0;
    }
 }

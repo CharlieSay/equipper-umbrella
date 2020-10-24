@@ -2,9 +2,9 @@ import React from "react";
 import { FC } from "react";
 import { Route, RouteProps } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import { DesktopHeader, MobileHeader } from "./header";
-import { Footer } from "./footer";
 import { Helmet } from "react-helmet-async";
+import { DesktopHeader } from "./header";
+import { Footer } from "./footer";
 
 import navigationLinks from "../../data/header-footer-links.json";
 
@@ -56,8 +56,7 @@ const withLayout = <P extends Record<string, unknown>>(
           ))}
           <meta name="description" content={pageData.metaDescription}></meta>
         </Helmet>
-        {isDesktop && <DesktopHeader links={navigationLinks.header} />}
-        {isMobile && <MobileHeader links={navigationLinks.header} />}
+        <DesktopHeader links={navigationLinks.header} isDesktop={isDesktop} />
         <main id="content">
           <ContentComponent {...props} />
         </main>

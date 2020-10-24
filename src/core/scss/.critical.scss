@@ -9,11 +9,20 @@ body {
     font-family: $font-stack;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: $gray;
+    background-color: $white;
 }
 
 a {
     text-decoration: none;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.col {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 main {

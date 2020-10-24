@@ -1,25 +1,23 @@
 import React from "react";
-import { HeaderFooterLinks } from "./header";
+import { HeaderFooterProps } from "./header";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import "./footer.scss";
 
-export const Footer = (links: HeaderFooterLinks) => {
+export const Footer = (links: HeaderFooterProps) => {
   return (
     <footer className="footer-root">
       <div className="container--constrained">
         <div className="footer-spacing">
           <Row>
             <Col>
-              <Col>
-                <Row>
-                  <h3 className="footer-equippr">Equippr</h3>
-                </Row>
-                <Row>
-                  <span className="footer-email-small">hello@equippr.io</span>
-                </Row>
-              </Col>
+              <Row>
+                <h3 className="footer-equippr">Equippr</h3>
+              </Row>
+              <Row>
+                <span className="footer-email-small">hello@equippr.io</span>
+              </Row>
             </Col>
             {links.links.map((link, i) => (
               <Col key={i}>

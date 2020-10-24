@@ -3,6 +3,8 @@
 .footer-root {
     border-top: 1px solid $white  !important;
     box-sizing: border-box;
+    background-color: $gray;
+    padding-bottom:20px; 
 }
 
 .footer-link {
@@ -34,4 +36,6 @@
     margin-left: -12px !important;
     margin-right: -12px !important;
     padding: 0.5rem 1rem;
+    background-color: $gray;
+
 }

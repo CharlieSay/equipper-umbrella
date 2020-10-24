@@ -1,7 +1,6 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
-import Carousel from "react-bootstrap/Carousel";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -9,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 import InfluencerTestData from "../../core/data/influencer-page-data.json";
 import { InfluencerPageProps } from "../../core/models/influencer-page.model";
+
 import "./influencer-page.scss";
 
 const InfluencerPageUsingParams = () => {
@@ -21,7 +21,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
       <Row>
         <Col>
           <Row>
-            <Col>
+            <Col style={{ marginBottom: `16px` }}>
               <a href={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
                 <Badge variant="red">{props.keyFacts.creatorType}</Badge>
               </a>
@@ -54,22 +54,11 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         </Col>
         <Col>
           <div className="image-aligner">
-            <Carousel activeIndex={0}>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={props.personalFacts.ytTumbnail}
-                  alt="First slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={props.personalFacts.faceThumbnail}
-                  alt="First slide"
-                />
-              </Carousel.Item>
-            </Carousel>
+            <Image
+              src={props.personalFacts.ytTumbnail}
+              alt="First slide"
+              rounded
+            />
           </div>
         </Col>
       </Row>

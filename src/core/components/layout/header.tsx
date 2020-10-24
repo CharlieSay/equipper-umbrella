@@ -9,8 +9,9 @@ import Logo from "../../../assets/logo.svg";
 
 import "./header.scss";
 
-export interface HeaderFooterLinks {
+export interface HeaderFooterProps {
   links: Array<Link>;
+  isDesktop?: boolean;
 }
 
 interface Link {
@@ -21,7 +22,7 @@ interface Link {
   subHeaders?: Link[];
 }
 
-export const DesktopHeader = (links: HeaderFooterLinks) => {
+export const DesktopHeader = (links: HeaderFooterProps) => {
   return (
     <Headroom>
       <Navbar bg="primary" variant="dark">
@@ -41,32 +42,17 @@ export const DesktopHeader = (links: HeaderFooterLinks) => {
               </Nav.Link>
             ))}
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="red">Search</Button>
-          </Form>
+          {links.isDesktop && (
+            <Form inline>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+              />
+              <Button variant="red">Search</Button>
+            </Form>
+          )}
         </div>
-      </Navbar>
-    </Headroom>
-  );
-};
-export const MobileHeader = (links: HeaderFooterLinks) => {
-  return (
-    <Headroom>
-      <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="/">
-          <img
-            src={Logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />
-        </Navbar.Brand>
-        {links.links.map((key, i) => (
-          <Nav.Link key={i} href={key.url}>
-            <span className="red-header-text">{key.displayText}</span>
-          </Nav.Link>
-        ))}
       </Navbar>
     </Headroom>
   );
