@@ -28,6 +28,7 @@ export interface SimilarCreator {
 
 export interface UsedEquipment {
   friendlySectionName: string;
+  anchor: string;
   equipment: Equipment[];
 }
 

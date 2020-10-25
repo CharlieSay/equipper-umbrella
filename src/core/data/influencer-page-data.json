@@ -14,6 +14,7 @@
     "usedEquipment": [
         {
             "friendlySectionName": "Cameras",
+            "anchor": "Cameras",
             "equipment": [
                 {
                     "friendlyName": "Canon Powershot G7X",
@@ -30,6 +31,7 @@
         },
         {
             "friendlySectionName": "Desktop / Computer",
+            "anchor": "desktop",
             "equipment": [
                 {
                     "friendlyName": "Intel Core i5-9400F 2.9 GHz 6-Core Processor",

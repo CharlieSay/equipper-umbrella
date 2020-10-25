@@ -18,7 +18,7 @@ const InfluencerPageUsingParams = () => {
 const InfluencerPageInternal = (props: InfluencerPageProps) => {
   return (
     <div className="container--fixed-wide">
-      <Row>
+      <Row className="key-facts-container">
         <Col>
           <Row>
             <Col style={{ marginBottom: `8px`, paddingLeft: `0` }}>
@@ -65,8 +65,27 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
       </Row>
       <Row>
         <ListGroup variant="flush">
+          <ListGroup.Item style={{ backgroundColor: `#f3f3f3` }}>
+            <h1 style={{ fontWeight: `bold`, color: `#de354c` }}>
+              Table of contents
+            </h1>
+            {props.usedEquipment.map((equip, i) => (
+              <Col key={i}>
+                <a
+                  style={{ color: ` #283747`, fontWeight: `bold` }}
+                  href={`#${equip.anchor}`}
+                >
+                  {`${i + 1} | ${equip.friendlySectionName}`}
+                </a>
+              </Col>
+            ))}
+          </ListGroup.Item>
           {props.usedEquipment.map((equipmentVal, i) => (
-            <ListGroup.Item key={i} style={{ backgroundColor: ` #f3f3f3` }}>
+            <ListGroup.Item
+              key={i}
+              style={{ backgroundColor: `#f3f3f3` }}
+              id={`${equipmentVal.anchor}`}
+            >
               <h1 style={{ fontWeight: `bold`, color: `#de354c` }}>
                 {equipmentVal.friendlySectionName}
               </h1>
