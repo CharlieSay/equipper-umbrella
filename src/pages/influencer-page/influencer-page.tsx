@@ -101,38 +101,41 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
               </h1>
               {equipmentVal.equipment.map((equipmentDetail, i) => (
                 <div key={i}>
-                  <h4>{`What ${equipmentDetail.part} does ${props.personalFacts.name} use?`}</h4>
+                  <h4>{`What ${equipmentDetail.part} does ${props.personalFacts.name} have?`}</h4>
                   <h2>{equipmentDetail.friendlyName}</h2>
-                  <div style={{ maxWidth: `170px`, maxHeight: `170px` }}>
+                  <Row>
                     <Image
                       src={`${equipmentDetail.thumbnail}`}
                       fluid
                       thumbnail
                       rounded
+                      style={{ maxWidth: `160px` }}
                     />
-                  </div>
-                  <Row style={{ paddingTop: `16px`, paddingBottom: `16px` }}>
-                    {equipmentDetail.affiliate.map((affiliateSingular, i) => (
-                      <Button
-                        key={i}
-                        href={affiliateSingular.affiliateUrl}
-                        variant="gray"
-                        target="_blank"
-                      >
-                        Click to buy from {affiliateSingular.vendor}
-                      </Button>
-                    ))}
+                    <Col style={{ paddingTop: `34px` }}>
+                      {equipmentDetail.affiliate.map((affiliateSingular, i) => (
+                        <Button
+                          key={i}
+                          href={affiliateSingular.affiliateUrl}
+                          variant="gray"
+                          target="_blank"
+                        >
+                          Click to buy from {affiliateSingular.vendor}
+                        </Button>
+                      ))}
+                      <Row>
+                        <small style={{ paddingTop: `8px` }}>
+                          Wrong item or not quite right? Let us know
+                          <a
+                            href="/submit"
+                            style={{ color: ` #283747`, fontWeight: `bold` }}
+                          >
+                            {" "}
+                            here
+                          </a>
+                        </small>
+                      </Row>
+                    </Col>
                   </Row>
-                  <small>
-                    Something wrong with this item? Let us know
-                    <a
-                      href="/submit"
-                      style={{ color: ` #283747`, fontWeight: `bold` }}
-                    >
-                      {" "}
-                      here
-                    </a>
-                  </small>
                 </div>
               ))}
             </ListGroup.Item>
