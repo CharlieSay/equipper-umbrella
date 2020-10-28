@@ -5,11 +5,12 @@
         "description": "lorem ipsum decorum sit amet.",
         "dob": "24/08/96",
         "ytTumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj",
-        "faceThumbnail":"https://static.wikia.nocookie.net/theultimatesidemen/images/7/7a/W2S.png/revision/latest/scale-to-width-down/310?cb=20200927112457"
+        "faceThumbnail": "https://static.wikia.nocookie.net/theultimatesidemen/images/7/7a/W2S.png/revision/latest/scale-to-width-down/310?cb=20200927112457"
     },
     "keyFacts": {
         "activeSince": "Jan 2010",
-        "creatorType": "Vlogger"
+        "creatorType": "Vlogger",
+        "lastUpdated": "1 Minute ago"
     },
     "usedEquipment": [
         {
@@ -48,6 +49,24 @@
         }
     ],
     "similarCreators": [
+        {
+            "creatorName": "KSI",
+            "creatorType": "Gamer",
+            "link": "/influencer/ksi",
+            "thumbnail": "https://yt3.ggpht.com/-yp9RTevUEk0/AAAAAAAAAAI/AAAAAAAAAAA/lCVbT0EdxZA/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        {
+            "creatorName": "KSI",
+            "creatorType": "Gamer",
+            "link": "/influencer/ksi",
+            "thumbnail": "https://yt3.ggpht.com/-yp9RTevUEk0/AAAAAAAAAAI/AAAAAAAAAAA/lCVbT0EdxZA/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        {
+            "creatorName": "KSI",
+            "creatorType": "Gamer",
+            "link": "/influencer/ksi",
+            "thumbnail": "https://yt3.ggpht.com/-yp9RTevUEk0/AAAAAAAAAAI/AAAAAAAAAAA/lCVbT0EdxZA/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
         {
             "creatorName": "KSI",
             "creatorType": "Gamer",

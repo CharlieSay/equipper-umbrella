@@ -8,6 +8,7 @@ export interface InfluencerPageProps {
 export interface KeyFacts {
   activeSince: string;
   creatorType: string;
+  lastUpdated: string;
 }
 
 export interface PersonalFacts {

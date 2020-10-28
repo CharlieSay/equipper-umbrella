@@ -1,4 +1,6 @@
 import React from "react";
+import Card from "react-bootstrap/Card";
+import CardDeck from "react-bootstrap/CardDeck";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -16,6 +18,8 @@ const InfluencerPageUsingParams = () => {
 };
 
 const InfluencerPageInternal = (props: InfluencerPageProps) => {
+  const showSimilarCreator = props.similarCreators.length >= 3;
+
   return (
     <div className="container--fixed-wide">
       <Row className="key-facts-container">
@@ -49,6 +53,10 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                 <td>Active Since</td>
                 <td>{props.keyFacts.activeSince}</td>
               </tr>
+              <tr>
+                <td>Last updated </td>
+                <td>{props.keyFacts.lastUpdated}</td>
+              </tr>
             </tbody>
           </Table>
         </Col>
@@ -67,18 +75,20 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         <ListGroup variant="flush">
           <ListGroup.Item style={{ backgroundColor: `#f3f3f3` }}>
             <h1 style={{ fontWeight: `bold`, color: `#de354c` }}>
-              Table of contents
+              {`${props.personalFacts.name}'s equipment`}
             </h1>
-            {props.usedEquipment.map((equip, i) => (
-              <Col key={i}>
-                <a
-                  style={{ color: ` #283747`, fontWeight: `bold` }}
-                  href={`#${equip.anchor}`}
-                >
-                  {`${i + 1} | ${equip.friendlySectionName}`}
-                </a>
-              </Col>
-            ))}
+            <ul>
+              {props.usedEquipment.map((equip, i) => (
+                <li key={i}>
+                  <a
+                    style={{ color: ` #283747`, fontWeight: `bold` }}
+                    href={`#${equip.anchor}`}
+                  >
+                    {`${equip.friendlySectionName}`}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </ListGroup.Item>
           {props.usedEquipment.map((equipmentVal, i) => (
             <ListGroup.Item
@@ -91,7 +101,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
               </h1>
               {equipmentVal.equipment.map((equipmentDetail, i) => (
                 <div key={i}>
-                  <h4>{equipmentDetail.part}</h4>
+                  <h4>{`What ${equipmentDetail.part} does ${props.personalFacts.name} use?`}</h4>
                   <h2>{equipmentDetail.friendlyName}</h2>
                   <div style={{ maxWidth: `170px`, maxHeight: `170px` }}>
                     <Image
@@ -101,7 +111,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                       rounded
                     />
                   </div>
-                  <Row style={{ paddingTop: `16px` }}>
+                  <Row style={{ paddingTop: `16px`, paddingBottom: `16px` }}>
                     {equipmentDetail.affiliate.map((affiliateSingular, i) => (
                       <Button
                         key={i}
@@ -113,12 +123,51 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                       </Button>
                     ))}
                   </Row>
+                  <small>
+                    Something wrong with this item? Let us know
+                    <a
+                      href="/submit"
+                      style={{ color: ` #283747`, fontWeight: `bold` }}
+                    >
+                      {" "}
+                      here
+                    </a>
+                  </small>
                 </div>
               ))}
             </ListGroup.Item>
           ))}
         </ListGroup>
       </Row>
+      {showSimilarCreator && (
+        <Row style={{ paddingTop: `32px` }}>
+          <Col>
+            <h2 style={{ fontWeight: `bold`, color: `#de354c` }}>
+              Similar creators
+            </h2>
+            <CardDeck>
+              {props.similarCreators.map((similarCreator, idx) => (
+                <Card key={idx} className="mb-2" bg="dark-red">
+                  <a
+                    className="influencer-group-link"
+                    href={similarCreator.link}
+                  >
+                    <Card.Img src={similarCreator.thumbnail} />
+                    <Card.Body className="card-text">
+                      <Card.Title>{similarCreator.creatorName}</Card.Title>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small className="card-text">
+                        {similarCreator.creatorType}
+                      </small>
+                    </Card.Footer>
+                  </a>
+                </Card>
+              ))}
+            </CardDeck>
+          </Col>
+        </Row>
+      )}
     </div>
   );
 };

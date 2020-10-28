@@ -13,7 +13,7 @@ interface InfluencerGroupProps {
 const InfluencerGroup = (props: InfluencerGroupProps) => {
   return (
     <>
-      <h1 className="">{props.groupTitle}</h1>
+      <h1>{props.groupTitle}</h1>
       <CardDeck>
         {props.popularInfluencers.map((influencer, idx) => (
           <Card key={idx} className="mb-2" bg="dark-red">
