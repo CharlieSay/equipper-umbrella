@@ -7,14 +7,16 @@ import "./influencer-group.scss";
 
 interface InfluencerGroupProps {
   groupTitle: string;
+  groupSubTitle: string;
   popularInfluencers: InfluencerSearchModel[];
 }
 
 const InfluencerGroup = (props: InfluencerGroupProps) => {
   return (
     <>
-      <h1>{props.groupTitle}</h1>
-      <CardDeck>
+      <h2 style={{ fontSize: `1.5em`, fontWeight: 600 }}>{props.groupTitle}</h2>
+      <span style={{ fontSize: `16px` }}>{props.groupSubTitle}</span>
+      <CardDeck style={{ marginTop: `24px` }}>
         {props.popularInfluencers.map((influencer, idx) => (
           <Card key={idx} className="mb-2" bg="dark-red">
             <a className="influencer-group-link" href={influencer.link}>

@@ -42,7 +42,7 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
               </Nav.Link>
             ))}
           </Nav>
-          {links.isDesktop && (
+          {/* {links.isDesktop && (
             <Form onSubmit={() => console.log("sure")} inline>
               <FormControl
                 type="text"
@@ -59,7 +59,7 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
                 Search
               </Button>
             </Form>
-          )}
+          )} */}
         </div>
       </Navbar>
     </Headroom>
