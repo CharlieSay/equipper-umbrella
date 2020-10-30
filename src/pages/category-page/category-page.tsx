@@ -4,7 +4,9 @@ import InfluencerGroup from "../../core/components/popular-group/influencer-grou
 import categoryBeauty from "../../core/data/category-beauty.json";
 
 const CategoryPage = () => {
-  const { influencerCategory } = useParams();
+  const { influencerCategory } = useParams() as {
+    influencerCategory: string;
+  };
 
   const influencerParsed =
     influencerCategory[0].toUpperCase() + influencerCategory.slice(1);
