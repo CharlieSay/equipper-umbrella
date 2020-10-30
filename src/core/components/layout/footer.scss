@@ -4,7 +4,8 @@
     border-top: 1px solid $white  !important;
     box-sizing: border-box;
     background-color: $gray;
-    padding-bottom:20px; 
+    padding-bottom:20px;
+    box-shadow: 0 50vh 0 50vh $gray;
 }
 
 .footer-link {
@@ -25,7 +26,7 @@
 .footer-email-small{
     color: $white;
     font-weight: 400;
-    
+
 }
 
 .footer-spacing {
