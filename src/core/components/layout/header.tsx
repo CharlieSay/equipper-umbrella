@@ -1,13 +1,12 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Headroom from "react-headroom";
+
 import Logo from "../../../assets/logo.svg";
 
 import "./header.scss";
+import styled from "styled-components";
 
 export interface HeaderFooterProps {
   links: Array<Link>;
@@ -22,11 +21,42 @@ interface Link {
   subHeaders?: Link[];
 }
 
+const HeaderRestrictor = styled.header`
+  margin: 0 auto;
+  max-width: 1272px;
+  padding: 8px 4px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const HeaderLink = styled.span`
+  color: ${(props) => props.theme.lightRed};
+  font-weight: 600;
+`;
+const VisuallyHidden = styled.a`
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+`;
+
 export const DesktopHeader = (links: HeaderFooterProps) => {
   return (
     <Headroom>
-      <Navbar bg="primary" variant="dark">
-        <div className="container--fixed-wide header-footer-restrictor">
+      <HeaderRestrictor>
+        <VisuallyHidden href="#content" rel="external">
+          Skip to content
+        </VisuallyHidden>
+        <VisuallyHidden href="#footer" rel="external">
+          Skip to footer
+        </VisuallyHidden>
+        <Navbar bg="primary" variant="dark">
           <Navbar.Brand href="/">
             <img
               src={Logo}
@@ -38,30 +68,12 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
           <Nav className="mr-auto">
             {links.links.map((key, i) => (
               <Nav.Link key={i} href={key.url}>
-                <span className="red-header-text">{key.displayText}</span>
+                <HeaderLink>{key.displayText}</HeaderLink>
               </Nav.Link>
             ))}
           </Nav>
-          {/* {links.isDesktop && (
-            <Form onSubmit={() => console.log("sure")} inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-                onChange={(event) =>
-                  localStorage.setItem(
-                    "searchQuery",
-                    (event.target as any).value
-                  )
-                }
-              />
-              <Button variant="red" type="submit">
-                Search
-              </Button>
-            </Form>
-          )} */}
-        </div>
-      </Navbar>
+        </Navbar>
+      </HeaderRestrictor>
     </Headroom>
   );
 };

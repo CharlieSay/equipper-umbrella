@@ -31,12 +31,6 @@ const withLayout = <P extends Record<string, unknown>>(
   helmetData: PageDataProps
 ): FC<P> => {
   const WithLayout = (props: P) => {
-    const isTabletOrMobile = useMediaQuery({ query: "(max-width: 860px)" });
-    const isTabletOrMobileDevice = useMediaQuery({
-      query: "(max-device-width: 860px)",
-    });
-    const isMobile = isTabletOrMobile && isTabletOrMobileDevice;
-
     const isDesktop = useMediaQuery({
       query: "(min-device-width: 861px)",
     });

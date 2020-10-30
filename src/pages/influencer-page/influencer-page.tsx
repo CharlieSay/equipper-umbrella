@@ -8,9 +8,15 @@ import Image from "react-bootstrap/Image";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
-import InfluencerTestData from "../../core/data/influencer-page-data.json";
-import { InfluencerPageProps } from "../../core/models/influencer-page.model";
 
+import { ContainerConstrained } from "../../core/style/containers.styles";
+import {
+  SectionH2Red,
+  ALinkSmallGray,
+} from "../../core/style/typography.styles";
+
+import { InfluencerPageProps } from "../../core/models/influencer-page.model";
+import InfluencerTestData from "../../core/data/influencer-page-data.json";
 import "./influencer-page.scss";
 
 const InfluencerPageUsingParams = () => {
@@ -21,7 +27,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
   const showSimilarCreator = props.similarCreators.length >= 3;
 
   return (
-    <div className="container--fixed-wide">
+    <ContainerConstrained>
       <Row className="key-facts-container">
         <Col>
           <Row>
@@ -125,13 +131,13 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                       <Row>
                         <small style={{ paddingTop: `8px` }}>
                           Wrong item or not quite right? Let us know
-                          <a
+                          <ALinkSmallGray
                             href="/submit"
                             style={{ color: ` #283747`, fontWeight: `bold` }}
                           >
                             {" "}
                             here
-                          </a>
+                          </ALinkSmallGray>
                         </small>
                       </Row>
                     </Col>
@@ -145,9 +151,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
       {showSimilarCreator && (
         <Row style={{ paddingTop: `32px` }}>
           <Col>
-            <h2 style={{ fontWeight: `bold`, color: `#de354c` }}>
-              Similar creators
-            </h2>
+            <SectionH2Red>Similar creators</SectionH2Red>
             <CardDeck>
               {props.similarCreators.map((similarCreator, idx) => (
                 <Card key={idx} className="mb-2" bg="dark-red">
@@ -171,7 +175,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
           </Col>
         </Row>
       )}
-    </div>
+    </ContainerConstrained>
   );
 };
 
