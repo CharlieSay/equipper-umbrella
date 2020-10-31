@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
@@ -21,15 +22,24 @@ const HeroTextAligner = styled.div`
   text-align: center;
 `;
 
+const getSearchQuery = () => {
+  const queryItem = localStorage.getItem("searchQuery");
+  const sort = "relevance";
+  return `?query=${queryItem}&sort=${sort}`;
+};
+
 const HomePage = () => {
+  const [toSearch, setToSearch] = useState(false);
+
   return (
     <ContainerConstrained>
+      {toSearch ? <Redirect to={`/search${getSearchQuery()}`} /> : null}
       <HeroTextAligner>
         <HeroTitle>So who is your favourite influencer?</HeroTitle>
         <SubTitle>Just pop in their name and we will find it.</SubTitle>
         <Form
           inline
-          onSubmit={() => console.log("sure")}
+          onSubmit={() => setToSearch(true)}
           style={{ width: `100%`, display: `inline` }}
         >
           <BaseUnitTopBottomPadding>
@@ -41,7 +51,7 @@ const HomePage = () => {
                 localStorage.setItem("searchQuery", event.target.value)
               }
             />
-            <Button variant="red" type="submit">
+            <Button variant="red" type="submit" style={{ marginLeft: `8px` }}>
               Search
             </Button>
           </BaseUnitTopBottomPadding>
