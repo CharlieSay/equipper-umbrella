@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const ContainerConstrained = styled(Container)`
   margin: 0 auto 72px;
-  padding: 0 40px 0 40px;
+  padding: 0 20px 0 20px;
   max-width: 1224px;
 
   @media (min-width: 640px) {

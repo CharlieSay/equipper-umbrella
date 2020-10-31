@@ -48,8 +48,8 @@ const VisuallyHidden = styled.a`
 
 export const DesktopHeader = (links: HeaderFooterProps) => {
   return (
-    <Headroom>
-      <HeaderRestrictor>
+    <HeaderRestrictor>
+      <Headroom>
         <VisuallyHidden href="#content" rel="external">
           Skip to content
         </VisuallyHidden>
@@ -73,7 +73,7 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
             ))}
           </Nav>
         </Navbar>
-      </HeaderRestrictor>
-    </Headroom>
+      </Headroom>
+    </HeaderRestrictor>
   );
 };
