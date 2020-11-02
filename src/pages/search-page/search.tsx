@@ -1,9 +1,10 @@
 import React from "react";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
-
+import getSearch from "../../hooks/search-hooks";
 import { ContainerConstrained, Flex } from "../../core/style/containers.styles";
-import { HeroTitleGray, HeroTitle } from "../../core/style/typography.styles";
+import { HeroTitle } from "../../core/style/typography.styles";
+import Loading from "../utility-pages/loading/loading";
 
 function convertToTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -16,6 +17,19 @@ const Search = () => {
   const queryName = convertToTitleCase(
     queryFromStorage?.query ? queryFromStorage.query.toString() : ""
   );
+
+  const isLoading = getSearch();
+
+  if (isLoading) {
+    return (
+      <ContainerConstrained>
+        <Flex>
+          <Loading />
+        </Flex>
+      </ContainerConstrained>
+    );
+  }
+
   return (
     <ContainerConstrained>
       <Flex>

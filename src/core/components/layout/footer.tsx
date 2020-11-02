@@ -2,11 +2,7 @@ import React from "react";
 import { HeaderFooterProps } from "./header";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {
-  FooterRoot,
-  FooterContainerFlexOnMobile,
-  FooterColumn,
-} from "./footer.styles";
+import { FooterRoot, FooterContainerFlexOnMobile } from "./footer.styles";
 import { ContainerConstrained } from "../../style/containers.styles";
 import "./footer.scss";
 

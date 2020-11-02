@@ -5,3 +5,7 @@ export interface InfluencerSearchModel {
   imgUrl: string;
   lastUpdatedBlurb: string;
 }
+
+export interface InfluencerSearchModelResponse {
+  searchResults: InfluencerSearchModel[];
+}

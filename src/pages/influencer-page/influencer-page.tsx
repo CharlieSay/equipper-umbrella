@@ -15,12 +15,15 @@ import {
   ALinkSmallGray,
 } from "../../core/style/typography.styles";
 
+import getInfluencerPageData from "../../hooks/influencer-page-hooks";
+
 import { InfluencerPageProps } from "../../core/models/influencer-page.model";
-import InfluencerTestData from "../../core/data/influencer-page-data.json";
 import "./influencer-page.scss";
 
 const InfluencerPageUsingParams = () => {
-  return <InfluencerPageInternal {...InfluencerTestData} />;
+  const getInfluencerData = getInfluencerPageData();
+
+  return <InfluencerPageInternal {...getInfluencerData} />;
 };
 
 const InfluencerPageInternal = (props: InfluencerPageProps) => {
