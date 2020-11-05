@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Loading from "../pages/utility-pages/loading/loading";
+import { useEffect, useState } from "react";
 
 const getSearch = () => {
   const [isLoading, setIsLoading] = useState(true);

@@ -13,30 +13,27 @@ function convertToTitleCase(str: string) {
 }
 
 const Search = () => {
+  const isLoading = getSearch();
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return <div>Search result</div>;
+};
+
+const SearchWrapper = () => {
   const queryFromStorage = queryString.parse(useLocation().search);
   const queryName = convertToTitleCase(
     queryFromStorage?.query ? queryFromStorage.query.toString() : ""
   );
 
-  const isLoading = getSearch();
-
-  if (isLoading) {
-    return (
-      <ContainerConstrained>
-        <Flex>
-          <Loading />
-        </Flex>
-      </ContainerConstrained>
-    );
-  }
-
   return (
     <ContainerConstrained>
-      <Flex>
-        <HeroTitle>{`Search results for ${queryName}`}</HeroTitle>
-      </Flex>
+      <HeroTitle>{`Search results for ${queryName}`}</HeroTitle>
+      <Search />
     </ContainerConstrained>
   );
 };
 
-export default Search;
+export default SearchWrapper;
