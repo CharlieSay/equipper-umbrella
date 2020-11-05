@@ -1,21 +1,31 @@
 import { useEffect, useState } from "react";
+import { InfluencerSearchModel } from "../core/models/influencer-search.model";
 
-const getSearch = () => {
+import popularData from "../core/data/search-result-data.json";
+import emptyData from "../core/data/empty-popular-data.json";
+
+interface SearchResultsInterface {
+  isLoading: boolean;
+  searchResults: InfluencerSearchModel[];
+}
+
+const getSearch = (): SearchResultsInterface => {
   const [isLoading, setIsLoading] = useState(true);
+  const [searchResultData, setSearchResultData] = useState<
+    InfluencerSearchModel[]
+  >([]);
 
   useEffect(
     () => {
-      const timer1 = setTimeout(() => setIsLoading(false), 1000);
-      // this will clear Timeout when component unmount like in willComponentUnmount
-      return () => {
-        clearTimeout(timer1);
-      };
-    },
-    [] //useEffect will run only one time
+      setTimeout(() => {
+        setIsLoading(false);
+        setSearchResultData(popularData);
+      }, 1000);
+    }
     //if you pass a value to array, like this [data] than clearTimeout will run every time this value changes (useEffect re-run)
   );
 
-  return isLoading;
+  return { isLoading, searchResults: searchResultData };
 };
 
 export default getSearch;
