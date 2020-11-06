@@ -5,7 +5,6 @@ import getSearch from "../../hooks/search-hooks";
 import { ContainerConstrained } from "../../core/style/containers.styles";
 import { HeroTitle } from "../../core/style/typography.styles";
 import Loading from "../utility-pages/loading/loading";
-import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import styled from "styled-components";
@@ -64,10 +63,14 @@ const SearchWrapper = () => {
   const queryName = convertToTitleCase(
     queryFromStorage?.query ? queryFromStorage.query.toString() : ""
   );
+  const heroTitle =
+    queryName === ""
+      ? "This is all the influencers we have got"
+      : `Here's what we found for ${queryName}`;
 
   return (
     <ContainerConstrained>
-      <HeroTitle>{`Search results for ${queryName}`}</HeroTitle>
+      <HeroTitle>{heroTitle}</HeroTitle>
       <Search />
     </ContainerConstrained>
   );

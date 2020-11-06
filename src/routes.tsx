@@ -7,6 +7,7 @@ import NotFound from "./pages/utility-pages/error/not-found";
 import InfluencerPageUsingParams from "./pages/influencer-page/influencer-page";
 import CategoryPage from "./pages/category-page/category-page";
 import SearchPage from "./pages/search-page/search";
+import SubmitPage from "./pages/submit-page/submit-page";
 
 const Routes = () => (
   <BrowserRouter>
@@ -34,6 +35,12 @@ const Routes = () => (
         path="/search"
         component={SearchPage}
         pageData={{ title: "Search", id: "/search" }}
+      />
+      <PageRoute
+        exact
+        path="/submit"
+        component={SubmitPage}
+        pageData={{ title: "Submit", id: "/submit" }}
       />
       <PageRoute component={NotFound} pageData={{ title: "Not Found" }} />
     </Switch>

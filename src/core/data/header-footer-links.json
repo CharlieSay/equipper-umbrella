@@ -5,8 +5,8 @@
             "url": "/"
         },
         {
-            "displayText": "Library",
-            "url": "/"
+            "displayText": "Popular",
+            "url": "/search?sort=popular"
         }
     ],
     "footer": [
