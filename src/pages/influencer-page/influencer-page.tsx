@@ -135,7 +135,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                         <small style={{ paddingTop: `8px` }}>
                           Wrong item or not quite right? Let us know
                           <ALinkSmallGray
-                            href="/submit"
+                            href={`/submit?influencerName=${props.personalFacts.name}&equipmentName=${equipmentDetail.friendlyName}`}
                             style={{ color: ` #283747`, fontWeight: `bold` }}
                           >
                             {" "}

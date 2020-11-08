@@ -2,8 +2,11 @@ import React from "react";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
 import getSearch from "../../hooks/search-hooks";
-import { ContainerConstrained } from "../../core/style/containers.styles";
-import { HeroTitle } from "../../core/style/typography.styles";
+import {
+  BaseUnitTopBottomPadding,
+  ContainerConstrained,
+} from "../../core/style/containers.styles";
+import { HeroTitle, SubTitle } from "../../core/style/typography.styles";
 import Loading from "../utility-pages/loading/loading";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
@@ -34,27 +37,31 @@ const Search = () => {
   }
 
   return (
-    <CardColumns>
-      {searchResults &&
-        searchResults.map((influencer, idx) => (
-          <Col key={idx}>
-            <Card className="mb-2" bg="dark-red">
-              <NoTextDecoration href={influencer.link}>
-                <CardStyle>
-                  <Card.Img src={influencer.imgUrl} />
-                  <Card.Body>
-                    <Card.Title>{influencer.name}</Card.Title>
-                    <Card.Text>{influencer.description}</Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <small>Last updated {influencer.lastUpdatedBlurb}</small>
-                  </Card.Footer>
-                </CardStyle>
-              </NoTextDecoration>
-            </Card>
-          </Col>
-        ))}
-    </CardColumns>
+    <>
+      <SubTitle>{`${searchResults.length} influencers`}</SubTitle>
+      <BaseUnitTopBottomPadding />
+      <CardColumns>
+        {searchResults &&
+          searchResults.map((influencer, idx) => (
+            <Col key={idx}>
+              <Card className="mb-2" bg="dark-red">
+                <NoTextDecoration href={influencer.link}>
+                  <CardStyle>
+                    <Card.Img src={influencer.imgUrl} />
+                    <Card.Body>
+                      <Card.Title>{influencer.name}</Card.Title>
+                      <Card.Text>{influencer.description}</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small>Last updated {influencer.lastUpdatedBlurb}</small>
+                    </Card.Footer>
+                  </CardStyle>
+                </NoTextDecoration>
+              </Card>
+            </Col>
+          ))}
+      </CardColumns>
+    </>
   );
 };
 
