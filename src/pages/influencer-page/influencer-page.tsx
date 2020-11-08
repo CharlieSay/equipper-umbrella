@@ -8,25 +8,45 @@ import Image from "react-bootstrap/Image";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
-
-import { ContainerConstrained } from "../../core/style/containers.styles";
+import styled from "styled-components";
+import {
+  BaseUnitTopBottomPadding,
+  ContainerConstrained,
+} from "../../core/style/containers.styles";
 import {
   SectionH2Red,
   ALinkSmallGray,
+  HeroTitle,
+  SubTitle,
+  SectionH2,
 } from "../../core/style/typography.styles";
 
 import getInfluencerPageData from "../../hooks/influencer-page-hooks";
 
-import { InfluencerPageProps } from "../../core/models/influencer-page.model";
+import { InfluencerPageModel } from "../../core/models/influencer-page.model";
 import "./influencer-page.scss";
+import { Link } from "react-router-dom";
+import Loading from "../utility-pages/loading/loading";
 
 const InfluencerPageUsingParams = () => {
   const getInfluencerData = getInfluencerPageData();
 
-  return <InfluencerPageInternal {...getInfluencerData} />;
+  if (getInfluencerData.isLoading) {
+    return <Loading />;
+  }
+
+  return (
+    <>
+      {getInfluencerData.influencerPage && (
+        <InfluencerPageInternal {...getInfluencerData.influencerPage} />
+      )}
+    </>
+  );
 };
 
-const InfluencerPageInternal = (props: InfluencerPageProps) => {
+const SmallPrint = styled.small``;
+
+const InfluencerPageInternal = (props: InfluencerPageModel) => {
   const showSimilarCreator = props.similarCreators.length >= 3;
 
   return (
@@ -35,9 +55,11 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
         <Col>
           <Row>
             <Col style={{ marginBottom: `8px`, paddingLeft: `0` }}>
-              <a href={`/category/${props.keyFacts.creatorType.toLowerCase()}`}>
+              <Link
+                to={`/category/${props.keyFacts.creatorType.toLowerCase()}`}
+              >
                 <Badge variant="red">{props.keyFacts.creatorType}</Badge>
-              </a>
+              </Link>
             </Col>
           </Row>
           <Table striped bordered hover size="sm">
@@ -83,9 +105,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
       <Row>
         <ListGroup variant="flush">
           <ListGroup.Item style={{ backgroundColor: `#f3f3f3` }}>
-            <h1 style={{ fontWeight: `bold`, color: `#de354c` }}>
-              {`${props.personalFacts.name}'s equipment`}
-            </h1>
+            <HeroTitle>{`${props.personalFacts.name}'s equipment`}</HeroTitle>
             <ul>
               {props.usedEquipment.map((equip, i) => (
                 <li key={i}>
@@ -105,13 +125,11 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
               style={{ backgroundColor: `#f3f3f3` }}
               id={`${equipmentVal.anchor}`}
             >
-              <h1 style={{ fontWeight: `bold`, color: `#de354c` }}>
-                {equipmentVal.friendlySectionName}
-              </h1>
+              <HeroTitle>{equipmentVal.friendlySectionName}</HeroTitle>
               {equipmentVal.equipment.map((equipmentDetail, i) => (
                 <div key={i}>
-                  <h4>{`What ${equipmentDetail.part} does ${props.personalFacts.name} have?`}</h4>
-                  <h2>{equipmentDetail.friendlyName}</h2>
+                  <SectionH2>{`What ${equipmentDetail.part} does ${props.personalFacts.name} have?`}</SectionH2>
+                  <SubTitle>{equipmentDetail.friendlyName}</SubTitle>
                   <Row>
                     <Image
                       src={`${equipmentDetail.thumbnail}`}
@@ -132,7 +150,8 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                         </Button>
                       ))}
                       <Row>
-                        <small style={{ paddingTop: `8px` }}>
+                        <SmallPrint>
+                          <BaseUnitTopBottomPadding />
                           Wrong item or not quite right? Let us know
                           <ALinkSmallGray
                             href={`/submit?influencerName=${props.personalFacts.name}&equipmentName=${equipmentDetail.friendlyName}`}
@@ -141,7 +160,7 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                             {" "}
                             here
                           </ALinkSmallGray>
-                        </small>
+                        </SmallPrint>
                       </Row>
                     </Col>
                   </Row>
@@ -167,9 +186,9 @@ const InfluencerPageInternal = (props: InfluencerPageProps) => {
                       <Card.Title>{similarCreator.creatorName}</Card.Title>
                     </Card.Body>
                     <Card.Footer>
-                      <small className="card-text">
+                      <SmallPrint className="card-text">
                         {similarCreator.creatorType}
-                      </small>
+                      </SmallPrint>
                     </Card.Footer>
                   </a>
                 </Card>

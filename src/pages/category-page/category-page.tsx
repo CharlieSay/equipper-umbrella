@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import InfluencerGroup from "../../core/components/popular-group/influencer-group";
 import categoryBeauty from "../../core/data/category-beauty.json";
+import { ContainerConstrained } from "../../core/style/containers.styles";
 
 const CategoryPage = () => {
   const { influencerCategory } = useParams() as {
@@ -12,7 +13,7 @@ const CategoryPage = () => {
     influencerCategory[0].toUpperCase() + influencerCategory.slice(1);
 
   return (
-    <div className="container--constrained">
+    <ContainerConstrained>
       <InfluencerGroup
         groupTitle={influencerParsed}
         popularInfluencers={categoryBeauty}
@@ -20,7 +21,7 @@ const CategoryPage = () => {
           "Our most popular influencers, and all the equipment they use."
         }
       />
-    </div>
+    </ContainerConstrained>
   );
 };
 

@@ -1,4 +1,4 @@
-export interface InfluencerPageProps {
+export interface InfluencerPageModel {
   personalFacts: PersonalFacts;
   keyFacts: KeyFacts;
   usedEquipment: UsedEquipment[];

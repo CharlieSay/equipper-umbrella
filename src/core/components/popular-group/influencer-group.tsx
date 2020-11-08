@@ -2,7 +2,7 @@ import React from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import { InfluencerSearchModel } from "../../models/influencer-search.model";
-import { SectionH2, SubTitle } from "../../style/typography.styles";
+import { HeroTitleGray, SubTitle } from "../../style/typography.styles";
 import styled from "styled-components";
 import "./influencer-group.scss";
 
@@ -27,7 +27,7 @@ const NoTextDecoration = styled.a`
 const InfluencerGroup = (props: InfluencerGroupProps) => {
   return (
     <>
-      <SectionH2>{props.groupTitle}</SectionH2>
+      <HeroTitleGray>{props.groupTitle}</HeroTitleGray>
       <SubTitle>{props.groupSubTitle}</SubTitle>
       <CardDeck style={{ marginTop: `24px` }}>
         {props.popularInfluencers.map((influencer, idx) => (

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { InfluencerSearchModel } from "../core/models/influencer-search.model";
 
 import popularData from "../core/data/search-result-data.json";
-import emptyData from "../core/data/empty-popular-data.json";
 
 interface SearchResultsInterface {
   isLoading: boolean;
