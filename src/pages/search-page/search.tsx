@@ -11,7 +11,7 @@ import Loading from "../utility-pages/loading/loading";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import styled from "styled-components";
-import { Col } from "react-bootstrap";
+import { CardDeck, Col } from "react-bootstrap";
 
 function convertToTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -40,27 +40,30 @@ const Search = () => {
     <>
       <SubTitle>{`${searchResults.length} influencers`}</SubTitle>
       <BaseUnitTopBottomPadding />
-      <CardColumns>
+      <CardDeck>
         {searchResults &&
           searchResults.map((influencer, idx) => (
-            <Col key={idx}>
-              <Card className="mb-2" bg="dark-red">
-                <NoTextDecoration href={influencer.link}>
-                  <CardStyle>
-                    <Card.Img src={influencer.imgUrl} />
-                    <Card.Body>
-                      <Card.Title>{influencer.name}</Card.Title>
-                      <Card.Text>{influencer.description}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                      <small>Last updated {influencer.lastUpdatedBlurb}</small>
-                    </Card.Footer>
-                  </CardStyle>
-                </NoTextDecoration>
-              </Card>
-            </Col>
+            <Card
+              className="mb-2"
+              bg="dark-red"
+              key={idx}
+              style={{ minWidth: `30%` }}
+            >
+              <NoTextDecoration href={influencer.link}>
+                <CardStyle>
+                  <Card.Img src={influencer.imgUrl} />
+                  <Card.Body>
+                    <Card.Title>{influencer.name}</Card.Title>
+                    <Card.Text>{influencer.description}</Card.Text>
+                  </Card.Body>
+                  <Card.Footer>
+                    <small>Last updated {influencer.lastUpdatedBlurb}</small>
+                  </Card.Footer>
+                </CardStyle>
+              </NoTextDecoration>
+            </Card>
           ))}
-      </CardColumns>
+      </CardDeck>
     </>
   );
 };
