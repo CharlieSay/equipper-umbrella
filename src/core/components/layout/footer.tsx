@@ -1,10 +1,24 @@
 import React from "react";
-import { HeaderFooterProps } from "./header";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { FooterRoot, FooterContainerFlexOnMobile } from "./footer.styles";
+import Row from "react-bootstrap/Row";
+import styled from "styled-components";
+import packageJson from "../../../../package.json";
 import { ContainerConstrained } from "../../style/containers.styles";
+import { SmallBold } from "../../style/typography.styles";
 import "./footer.scss";
+import { FooterContainerFlexOnMobile, FooterRoot } from "./footer.styles";
+import { HeaderFooterProps } from "./header";
+
+const FooterEmailSmall = styled.span`
+  color: ${(props) => props.theme.white};
+  font-weight: 400;
+`;
+
+const FooterEmailTextType = styled.span`
+  color: ${(props) => props.theme.white};
+  font-weight: 700;
+  font-size: 2em;
+`;
 
 export const Footer = (links: HeaderFooterProps) => {
   return (
@@ -14,10 +28,13 @@ export const Footer = (links: HeaderFooterProps) => {
           <Row noGutters>
             <Col>
               <Row>
-                <h3 className="footer-equippr">Equippr</h3>
+                <FooterEmailTextType>Equippr</FooterEmailTextType>
               </Row>
               <Row>
-                <span className="footer-email-small">hello@equippr.io</span>
+                <FooterEmailSmall>hello@equippr.io</FooterEmailSmall>
+              </Row>
+              <Row>
+                <SmallBold>{` ${packageJson.name} (${packageJson.version})`}</SmallBold>
               </Row>
             </Col>
             {links.links.map((link, i) => (

@@ -35,7 +35,12 @@ const HeaderRestrictor = styled.header`
 const HeaderLink = styled.span`
   color: ${(props) => props.theme.lightRed};
   font-weight: 600;
+
+  &:hover {
+    color: ${(props) => props.theme.darkRed};
+  }
 `;
+
 const VisuallyHidden = styled.a`
   clip: rect(0 0 0 0);
   clip-path: inset(50%);

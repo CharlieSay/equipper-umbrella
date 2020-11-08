@@ -32,3 +32,8 @@ export const ALinkSmallGray = styled.a`
   color: ${(props) => props.theme.gray};
   font-weight: bold;
 `;
+
+export const SmallBold = styled.small`
+  color: ${(props) => props.theme.white};
+  font-weight: normal;
+`;
