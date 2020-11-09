@@ -22,17 +22,21 @@ import {
 } from "../../core/style/typography.styles";
 
 import getInfluencerPageData from "../../hooks/influencer-page-hooks";
-
-import { InfluencerPageModel } from "../../core/models/influencer-page.model";
-import "./influencer-page.scss";
+import InfluencerPageLoading from "./influencer-page-loading";
 import { Link } from "react-router-dom";
-import Loading from "../utility-pages/loading/loading";
+import { InfluencerPageModel } from "../../core/models/influencer-page.model";
+
+import "./influencer-page.scss";
 
 const InfluencerPageUsingParams = () => {
   const getInfluencerData = getInfluencerPageData();
 
   if (getInfluencerData.isLoading) {
-    return <Loading />;
+    return (
+      <ContainerConstrained>
+        <InfluencerPageLoading />
+      </ContainerConstrained>
+    );
   }
 
   return (
