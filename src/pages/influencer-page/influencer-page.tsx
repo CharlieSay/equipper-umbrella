@@ -27,17 +27,18 @@ import { Link } from "react-router-dom";
 import { InfluencerPageModel } from "../../core/models/influencer-page.model";
 
 import "./influencer-page.scss";
+const SmallPrint = styled.small``;
 
 const InfluencerPageUsingParams = () => {
   const getInfluencerData = getInfluencerPageData();
 
-  if (getInfluencerData.isLoading) {
-    return (
-      <ContainerConstrained>
-        <InfluencerPageLoading />
-      </ContainerConstrained>
-    );
-  }
+  // if (getInfluencerData.isLoading) {
+  //   return (
+  //     <ContainerConstrained>
+  //       <InfluencerPageLoading />
+  //     </ContainerConstrained>
+  //   );
+  // }
 
   return (
     <>
@@ -47,8 +48,6 @@ const InfluencerPageUsingParams = () => {
     </>
   );
 };
-
-const SmallPrint = styled.small``;
 
 const InfluencerPageInternal = (props: InfluencerPageModel) => {
   const showSimilarCreator = props.similarCreators.length >= 3;

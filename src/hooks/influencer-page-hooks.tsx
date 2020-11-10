@@ -17,7 +17,7 @@ const getSearch = (): SearchResultsInterface => {
       setTimeout(() => {
         setIsLoading(false);
         setInfluencerData(influencerPageData);
-      }, 10000);
+      }, 1000);
     }
     //if you pass a value to array, like this [data] than clearTimeout will run every time this value changes (useEffect re-run)
   );

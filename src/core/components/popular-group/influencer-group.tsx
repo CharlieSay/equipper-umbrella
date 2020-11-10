@@ -17,7 +17,7 @@ const InfluencerGroup = (props: InfluencerGroupProps) => {
     <>
       <HeroTitleGray>{props.groupTitle}</HeroTitleGray>
       <SubTitle>{props.groupSubTitle}</SubTitle>
-      <CardDeck style={{ marginTop: `24px` }}>
+      <CardDeck className="justify-content-around">
         {props.popularInfluencers.map((influencer, idx) => (
           <InfluencerCard influencer={influencer} key={idx} />
         ))}
