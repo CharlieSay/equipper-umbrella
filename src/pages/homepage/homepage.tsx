@@ -31,10 +31,9 @@ const getSearchQuery = () => {
 
 const HomePage = () => {
   const [toSearch, setToSearch] = useState(false);
+  console.log("test me");
   console.log(
-    "test me + " + process.env.MONGO_DB_P
-      ? process.env.MONGO_DB_P
-      : " there was none charles"
+    process.env.MONGO_DB_P ? process.env.MONGO_DB_P : "there was none charles"
   );
   return (
     <ContainerConstrained>
