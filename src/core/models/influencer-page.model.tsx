@@ -9,6 +9,12 @@ export interface KeyFacts {
   activeSince: string;
   creatorType: string;
   lastUpdated: string;
+  socialLinks: SocialLinks[];
+}
+
+export interface SocialLinks {
+  socialNetwork: string;
+  link: string;
 }
 
 export interface PersonalFacts {

@@ -10,7 +10,13 @@
     "keyFacts": {
         "activeSince": "Jan 2010",
         "creatorType": "Vlogger",
-        "lastUpdated": "1 Minute ago"
+        "lastUpdated": "1 Minute ago",
+        "socialLinks": [
+            {
+                "socialNetwork": "youtube",
+                "link": "https://www.youtube.com/channel/UCZei-B_NaSRBFcLgUxx8zMA/"
+            }
+        ]
     },
     "usedEquipment": [
         {

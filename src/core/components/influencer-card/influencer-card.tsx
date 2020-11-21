@@ -25,7 +25,7 @@ const InfluencerCard = (props: CardType) => {
   const { influencer, key } = props;
 
   return (
-    <Card key={key} className="mb-4" bg="dark-red" style={{ minWidth: "30%" }}>
+    <Card key={key} className="mb-4" bg="dark-red" style={{ minWidth: "35%" }}>
       <NoTextDecoration href={influencer.link}>
         <CardStyle>
           <Card.Img src={influencer.imgUrl} />

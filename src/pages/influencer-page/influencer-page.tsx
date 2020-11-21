@@ -27,18 +27,19 @@ import { Link } from "react-router-dom";
 import { InfluencerPageModel } from "../../core/models/influencer-page.model";
 
 import "./influencer-page.scss";
+
 const SmallPrint = styled.small``;
 
 const InfluencerPageUsingParams = () => {
   const getInfluencerData = getInfluencerPageData();
 
-  // if (getInfluencerData.isLoading) {
-  //   return (
-  //     <ContainerConstrained>
-  //       <InfluencerPageLoading />
-  //     </ContainerConstrained>
-  //   );
-  // }
+  if (getInfluencerData.isLoading) {
+    return (
+      <ContainerConstrained>
+        <InfluencerPageLoading />
+      </ContainerConstrained>
+    );
+  }
 
   return (
     <>
@@ -114,7 +115,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                 <li key={i}>
                   <a
                     style={{ color: ` #283747`, fontWeight: `bold` }}
-                    href={`#${equip.anchor}`}
+                    href={`#${equip.anchor.toLowerCase()}`}
                   >
                     {`${equip.friendlySectionName}`}
                   </a>
