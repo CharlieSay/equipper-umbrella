@@ -27,6 +27,7 @@ import { Link } from "react-router-dom";
 import { InfluencerPageModel } from "../../core/models/influencer-page.model";
 
 import "./influencer-page.scss";
+import { Helmet } from "react-helmet-async";
 
 const SmallPrint = styled.small``;
 
@@ -44,7 +45,12 @@ const InfluencerPageUsingParams = () => {
   return (
     <>
       {getInfluencerData.influencerPage && (
-        <InfluencerPageInternal {...getInfluencerData.influencerPage} />
+        <div>
+          <Helmet>
+            <title>{`${getInfluencerData.influencerPage.personalFacts.name} - Equippr`}</title>
+          </Helmet>
+          <InfluencerPageInternal {...getInfluencerData.influencerPage} />
+        </div>
       )}
     </>
   );

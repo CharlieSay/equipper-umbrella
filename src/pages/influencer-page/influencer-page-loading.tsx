@@ -1,6 +1,7 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InfluencerPageLoading = (props: any) => (
   <ContentLoader
     speed={2}

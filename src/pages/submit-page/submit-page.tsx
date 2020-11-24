@@ -11,7 +11,6 @@ import { HeroTitle } from "../../core/style/typography.styles";
 
 const SubmitPage = () => {
   const [validated, setValidated] = useState(false);
-
   const prefillFormData = queryString.parse(useLocation().search);
 
   const handleSubmit = (event: React.SyntheticEvent) => {
@@ -51,7 +50,6 @@ const SubmitPage = () => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-
           <Form.Group controlId="formGridEquipmentName">
             <Form.Label>Equipment Name</Form.Label>
             <Form.Control
@@ -65,7 +63,6 @@ const SubmitPage = () => {
               }
             />
           </Form.Group>
-
           <Form.Group controlId="formGridEquipmentEvidence">
             <Form.Label>Evidence of equipment</Form.Label>
             <Form.Control
@@ -74,12 +71,10 @@ const SubmitPage = () => {
               required
             />
           </Form.Group>
-
           <Form.Group controlId="formGridDetails">
             <Form.Label>Details</Form.Label>
             <Form.Control as="textarea" rows={3} />
           </Form.Group>
-
           <Button variant="red" type="submit">
             Submit
           </Button>

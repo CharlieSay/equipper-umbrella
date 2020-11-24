@@ -17,9 +17,7 @@ const CategoryPage = () => {
       <InfluencerGroup
         groupTitle={influencerParsed}
         popularInfluencers={categoryBeauty}
-        groupSubTitle={
-          "Our most popular influencers, and all the equipment they use."
-        }
+        groupSubTitle={`The most popular ${influencerParsed}, and all the equipment they use.`}
       />
     </ContainerConstrained>
   );

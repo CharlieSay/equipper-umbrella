@@ -1,5 +1,4 @@
 import React from "react";
-import CardDeck from "react-bootstrap/CardDeck";
 import { InfluencerSearchModel } from "../../models/influencer-search.model";
 import { BaseUnitTopBottomPadding } from "../../style/containers.styles";
 import { HeroTitleGray, SubTitle } from "../../style/typography.styles";

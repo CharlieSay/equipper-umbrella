@@ -24,6 +24,7 @@
     "react-bootstrap": "^1.4.0",
     "react-content-loader": "^5.1.4",
     "react-dom": "^16.13.1",
+    "react-google-recaptcha-v3": "^1.7.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.0.7",
