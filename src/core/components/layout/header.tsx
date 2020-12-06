@@ -30,6 +30,7 @@ const HeaderRestrictor = styled.header`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  color: transparent;
 `;
 
 const HeaderLink = styled.span`

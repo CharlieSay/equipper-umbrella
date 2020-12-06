@@ -8,7 +8,7 @@ export const HeroTitle = styled.h1`
 `;
 
 export const HeroTitleGray = styled(HeroTitle)`
-  color: ${(props) => props.theme.gray};
+  color: ${(props) => props.theme.darkBlue};
 `;
 
 export const SectionH2 = styled.h1`
@@ -29,7 +29,7 @@ export const SubTitle = styled.span`
 `;
 
 export const ALinkSmallGray = styled.a`
-  color: ${(props) => props.theme.gray};
+  color: ${(props) => props.theme.darkBlue};
   font-weight: bold;
 `;
 

@@ -33,6 +33,11 @@ export const BaseUnitTopBottomPadding = styled.div`
   padding-bottom: 8px;
 `;
 
+export const DoubleBaseUnitTopBottomPadding = styled.div`
+  padding-top: 8px;
+  padding-bottom: 8px;
+`;
+
 export const Flex = styled.div`
   display: flex;
 `;

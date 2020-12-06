@@ -1,6 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 import { InfluencerSearchModel } from "../../models/influencer-search.model";
-import { BaseUnitTopBottomPadding } from "../../style/containers.styles";
+import {
+  BaseUnitTopBottomPadding,
+  DoubleBaseUnitTopBottomPadding,
+} from "../../style/containers.styles";
 import { HeroTitleGray, SubTitle } from "../../style/typography.styles";
 import InfluencerCard from "../influencer-card/influencer-card";
 
@@ -12,24 +16,29 @@ interface InfluencerGroupProps {
   popularInfluencers: InfluencerSearchModel[];
 }
 
+const Cards = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Centered = styled.div`
+  margin: 0 auto;
+`;
+
 const InfluencerGroup = (props: InfluencerGroupProps) => {
   return (
     <>
+      <DoubleBaseUnitTopBottomPadding />
       <HeroTitleGray>{props.groupTitle}</HeroTitleGray>
       <SubTitle>{props.groupSubTitle}</SubTitle>
       <BaseUnitTopBottomPadding />
-      {/* <CardDeck className="justify-content-around">
-        {props.popularInfluencers.map((influencer, idx) => (
-          <InfluencerCard influencer={influencer} key={idx} />
-        ))}
-      </CardDeck>{" "} */}
-      <div className="row">
-        {props.popularInfluencers.map((influencer, idx) => (
-          <div key={idx} className="col-4 h-100">
+      <Centered>
+        <Cards>
+          {props.popularInfluencers.map((influencer, idx) => (
             <InfluencerCard influencer={influencer} key={idx} />
-          </div>
-        ))}
-      </div>
+          ))}
+        </Cards>
+      </Centered>
     </>
   );
 };
