@@ -15,7 +15,8 @@ export interface HeaderFooterProps {
 
 interface Link {
   displayText: string;
-  url: string;
+  stem: string;
+  params?: string;
   isActive?: boolean;
   isDivider?: boolean;
   subHeaders?: Link[];
@@ -73,7 +74,10 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
           </Navbar.Brand>
           <Nav className="mr-auto">
             {links.links.map((key, i) => (
-              <Nav.Link key={i} href={key.url}>
+              <Nav.Link
+                key={i}
+                href={`${key.stem}${key.params ? key.params : ""}`}
+              >
                 <HeaderLink>{key.displayText}</HeaderLink>
               </Nav.Link>
             ))}

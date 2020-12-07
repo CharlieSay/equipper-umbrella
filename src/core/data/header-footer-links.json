@@ -2,81 +2,82 @@
     "header": [
         {
             "displayText": "Home",
-            "url": "/"
+            "stem": "/"
         },
         {
             "displayText": "Popular",
-            "url": "/search?sort=popular"
+            "stem": "/search",
+            "params":"?sort=popular"
         }
     ],
     "footer": [
         {
             "displayText": "Popular Influencers",
-            "url": "/",
+            "stem": "/",
             "subHeaders": [
                 {
                     "displayText": "Logan Paul",
-                    "url": "/influencers/jake-paul"
+                    "stem": "/influencers/jake-paul"
                 },
                 {
                     "displayText": "KSI",
-                    "url": "/influencers/ksi"
+                    "stem": "/influencers/ksi"
                 },
                 {
                     "displayText": "Pewdiepie",
-                    "url": "/influencers/pewdiepie"
+                    "stem": "/influencers/pewdiepie"
                 },
                 {
                     "displayText": "James Charles",
-                    "url": "/influencers/james-charles"
+                    "stem": "/influencers/james-charles"
                 }
             ]
         },
         {
             "displayText": "Categories",
-            "url": "/categories",
+            "stem": "/categories",
             "subHeaders": [
                 {
                     "displayText": "Vloggers",
-                    "url": "/category/vloggers"
+                    "stem": "/category/vloggers"
                 },
                 {
                     "displayText": "Gamers",
-                    "url": "/category/gamers"
+                    "stem": "/category/gamers"
                 },
                 {
                     "displayText": "Beauty",
-                    "url": "/category/beauty"
+                    "stem": "/category/beauty"
                 },
                 {
                     "displayText": "Lifestyle",
-                    "url": "/category/lifestyle"
+                    "stem": "/category/lifestyle"
                 },
                 {
                     "displayText": "Podcasts",
-                    "url": "/category/podcasts"
+                    "stem": "/category/podcasts"
                 }
             ]
         },
         {
             "displayText": "Help",
-            "url": "/help",
+            "stem": "/help",
             "subHeaders": [
                 {
                     "displayText": "Contact us",
-                    "url": "/help/contact"
+                    "stem": "/help/contact"
                 },
                 {
                     "displayText": "FAQ",
-                    "url": "/help/faq"
+                    "stem": "/help/faq"
                 },
                 {
                     "displayText": "Privacy Policy",
-                    "url": "/privacy-policy"
+                    "stem": "/privacy-policy"
                 },
                 {
                     "displayText": "About us",
-                    "url": "/about-us"
+                    "stem": "/about-us"
                 }
             ]
         }

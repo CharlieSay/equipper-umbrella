@@ -42,7 +42,7 @@ export const Footer = (links: HeaderFooterProps) => {
                 <ul>
                   <li>
                     <h5>
-                      <a href={link.url}>
+                      <a href={link.stem}>
                         <span className="footer-link">{link.displayText}</span>
                       </a>
                     </h5>
@@ -51,7 +51,7 @@ export const Footer = (links: HeaderFooterProps) => {
                     link.subHeaders.map((subLinks, i) => (
                       <li key={i}>
                         <h6>
-                          <a href={subLinks.url}>
+                          <a href={subLinks.stem}>
                             <span className="footer-sub-link">
                               {subLinks.displayText}
                             </span>
