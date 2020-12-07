@@ -2,11 +2,11 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Headroom from "react-headroom";
+import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 
 import Logo from "../../../assets/logo.svg";
-
 import "./header.scss";
-import styled from "styled-components";
 
 export interface HeaderFooterProps {
   links: Array<Link>;
@@ -34,12 +34,28 @@ const HeaderRestrictor = styled.header`
   color: transparent;
 `;
 
-const HeaderLink = styled.span`
+const HeaderLinkBase = styled.span`
   color: ${(props) => props.theme.lightRed};
   font-weight: 600;
+  transition: 0.25s;
+`;
 
+const HeaderLinkStyled = styled(HeaderLinkBase)`
   &:hover {
     color: ${(props) => props.theme.darkRed};
+  }
+`;
+
+const HeaderLinkActive = styled(HeaderLinkBase)`
+  color: white;
+  background-color: ${(props) => props.theme.lightRed};
+  border-radius: 4px;
+  padding: 2px 4px 2px 4px;
+  text-decoration: underline;
+
+  &:hover {
+    color: ${(props) => props.theme.grey};
+    padding: 2px 6px 2px 6px;
   }
 `;
 
@@ -52,6 +68,22 @@ const VisuallyHidden = styled.a`
   white-space: nowrap;
   width: 1px;
 `;
+
+interface HeaderLinkProps {
+  stem: string;
+  displayText: string;
+}
+
+const HeaderLink = (props: HeaderLinkProps) => {
+  const { pathname } = useLocation();
+  const isActive = pathname === props.stem;
+
+  if (isActive) {
+    return <HeaderLinkActive>{props.displayText}</HeaderLinkActive>;
+  }
+
+  return <HeaderLinkStyled>{props.displayText}</HeaderLinkStyled>;
+};
 
 export const DesktopHeader = (links: HeaderFooterProps) => {
   return (
@@ -78,7 +110,7 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
                 key={i}
                 href={`${key.stem}${key.params ? key.params : ""}`}
               >
-                <HeaderLink>{key.displayText}</HeaderLink>
+                <HeaderLink stem={key.stem} displayText={key.displayText} />
               </Nav.Link>
             ))}
           </Nav>
