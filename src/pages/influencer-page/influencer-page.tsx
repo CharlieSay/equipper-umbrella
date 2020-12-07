@@ -139,7 +139,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
               {equipmentVal.equipment.map((equipmentDetail, i) => (
                 <div key={i}>
                   <SectionH2>{`What ${equipmentDetail.part} does ${props.personalFacts.name} have?`}</SectionH2>
-                  <SubTitle>{equipmentDetail.friendlyName}</SubTitle>
+                  <SubTitle primary>{equipmentDetail.friendlyName}</SubTitle>
                   <Row>
                     <Image
                       src={`${equipmentDetail.thumbnail}`}

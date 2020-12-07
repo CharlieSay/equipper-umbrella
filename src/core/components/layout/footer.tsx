@@ -1,24 +1,21 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import styled from "styled-components";
 import packageJson from "../../../../package.json";
 import { ContainerConstrained } from "../../style/containers.styles";
 import { SmallBold } from "../../style/typography.styles";
-import "./footer.scss";
-import { FooterContainerFlexOnMobile, FooterRoot } from "./footer.styles";
+import {
+  FooterColumn,
+  FooterContainerFlexOnMobile,
+  FooterEmailSmall,
+  FooterEmailTextType,
+  FooterHeadLink,
+  FooterRoot,
+  FooterSubLink,
+  FooterUL,
+} from "./footer.styles";
 import { HeaderFooterProps } from "./header";
-
-const FooterEmailSmall = styled.span`
-  color: ${(props) => props.theme.white};
-  font-weight: 400;
-`;
-
-const FooterEmailTextType = styled.span`
-  color: ${(props) => props.theme.white};
-  font-weight: 700;
-  font-size: 2em;
-`;
+import "./footer.scss";
 
 export const Footer = (links: HeaderFooterProps) => {
   return (
@@ -38,29 +35,25 @@ export const Footer = (links: HeaderFooterProps) => {
               </Row>
             </Col>
             {links.links.map((link, i) => (
-              <Col key={i}>
-                <ul>
+              <FooterColumn key={i}>
+                <FooterUL>
                   <li>
-                    <h5>
-                      <a href={link.stem}>
-                        <span className="footer-link">{link.displayText}</span>
-                      </a>
-                    </h5>
+                    <FooterHeadLink href={link.stem}>
+                      {link.displayText}
+                    </FooterHeadLink>
                   </li>
-                  {link.subHeaders &&
-                    link.subHeaders.map((subLinks, i) => (
-                      <li key={i}>
-                        <h6>
-                          <a href={subLinks.stem}>
-                            <span className="footer-sub-link">
-                              {subLinks.displayText}
-                            </span>
-                          </a>
-                        </h6>
+                </FooterUL>
+                {link.subHeaders &&
+                  link.subHeaders.map((subLinks, i) => (
+                    <FooterUL key={i}>
+                      <li>
+                        <FooterSubLink href={subLinks.stem}>
+                          {subLinks.displayText}
+                        </FooterSubLink>
                       </li>
-                    ))}
-                </ul>
-              </Col>
+                    </FooterUL>
+                  ))}
+              </FooterColumn>
             ))}
           </Row>
         </FooterContainerFlexOnMobile>

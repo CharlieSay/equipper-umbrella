@@ -5,7 +5,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import InfluencerGroup from "../../core/components/popular-group/influencer-group";
-
+import { getSearchQuery } from "../../hooks/storage-hooks";
 import { HeroTitle, SubTitle } from "../../core/style/typography.styles";
 import {
   ContainerConstrained,
@@ -32,13 +32,6 @@ const FullBleedImage = styled.div`
   margin-right: -50vw;
 `;
 
-const getSearchQuery = () => {
-  const queryItem = localStorage.getItem("searchQuery");
-  const queryItemParsed = (queryItem && queryItem.toString()) || "";
-  const sort = "relevance";
-  return `?query=${encodeURIComponent(queryItemParsed)}&sort=${sort}`;
-};
-
 const HomePage = () => {
   const [toSearch, setToSearch] = useState(false);
   console.log(
@@ -52,7 +45,9 @@ const HomePage = () => {
       <FullBleedImage>
         <HeroTextAligner>
           <HeroTitle>So who is your favourite influencer?</HeroTitle>
-          <SubTitle>Just pop in their name and we will find it.</SubTitle>
+          <SubTitle primary={false}>
+            Just pop in their name and we will find it.
+          </SubTitle>
           <Form
             inline
             onSubmit={() => setToSearch(true)}

@@ -2,9 +2,14 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Headroom from "react-headroom";
-import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
+import {
+  HeaderLinkActive,
+  HeaderLinkStyled,
+  HeaderRestrictor,
+  VisuallyHidden,
+} from "./header.styles";
 import Logo from "../../../assets/logo.svg";
 import "./header.scss";
 
@@ -21,53 +26,6 @@ interface Link {
   isDivider?: boolean;
   subHeaders?: Link[];
 }
-
-const HeaderRestrictor = styled.header`
-  margin: 0 auto;
-  max-width: 1272px;
-  padding: 8px 4px;
-  position: relative;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: transparent;
-`;
-
-const HeaderLinkBase = styled.span`
-  color: ${(props) => props.theme.lightRed};
-  font-weight: 600;
-  transition: 0.25s;
-`;
-
-const HeaderLinkStyled = styled(HeaderLinkBase)`
-  &:hover {
-    color: ${(props) => props.theme.darkRed};
-  }
-`;
-
-const HeaderLinkActive = styled(HeaderLinkBase)`
-  color: white;
-  background-color: ${(props) => props.theme.lightRed};
-  border-radius: 4px;
-  padding: 2px 4px 2px 4px;
-  text-decoration: underline;
-
-  &:hover {
-    color: ${(props) => props.theme.grey};
-    padding: 2px 6px 2px 6px;
-  }
-`;
-
-const VisuallyHidden = styled.a`
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-`;
 
 interface HeaderLinkProps {
   stem: string;

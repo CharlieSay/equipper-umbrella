@@ -9,6 +9,10 @@ import {
 import { HeroTitle, SubTitle } from "../../core/style/typography.styles";
 import InfluencerCard from "../../core/components/influencer-card/influencer-card";
 import MyLoader from "../../core/components/influencer-card/influencer-card-loading";
+import {
+  Cards,
+  Centered,
+} from "../../core/components/influencer-card/cards-styles";
 
 function convertToTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -25,16 +29,16 @@ const Search = () => {
 
   return (
     <>
-      <SubTitle>{`${searchResults.length} influencers`}</SubTitle>
+      <SubTitle primary>{`${searchResults.length} influencers`}</SubTitle>
       <BaseUnitTopBottomPadding />
-      <div className="row">
-        {searchResults &&
-          searchResults.map((influencer, idx) => (
-            <div key={idx} className="col-4 h-100">
+      <Centered>
+        <Cards>
+          {searchResults &&
+            searchResults.map((influencer, idx) => (
               <InfluencerCard influencer={influencer} key={idx} />
-            </div>
-          ))}
-      </div>
+            ))}
+        </Cards>
+      </Centered>
     </>
   );
 };

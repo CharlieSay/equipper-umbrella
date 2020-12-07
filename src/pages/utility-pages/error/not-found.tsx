@@ -22,7 +22,9 @@ const NotFound = () => {
           src={"https://fansofdavid.com/wp-content/uploads/2014/05/kaboom.png"}
         />
         <HeroTitleGray>This page doesnt exist! 🤔</HeroTitleGray>
-        <SubTitle>{`We're not quite sure what went wrong there.`}</SubTitle>
+        <SubTitle
+          primary
+        >{`We're not quite sure what went wrong there.`}</SubTitle>
         <BaseUnitTopBottomPadding>
           <Button href={"/"} variant="red" target="_blank">
             Search for influencers

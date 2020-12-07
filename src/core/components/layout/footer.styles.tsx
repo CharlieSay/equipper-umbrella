@@ -17,5 +17,53 @@ export const FooterContainerFlexOnMobile = styled.div`
 `;
 
 export const FooterColumn = styled.div`
-  margin: 0 8px 0 8px;
+  margin-left: 0;
+  margin-right: 0;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  @media (max-width: 575px) {
+    margin-top: 16px;
+    flex-basis: initial;
+    flex-grow: initial;
+    width: 100%;
+  }
+`;
+
+export const FooterEmailSmall = styled.span`
+  color: ${(props) => props.theme.white};
+  font-weight: 400;
+`;
+
+export const FooterEmailTextType = styled.span`
+  color: ${(props) => props.theme.white};
+  font-weight: 700;
+  font-size: 2em;
+`;
+
+export const FooterSubLink = styled.a`
+  color: ${(props) => props.theme.lightRed};
+  font-weight: 400;
+  transition: ${(props) => props.theme.defaultTransitionLength};
+
+  &:hover {
+    text-decoration: none;
+    color: ${(props) => props.theme.grey};
+  }
+`;
+
+export const FooterHeadLink = styled.a`
+  color: ${(props) => props.theme.lightRed};
+  font-weight: 600;
+  font-size: 20px;
+  transition: ${(props) => props.theme.defaultTransitionLength};
+
+  &:hover {
+    text-decoration: none;
+    color: ${(props) => props.theme.grey};
+  }
+`;
+
+export const FooterUL = styled.ul`
+  margin-bottom: 0;
 `;
