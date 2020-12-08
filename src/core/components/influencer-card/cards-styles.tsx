@@ -62,7 +62,7 @@ export const Image = styled.img`
 `;
 
 export const CardFooter = styled.div`
-  padding: 0.5rem 0;
+  padding: 0.25rem 0 0.5rem 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 `;
