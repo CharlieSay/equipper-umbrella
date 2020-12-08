@@ -1,0 +1,38 @@
+[
+  {
+    "friendlySectionName": "Cameras",
+    "anchor": "camera",
+    "equipment": [
+      {
+        "friendlyName": "Canon Powershot G7X",
+        "part": "Vlogging Camera",
+        "thumbnail": "https://i.jessops.com/ce-images/PRODUCT/PRODUCT_REGULAR/ACANOCM095298480_003.jpg?image=600&blur",
+        "affiliate": [
+          {
+            "vendor": "Amazon",
+            "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
+          }
+        ],
+        "usedBy": [
+          { "displayName": "KSI", "link": "ksi" },
+          { "displayName": "Sidemen", "link": "sidemen" }
+        ]
+      },
+      {
+        "friendlyName": "Canon Powershot G7X",
+        "part": "Vlogging Camera",
+        "thumbnail": "https://i.jessops.com/ce-images/PRODUCT/PRODUCT_REGULAR/ACANOCM095298480_003.jpg?image=600&blur",
+        "affiliate": [
+          {
+            "vendor": "Amazon",
+            "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
+          }
+        ],
+        "usedBy": [
+          { "displayName": "KSI", "link": "ksi" },
+          { "displayName": "Sidemen", "link": "sidemen" }
+        ]
+      }
+    ]
+  }
+]

@@ -9,6 +9,10 @@ export const Centered = styled.div`
   margin: 0 auto;
 `;
 
+export const VerticalCenter = styled.div`
+  align-items: center;
+`;
+
 export const CardContent = styled.div`
   padding: 1em;
 `;
@@ -30,6 +34,15 @@ export const Card = styled.a`
   @media screen and (min-width: 60em) {
     max-width: calc(25% - 1em);
   }
+`;
+
+export const CardAsDiv = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  border: red;
+  margin: 8px;
+  padding: 31px 16px 31px 16px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.01), 0 15px 12px rgba(0, 0, 0, 0.01);
 `;
 
 export const CardTitle = styled.h2`

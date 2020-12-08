@@ -1,4 +1,5 @@
 import { InfluencerSearchModel } from "./influencer-search.model";
+import { UsedBy } from "./popular-gear.model";
 
 export interface InfluencerPageModel {
   personalFacts: PersonalFacts;
