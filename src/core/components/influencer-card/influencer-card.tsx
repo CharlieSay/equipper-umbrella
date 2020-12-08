@@ -26,7 +26,11 @@ const InfluencerCard = (props: CardType) => {
         <CardText>{influencer.description}</CardText>
       </CardContent>
       <CardFooter>
-        <UpdatedBlurb>Last updated {influencer.lastUpdatedBlurb}</UpdatedBlurb>
+        <UpdatedBlurb>
+          {influencer.lastUpdatedBlurb
+            ? `Last updated ${influencer.lastUpdatedBlurb}`
+            : "This is broke"}
+        </UpdatedBlurb>
       </CardFooter>
     </Card>
   );

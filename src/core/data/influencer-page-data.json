@@ -56,28 +56,31 @@
     ],
     "similarCreators": [
         {
-            "creatorName": "KSI",
-            "creatorType": "Gamer",
-            "link": "/influencers/ksi",
-            "thumbnail": "https://yt3.ggpht.com/-yp9RTevUEk0/AAAAAAAAAAI/AAAAAAAAAAA/lCVbT0EdxZA/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+            "name": "Vikkstar123",
+            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+            "link": "/influencers/vikkstar123",
+            "imgUrl": "https://yt3.ggpht.com/-GkxabB2r4Aw/AAAAAAAAAAI/AAAAAAAAAAA/rNwNMNQNcEI/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
+            "lastUpdatedBlurb": "60 Minutes ago"
         },
         {
-            "creatorName": "KSI",
-            "creatorType": "Gamer",
-            "link": "/influencers/ksi",
-            "thumbnail": "https://yt3.ggpht.com/-yp9RTevUEk0/AAAAAAAAAAI/AAAAAAAAAAA/lCVbT0EdxZA/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+            "name": "Carli Bybel",
+            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+            "link": "/influencers/carli-bybel",
+            "imgUrl": "https://yt3.ggpht.com/-n0IFDEsGM4g/AAAAAAAAAAI/AAAAAAAAAAA/RYuVWAoiR_U/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
+            "lastUpdatedBlurb": "8 days ago"
         },
         {
-            "creatorName": "MrBeast",
-            "creatorType": "Lifestyle",
-            "link": "/influencers/mrbeast",
-            "thumbnail": "https://yt3.ggpht.com/a/AATXAJynkPnPVO1teU1292tS2f52lj5Tb0ZwM_ML4ounGg=s176-c-k-c0x00ffffff-no-rj-mo"
+            "name": "Jake Paul",
+            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+            "link": "/influencers/jake-paul",
+            "imgUrl": "https://yt3.ggpht.com/-_z-GQp7DlaA/AAAAAAAAAAI/AAAAAAAAAAA/hPKjK-3CR5c/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
+            "lastUpdatedBlurb": "1 Minutes ago"
         },
         {
-            "creatorName": "KSI",
-            "creatorType": "Gamer",
-            "link": "/influencers/ksi",
-            "thumbnail": "https://yt3.ggpht.com/-yp9RTevUEk0/AAAAAAAAAAI/AAAAAAAAAAA/lCVbT0EdxZA/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+            "name": "Vikkstar123",
+            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+            "link": "/influencers/vikkstar123",
+            "imgUrl": "https://yt3.ggpht.com/-GkxabB2r4Aw/AAAAAAAAAAI/AAAAAAAAAAA/rNwNMNQNcEI/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
         }
     ]
 }

@@ -1,8 +1,10 @@
+import { InfluencerSearchModel } from "./influencer-search.model";
+
 export interface InfluencerPageModel {
   personalFacts: PersonalFacts;
   keyFacts: KeyFacts;
   usedEquipment: UsedEquipment[];
-  similarCreators: SimilarCreator[];
+  similarCreators: InfluencerSearchModel[];
 }
 
 export interface KeyFacts {

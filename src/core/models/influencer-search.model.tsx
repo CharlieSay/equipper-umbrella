@@ -3,7 +3,7 @@ export interface InfluencerSearchModel {
   description: string;
   link: string;
   imgUrl: string;
-  lastUpdatedBlurb: string;
+  lastUpdatedBlurb?: string;
 }
 
 export interface InfluencerSearchModelResponse {
