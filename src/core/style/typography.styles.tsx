@@ -39,3 +39,8 @@ export const SmallBold = styled.small`
   color: ${(props) => props.theme.white};
   font-weight: normal;
 `;
+
+export const SmallBoldButNot = styled.span`
+  color: ${(props) => props.theme.darkBlue};
+  font-weight: bold;
+`;

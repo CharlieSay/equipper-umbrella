@@ -8,6 +8,7 @@ import InfluencerPageUsingParams from "./pages/influencer-page/influencer-page";
 import CategoryPage from "./pages/category-page/category-page";
 import SearchPage from "./pages/search-page/search";
 import SubmitPage from "./pages/submit-page/submit-page";
+import CommonGearPage from "./pages/common-gear/common-gear-page";
 
 const Routes = () => (
   <BrowserRouter>
@@ -29,6 +30,12 @@ const Routes = () => (
         path="/category/:influencerCategory"
         component={CategoryPage}
         pageData={{ title: "Category", id: "/category/:influencerCategory" }}
+      />
+      <PageRoute
+        exact
+        path="/common-gear"
+        component={CommonGearPage}
+        pageData={{ title: "Popular Gear", id: "/common-gear" }}
       />
       <PageRoute
         exact

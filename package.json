@@ -1,6 +1,6 @@
 {
   "name": "equippr",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.3.3",

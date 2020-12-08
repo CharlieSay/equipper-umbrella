@@ -5,9 +5,13 @@
             "stem": "/"
         },
         {
-            "displayText": "Popular",
+            "displayText": "Popular Influencers",
             "stem": "/search",
             "params":"?sort=popular"
+        },
+        {
+            "displayText": "Popular Gear",
+            "stem": "/common-gear"
         }
     ],
     "footer": [

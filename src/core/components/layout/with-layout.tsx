@@ -37,7 +37,10 @@ const withLayout = <P extends Record<string, unknown>>(
 
     const pageData: PageDataProps = {
       title: `${helmetData.title || "Oops"} - Equippr`,
-      metaDescription: `${helmetData.metaDescription || "Oops"} - Equippr`,
+      metaDescription: `${
+        helmetData.metaDescription ||
+        "Equippr - What gear do popular influencers use for Social Media? Your number 1 source to check equipment"
+      }`,
       meta: helmetData.meta || [],
     };
 
@@ -54,7 +57,7 @@ const withLayout = <P extends Record<string, unknown>>(
         <main id="content">
           <ContentComponent {...props} />
         </main>
-        {Footer && <Footer links={navigationLinks.footer} />}
+        <Footer links={navigationLinks.footer} />
       </>
     );
   };

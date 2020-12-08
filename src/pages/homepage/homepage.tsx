@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import InfluencerGroup from "../../core/components/popular-group/influencer-group";
 import { getSearchQuery } from "../../hooks/storage-hooks";
-import { HeroTitle, SubTitle } from "../../core/style/typography.styles";
+import { HeroTitle } from "../../core/style/typography.styles";
 import {
   ContainerConstrained,
   BaseUnitTopBottomPadding,
@@ -22,16 +22,6 @@ const HeroTextAligner = styled.div`
   text-align: center;
 `;
 
-const FullBleedImage = styled.div`
-  background-image: url("https://www.just-eat.co.uk/CmsAssets/media/Images/Common/Backgrounds/30-04-2019-Update-Global/b1.jpg?bid=799e30a26a3340ad88fdfab0a352da23");
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-`;
-
 const HomePage = () => {
   const [toSearch, setToSearch] = useState(false);
   console.log(
@@ -42,33 +32,28 @@ const HomePage = () => {
   return (
     <ContainerConstrained>
       {toSearch ? <Redirect to={`/search${getSearchQuery()}`} /> : null}
-      <FullBleedImage>
-        <HeroTextAligner>
-          <HeroTitle>So who is your favourite influencer?</HeroTitle>
-          <SubTitle primary={false}>
-            Just pop in their name and we will find it.
-          </SubTitle>
-          <Form
-            inline
-            onSubmit={() => setToSearch(true)}
-            style={{ width: `100%`, display: `inline` }}
-          >
-            <BaseUnitTopBottomPadding>
-              <FormControl
-                type="text"
-                placeholder="Jake Paul, KSI, Molly Mae..."
-                style={{ maxWidth: `600px` }}
-                onChange={(event) =>
-                  localStorage.setItem("searchQuery", event.target.value)
-                }
-              />
-              <Button variant="red" type="submit" style={{ marginLeft: `8px` }}>
-                Search
-              </Button>
-            </BaseUnitTopBottomPadding>
-          </Form>
-        </HeroTextAligner>
-      </FullBleedImage>
+      <HeroTextAligner>
+        <HeroTitle>So who is your favourite influencer?</HeroTitle>
+        <Form
+          inline
+          onSubmit={() => setToSearch(true)}
+          style={{ width: `100%`, display: `inline` }}
+        >
+          <BaseUnitTopBottomPadding>
+            <FormControl
+              type="text"
+              placeholder="Jake Paul, KSI, Molly Mae..."
+              style={{ maxWidth: `600px` }}
+              onChange={(event) =>
+                localStorage.setItem("searchQuery", event.target.value)
+              }
+            />
+            <Button variant="red" type="submit" style={{ marginLeft: `8px` }}>
+              Search
+            </Button>
+          </BaseUnitTopBottomPadding>
+        </Form>
+      </HeroTextAligner>
       <InfluencerGroup
         groupTitle={"Popular Influencers"}
         groupSubTitle={

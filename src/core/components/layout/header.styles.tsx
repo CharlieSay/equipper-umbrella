@@ -9,7 +9,7 @@ export const HeaderRestrictor = styled.header`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: transparent;
+  background-color: transparent;
 `;
 
 export const HeaderLinkBase = styled.span`
