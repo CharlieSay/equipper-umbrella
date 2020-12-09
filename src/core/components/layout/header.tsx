@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Headroom from "react-headroom";
+import SearchForm from "../search-form/search-form";
 import { useLocation } from "react-router-dom";
 
 import {
@@ -43,7 +44,8 @@ const HeaderLink = (props: HeaderLinkProps) => {
   return <HeaderLinkStyled>{props.displayText}</HeaderLinkStyled>;
 };
 
-export const DesktopHeader = (links: HeaderFooterProps) => {
+export const DesktopHeader = (props: HeaderFooterProps) => {
+  const { isDesktop, links } = props;
   return (
     <HeaderRestrictor>
       <Headroom>
@@ -63,7 +65,7 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
             />
           </Navbar.Brand>
           <Nav className="mr-auto">
-            {links.links.map((key, i) => (
+            {links.map((key, i) => (
               <Nav.Link
                 key={i}
                 href={`${key.stem}${key.params ? key.params : ""}`}
@@ -72,6 +74,7 @@ export const DesktopHeader = (links: HeaderFooterProps) => {
               </Nav.Link>
             ))}
           </Nav>
+          {/* {isDesktop && <SearchForm maxWidth={200} excludeButton={true} />} */}
         </Navbar>
       </Headroom>
     </HeaderRestrictor>

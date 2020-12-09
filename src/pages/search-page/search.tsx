@@ -10,9 +10,11 @@ import { HeroTitle, SubTitle } from "../../core/style/typography.styles";
 import InfluencerCard from "../../core/components/influencer-card/influencer-card";
 import MyLoader from "../../core/components/influencer-card/influencer-card-loading";
 import {
+  CardAsDiv,
   Cards,
   Centered,
 } from "../../core/components/influencer-card/cards-styles";
+import SearchForm from "../../core/components/search-form/search-form";
 
 function convertToTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -55,6 +57,11 @@ const SearchWrapper = () => {
 
   return (
     <ContainerConstrained>
+      <CardAsDiv>
+        <HeroTitle>Search for more</HeroTitle>
+        <SearchForm maxWidth={600} />
+      </CardAsDiv>
+      <hr></hr>
       <HeroTitle>{heroTitle}</HeroTitle>
       <Search />
     </ContainerConstrained>

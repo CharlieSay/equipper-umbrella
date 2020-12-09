@@ -1,18 +1,12 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
+import React from "react";
 import styled from "styled-components";
 import InfluencerGroup from "../../core/components/popular-group/influencer-group";
-import { getSearchQuery } from "../../hooks/storage-hooks";
+import SearchForm from "../../core/components/search-form/search-form";
 import { HeroTitle } from "../../core/style/typography.styles";
-import {
-  ContainerConstrained,
-  BaseUnitTopBottomPadding,
-} from "../../core/style/containers.styles";
+import { ContainerConstrained } from "../../core/style/containers.styles";
 
 import popularInfluecers from "../../core/data/homepage-popular-data.json";
+import { CardAsDiv } from "../../core/components/influencer-card/cards-styles";
 
 const HeroTextAligner = styled.div`
   display: flex;
@@ -23,7 +17,6 @@ const HeroTextAligner = styled.div`
 `;
 
 const HomePage = () => {
-  const [toSearch, setToSearch] = useState(false);
   console.log(
     process.env.REACT_APP_MONGO_DB_P
       ? process.env.REACT_APP_MONGO_DB_P
@@ -31,29 +24,12 @@ const HomePage = () => {
   );
   return (
     <ContainerConstrained>
-      {toSearch ? <Redirect to={`/search${getSearchQuery()}`} /> : null}
-      <HeroTextAligner>
-        <HeroTitle>So who is your favourite influencer?</HeroTitle>
-        <Form
-          inline
-          onSubmit={() => setToSearch(true)}
-          style={{ width: `100%`, display: `inline` }}
-        >
-          <BaseUnitTopBottomPadding>
-            <FormControl
-              type="text"
-              placeholder="Jake Paul, KSI, Molly Mae..."
-              style={{ maxWidth: `600px` }}
-              onChange={(event) =>
-                localStorage.setItem("searchQuery", event.target.value)
-              }
-            />
-            <Button variant="red" type="submit" style={{ marginLeft: `8px` }}>
-              Search
-            </Button>
-          </BaseUnitTopBottomPadding>
-        </Form>
-      </HeroTextAligner>
+      <CardAsDiv>
+        <HeroTextAligner>
+          <HeroTitle>So who is your favourite influencer?</HeroTitle>
+          <SearchForm maxWidth={600} />
+        </HeroTextAligner>
+      </CardAsDiv>
       <InfluencerGroup
         groupTitle={"Popular Influencers"}
         groupSubTitle={

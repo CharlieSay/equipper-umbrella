@@ -8,7 +8,7 @@ import InfluencerPageUsingParams from "./pages/influencer-page/influencer-page";
 import CategoryPage from "./pages/category-page/category-page";
 import SearchPage from "./pages/search-page/search";
 import SubmitPage from "./pages/submit-page/submit-page";
-import CommonGearPage from "./pages/common-gear/common-gear-page";
+import PopularGearPage from "./pages/popular-gear/popular-gear-page";
 
 const Routes = () => (
   <BrowserRouter>
@@ -33,9 +33,9 @@ const Routes = () => (
       />
       <PageRoute
         exact
-        path="/common-gear"
-        component={CommonGearPage}
-        pageData={{ title: "Popular Gear", id: "/common-gear" }}
+        path="/popular-gear"
+        component={PopularGearPage}
+        pageData={{ title: "Popular Gear", id: "/popular-gear" }}
       />
       <PageRoute
         exact
