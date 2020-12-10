@@ -16,6 +16,12 @@ export const HeaderLinkBase = styled.span`
   color: ${(props) => props.theme.lightRed};
   font-weight: 600;
   transition: ${(props) => props.theme.defaultTransitionLength};
+  @media (max-width: 458px) {
+    font-size: 12px;
+  }
+  @media (max-width: 378px) {
+    font-size: 10px;
+  }
 `;
 
 export const HeaderLinkStyled = styled(HeaderLinkBase)`
