@@ -36,7 +36,7 @@ const SearchForm = (props: SearchFormProps) => {
             <Button
               variant="red"
               type="submit"
-              style={{ width: `100%`, maxWidth: `${maxWidth / 2}px` }}
+              style={{ width: `100%`, maxWidth: `150px` }}
             >
               Search
             </Button>

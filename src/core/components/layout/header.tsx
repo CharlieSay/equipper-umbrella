@@ -2,7 +2,6 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Headroom from "react-headroom";
-import SearchForm from "../search-form/search-form";
 import { useLocation } from "react-router-dom";
 
 import {

@@ -33,11 +33,27 @@ export const SubTitle = styled("span")<{ primary: boolean }>`
 export const ALinkSmallGray = styled.a`
   color: ${(props) => props.theme.darkBlue};
   font-weight: bold;
+  &:hover {
+    color: ${(props) => props.theme.lightRed};
+  }
 `;
 
 export const SmallBold = styled.small`
   color: ${(props) => props.theme.white};
   font-weight: normal;
+`;
+
+export const PNormal = styled.p`
+  color: ${(props) => props.theme.darkBlue};
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+`;
+
+export const PBold = styled.p`
+  color: ${(props) => props.theme.darkBlue};
+  font-size: 14px;
+  font-weight: bold;
 `;
 
 export const SmallBolder = styled.span`

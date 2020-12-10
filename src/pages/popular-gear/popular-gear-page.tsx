@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
+import styled from "styled-components";
 import {
-  CardAsDiv,
-  VerticalCenter,
+  WideCard,
   Cards,
 } from "../../core/components/influencer-card/cards-styles";
 
@@ -11,8 +11,8 @@ import {
   ALinkSmallGray,
   HeroTitle,
   SectionH2,
-  SmallBolder,
-  SubTitle,
+  PNormal,
+  PBold,
 } from "../../core/style/typography.styles";
 
 import { getPopularGear } from "../../hooks/popular-gear-hooks";
@@ -25,48 +25,46 @@ const CommonGearPage = () => {
       <HeroTitle>{`Popular Gear`}</HeroTitle>
       {popularGear.map((section, i) => (
         <Row key={i}>
-          <div id={section.anchor} style={{ width: `100%` }}>
+          <div id={section.anchor}>
             <SectionH2>{section.friendlySectionName}</SectionH2>
             <Cards>
               {section.equipment.map((equipment, i) => (
-                <CardAsDiv key={i} style={{ marginTop: `8px`, width: `100%` }}>
+                <WideCard key={i}>
                   <Row>
+                    <img src={equipment.thumbnail} />
                     <Col>
-                      <img src={equipment.thumbnail} />
-                    </Col>
-                    <Col>
-                      <Row>
-                        <SmallBolder>{equipment.part}</SmallBolder>
-                      </Row>
-                      <Row>
-                        <SmallBolder>{equipment.friendlyName}</SmallBolder>
-                      </Row>
-                    </Col>
-                    <Col>
-                      <SubTitle primary>Used by</SubTitle>
-                      {equipment.usedBy.map((influencer, i) => (
-                        <ALinkSmallGray
-                          key={i}
-                          href={`/influencer/${influencer.link}`}
-                        >
-                          {influencer.displayName},
-                        </ALinkSmallGray>
-                      ))}
-                    </Col>
-                    <Col>
-                      {equipment.affiliate.map((affiliateSingular, i) => (
-                        <Button
-                          key={i}
-                          href={affiliateSingular.affiliateUrl}
-                          variant="gray"
-                          target="_blank"
-                        >
-                          Click to buy from {affiliateSingular.vendor}
-                        </Button>
-                      ))}
+                      <PNormal>{`${equipment.part}`}</PNormal>
+                      <PBold>{` ${equipment.friendlyName}`}</PBold>
+                      <div style={{ marginBottom: `8px` }}>
+                        <div>
+                          <PNormal>{`Used by`}</PNormal>
+                        </div>
+                        <div>
+                          {equipment.usedBy.map((influencer, i) => (
+                            <ALinkSmallGray
+                              key={i}
+                              href={`/influencer/${influencer.link}`}
+                            >
+                              {`${influencer.displayName}${
+                                i === equipment.usedBy.length - 1 ? "" : ","
+                              } `}
+                            </ALinkSmallGray>
+                          ))}
+                        </div>
+                      </div>
                     </Col>
                   </Row>
-                </CardAsDiv>
+                  {equipment.affiliate.map((affiliateSingular, i) => (
+                    <Button
+                      key={i}
+                      href={affiliateSingular.affiliateUrl}
+                      variant="gray"
+                      target="_blank"
+                    >
+                      Click to buy from {affiliateSingular.vendor}
+                    </Button>
+                  ))}
+                </WideCard>
               ))}
             </Cards>
           </div>

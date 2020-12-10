@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Cards = styled.section`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const Centered = styled.div`
@@ -36,10 +37,17 @@ export const Card = styled.a`
   }
 `;
 
+export const WideCard = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  padding: 32px 16px 32px 16px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.01), 0 15px 12px rgba(0, 0, 0, 0.01);
+  margin: 8px;
+`;
+
 export const CardAsDiv = styled.div`
   background-color: white;
   border-radius: 8px;
-  border: red;
   padding: 31px 16px 31px 16px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.01), 0 15px 12px rgba(0, 0, 0, 0.01);
 `;
