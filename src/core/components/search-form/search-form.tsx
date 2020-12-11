@@ -13,9 +13,12 @@ interface SearchFormProps {
 const SearchForm = (props: SearchFormProps) => {
   const { maxWidth, excludeButton, placeholderText } = props;
   const [toSearch, setToSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   return (
     <>
-      {toSearch ? <Redirect to={`/search${getSearchQuery()}`} /> : null}
+      {toSearch ? (
+        <Redirect to={`/search${getSearchQuery(searchQuery)}`} />
+      ) : null}
       <Form
         onSubmit={() => setToSearch(true)}
         style={{ width: `100%`, display: `inline` }}
@@ -28,9 +31,7 @@ const SearchForm = (props: SearchFormProps) => {
               placeholderText ? placeholderText : `Jake Paul, KSI, Molly Mae...`
             }
             style={{ maxWidth: `${maxWidth}px` }}
-            onChange={(event) =>
-              localStorage.setItem("searchQuery", event.target.value)
-            }
+            onChange={(event) => setSearchQuery(event.target.value)}
           />
           {!excludeButton && (
             <Button
