@@ -31,7 +31,10 @@ const CommonGearPage = () => {
               {section.equipment.map((equipment, i) => (
                 <WideCard key={i}>
                   <Row>
-                    <img src={equipment.thumbnail} />
+                    <img
+                      alt={`Picture of ${equipment.friendlyName}`}
+                      src={equipment.thumbnail}
+                    />
                     <Col>
                       <PNormal>{`${equipment.part}`}</PNormal>
                       <PBold>{` ${equipment.friendlyName}`}</PBold>

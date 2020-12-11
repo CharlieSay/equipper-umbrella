@@ -57,6 +57,7 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
         <Navbar bg="primary" variant="dark">
           <Navbar.Brand href="/">
             <img
+              alt={"Equipper Logo"}
               src={Logo}
               width="30"
               height="30"

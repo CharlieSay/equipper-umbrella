@@ -20,7 +20,10 @@ const InfluencerCard = (props: CardType) => {
 
   return (
     <Card key={key} href={influencer.link}>
-      <Image src={influencer.imgUrl}></Image>
+      <Image
+        alt={`Picture of ${influencer.name}`}
+        src={influencer.imgUrl}
+      ></Image>
       <CardContent>
         <CardTitle>{influencer.name}</CardTitle>
         <CardText>{influencer.description}</CardText>

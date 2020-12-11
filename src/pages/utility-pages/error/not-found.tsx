@@ -19,6 +19,7 @@ const NotFound = () => {
     <ContainerConstrained>
       <MiddleContainer>
         <img
+          alt={`Error kaboom`}
           src={"https://fansofdavid.com/wp-content/uploads/2014/05/kaboom.png"}
         />
         <HeroTitleGray>This page doesnt exist! 🤔</HeroTitleGray>
