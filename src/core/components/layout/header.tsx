@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Headroom from "react-headroom";
 import { useLocation } from "react-router-dom";
+import { Turn as Hamburger } from "hamburger-react";
 
 import {
   HeaderLinkActive,
@@ -11,11 +12,14 @@ import {
   VisuallyHidden,
 } from "./header.styles";
 import Logo from "../../../assets/logo.svg";
+// import Hamburger from "../../../assets/hamburger.svg";
 import "./header.scss";
 
 export interface HeaderFooterProps {
   links: Array<Link>;
   isDesktop?: boolean;
+  isMobile?: boolean;
+  navOpen?: boolean;
 }
 
 interface Link {
@@ -44,7 +48,8 @@ const HeaderLink = (props: HeaderLinkProps) => {
 };
 
 export const DesktopHeader = (props: HeaderFooterProps) => {
-  const { isDesktop, links } = props;
+  const { isDesktop, isMobile, links } = props;
+  const [mobileNavOpen, setNavOpen] = useState(false);
   return (
     <HeaderRestrictor>
       <Headroom>
@@ -54,7 +59,11 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
         <VisuallyHidden href="#footer" rel="external">
           Skip to footer
         </VisuallyHidden>
-        <Navbar bg="primary" variant="dark">
+        <Navbar
+          bg="primary"
+          variant="dark"
+          style={{ width: `100vw`, justifyContent: `space-between` }}
+        >
           <Navbar.Brand href="/">
             <img
               alt={"Equipper Logo"}
@@ -64,19 +73,52 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
               className="d-inline-block align-top"
             />
           </Navbar.Brand>
-          <Nav className="mr-auto">
-            {links.map((key, i) => (
-              <Nav.Link
-                key={i}
-                href={`${key.stem}${key.params ? key.params : ""}`}
-              >
-                <HeaderLink stem={key.stem} displayText={key.displayText} />
-              </Nav.Link>
-            ))}
-          </Nav>
-          {/* {isDesktop && <SearchForm maxWidth={200} excludeButton={true} />} */}
+          {isDesktop && <DesktopNavigation links={links} />}
+          {isMobile && (
+            <MobileNavigation navOpen={mobileNavOpen} setNavOpen={setNavOpen} />
+          )}
         </Navbar>
+        {mobileNavOpen &&
+          links.map((key, i) => (
+            <Nav.Link
+              key={i}
+              href={`${key.stem}${key.params ? key.params : ""}`}
+            >
+              <HeaderLink stem={key.stem} displayText={key.displayText} />
+            </Nav.Link>
+          ))}
       </Headroom>
     </HeaderRestrictor>
+  );
+};
+
+const DesktopNavigation = (props: HeaderFooterProps) => {
+  const { links } = props;
+  return (
+    <Nav className="mr-auto">
+      {links.map((key, i) => (
+        <Nav.Link key={i} href={`${key.stem}${key.params ? key.params : ""}`}>
+          <HeaderLink stem={key.stem} displayText={key.displayText} />
+        </Nav.Link>
+      ))}
+    </Nav>
+  );
+};
+
+interface MobileNavProps {
+  navOpen: boolean;
+  setNavOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const MobileNavigation = (props: MobileNavProps) => {
+  const { navOpen, setNavOpen } = props;
+  return (
+    <Nav>
+      <Hamburger
+        color={"#dc3545"}
+        toggled={navOpen}
+        onToggle={() => setNavOpen(!navOpen)}
+      />
+    </Nav>
   );
 };

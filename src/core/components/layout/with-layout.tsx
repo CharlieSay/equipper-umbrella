@@ -35,6 +35,10 @@ const withLayout = <P extends Record<string, unknown>>(
       query: "(min-device-width: 861px)",
     });
 
+    const isMobile = useMediaQuery({
+      query: "(max-device-width: 860px)",
+    });
+
     const pageData: PageDataProps = {
       title: `${helmetData.title || "Oops"} - Equippr`,
       metaDescription: `${
@@ -53,7 +57,11 @@ const withLayout = <P extends Record<string, unknown>>(
           ))}
           <meta name="description" content={pageData.metaDescription}></meta>
         </Helmet>
-        <DesktopHeader links={navigationLinks.header} isDesktop={isDesktop} />
+        <DesktopHeader
+          links={navigationLinks.header}
+          isDesktop={isDesktop}
+          isMobile={isMobile}
+        />
         <main id="content">
           <ContentComponent {...props} />
         </main>
