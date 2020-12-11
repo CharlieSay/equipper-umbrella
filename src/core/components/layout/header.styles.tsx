@@ -46,3 +46,7 @@ export const VisuallyHidden = styled.a`
   white-space: nowrap;
   width: 1px;
 `;
+
+export const MobileNavBackground = styled.div`
+  background-color: ${(props) => props.theme.grey};
+`;

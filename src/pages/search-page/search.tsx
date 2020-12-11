@@ -62,8 +62,12 @@ const SearchWrapper = () => {
         <SearchForm maxWidth={600} />
       </CardAsDiv>
       <hr></hr>
-      <HeroTitle>{heroTitle}</HeroTitle>
-      <Search />
+      {queryName && (
+        <>
+          <HeroTitle>{heroTitle}</HeroTitle>
+          <Search />
+        </>
+      )}
     </ContainerConstrained>
   );
 };

@@ -9,6 +9,7 @@ import {
   HeaderLinkActive,
   HeaderLinkStyled,
   HeaderRestrictor,
+  MobileNavBackground,
   VisuallyHidden,
 } from "./header.styles";
 import Logo from "../../../assets/logo.svg";
@@ -78,15 +79,18 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
             <MobileNavigation navOpen={mobileNavOpen} setNavOpen={setNavOpen} />
           )}
         </Navbar>
-        {mobileNavOpen &&
-          links.map((key, i) => (
-            <Nav.Link
-              key={i}
-              href={`${key.stem}${key.params ? key.params : ""}`}
-            >
-              <HeaderLink stem={key.stem} displayText={key.displayText} />
-            </Nav.Link>
-          ))}
+        {mobileNavOpen && (
+          <MobileNavBackground>
+            {links.map((key, i) => (
+              <Nav.Link
+                key={i}
+                href={`${key.stem}${key.params ? key.params : ""}`}
+              >
+                <HeaderLink stem={key.stem} displayText={key.displayText} />
+              </Nav.Link>
+            ))}
+          </MobileNavBackground>
+        )}
       </Headroom>
     </HeaderRestrictor>
   );
