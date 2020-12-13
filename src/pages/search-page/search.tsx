@@ -31,7 +31,7 @@ const Search = () => {
 
   return (
     <>
-      <SubTitle primary>{`${searchResults.length} influencers`}</SubTitle>
+      <SubTitle primary>{`${searchResults.length} influencers found`}</SubTitle>
       <BaseUnitTopBottomPadding />
       <Centered>
         <Cards>
@@ -53,13 +53,13 @@ const SearchWrapper = () => {
   const heroTitle =
     queryName === ""
       ? "This is all the influencers we have got"
-      : `Here's what we found for ${queryName}`;
+      : `Search results ${queryName}`;
 
   return (
     <ContainerConstrained>
       <CardAsDiv>
         <HeroTitle>Search for more</HeroTitle>
-        <SearchForm maxWidth={600} />
+        <SearchForm maxWidth={600} placeholderText={queryName} />
       </CardAsDiv>
       <hr></hr>
       {queryName && (

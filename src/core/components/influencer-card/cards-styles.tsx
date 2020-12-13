@@ -33,7 +33,13 @@ export const Card = styled.a`
     max-width: calc(50% - 1em);
   }
   @media screen and (min-width: 60em) {
-    max-width: calc(25% - 1em);
+    max-width: calc(50% - 1em);
+  }
+  @media screen and (max-width: 574px) {
+    max-width: calc(50% - 1em);
+  }
+  @media screen and (max-width: 414px) {
+    max-width: 414px;
   }
 `;
 
