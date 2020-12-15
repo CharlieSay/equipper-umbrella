@@ -21,23 +21,21 @@ const SearchForm = (props: SearchFormProps) => {
       ) : null}
       <Form
         onSubmit={() => setToSearch(true)}
-        style={{ width: `100%`, display: `inline` }}
+        style={{ width: "100%", display: "inline" }}
         inline
       >
         <BaseUnitTopBottomPadding>
           <FormControl
             type="text"
-            placeholder={
-              placeholderText ? placeholderText : `Jake Paul, KSI, Molly Mae...`
-            }
+            placeholder={placeholderText || "Jake Paul, KSI, Molly Mae..."}
             style={{ maxWidth: `${maxWidth}px` }}
-            onChange={(event) => setSearchQuery(event.target.value)}
+            onChange={event => setSearchQuery(event.target.value)}
           />
           {!excludeButton && (
             <Button
               variant="red"
               type="submit"
-              style={{ width: `100%`, maxWidth: `150px` }}
+              style={{ width: "100%", maxWidth: "150px" }}
             >
               Search
             </Button>

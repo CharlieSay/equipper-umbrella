@@ -1,5 +1,5 @@
-import React from "react";
-import { InfluencerSearchModel } from "../../models/influencer-search.model";
+import React from 'react';
+import { InfluencerSearchModel } from '../../models/influencer-search.model';
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardTitle,
   UpdatedBlurb,
   Image,
-} from "./cards-styles";
+} from './cards-styles';
 
 interface CardType {
   influencer: InfluencerSearchModel;
@@ -23,7 +23,7 @@ const InfluencerCard = (props: CardType) => {
       <Image
         alt={`Picture of ${influencer.name}`}
         src={influencer.imgUrl}
-      ></Image>
+      />
       <CardContent>
         <CardTitle>{influencer.name}</CardTitle>
         <CardText>{influencer.description}</CardText>
@@ -32,7 +32,7 @@ const InfluencerCard = (props: CardType) => {
         <UpdatedBlurb>
           {influencer.lastUpdatedBlurb
             ? `Last updated ${influencer.lastUpdatedBlurb}`
-            : "This is broke"}
+            : 'This is broke'}
         </UpdatedBlurb>
       </CardFooter>
     </Card>

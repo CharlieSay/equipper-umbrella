@@ -1,5 +1,4 @@
-import { InfluencerSearchModel } from "./influencer-search.model";
-import { UsedBy } from "./popular-gear.model";
+import { InfluencerSearchModel } from './influencer-search.model';
 
 export interface InfluencerPageModel {
   personalFacts: PersonalFacts;
@@ -26,6 +25,7 @@ export interface PersonalFacts {
   description: string;
   dob: string;
   ytTumbnail: string;
+  ytBanner: string;
   faceThumbnail: string;
 }
 

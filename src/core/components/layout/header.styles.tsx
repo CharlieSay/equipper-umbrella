@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderRestrictor = styled.header`
   margin: 0 auto;
@@ -49,4 +49,14 @@ export const VisuallyHidden = styled.a`
 
 export const MobileNavBackground = styled.div`
   background-color: ${(props) => props.theme.grey};
+  transition: ${(props) => props.theme.defaultTransitionLength};
+  padding: 16px 0 16px 0;
+`;
+
+export const Divider = styled.div`
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 2px solid ${(props) => props.theme.white};
+  width: 90%;
+  margin-left: 3.5%;
 `;

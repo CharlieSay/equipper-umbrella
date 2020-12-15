@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeroTitle = styled.h1`
   color: ${(props) => props.theme.lightRed};
@@ -22,12 +22,11 @@ export const SectionH2Red = styled.h1`
   color: ${(props) => props.theme.lightRed};
 `;
 
-export const SubTitle = styled("span")<{ primary: boolean }>`
+export const SubTitle = styled('span')<{ primary: boolean }>`
   font-size: 0.9rem;
   line-height: 1.1;
   font-weight: 400;
-  color: ${(props) =>
-    props.primary ? props.theme.darkBlue : props.theme.gray};
+  color: ${(props) => (props.primary ? props.theme.darkBlue : props.theme.gray)};
 `;
 
 export const ALinkSmallGray = styled.a`

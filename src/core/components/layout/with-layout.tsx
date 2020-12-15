@@ -1,12 +1,12 @@
-import React from "react";
-import { FC } from "react";
-import { Route, RouteProps } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
-import { Helmet } from "react-helmet-async";
-import { DesktopHeader } from "./header";
-import { Footer } from "./footer";
+import React, { FC } from 'react';
 
-import navigationLinks from "../../data/header-footer-links.json";
+import { Route, RouteProps } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import { Helmet } from 'react-helmet-async';
+import { DesktopHeader } from './header';
+import { Footer } from './footer';
+
+import navigationLinks from '../../data/header-footer-links.json';
 
 export interface PageRouteProps extends RouteProps {
   pageData: PageDataProps;
@@ -28,22 +28,22 @@ export interface Meta {
 
 const withLayout = <P extends Record<string, unknown>>(
   ContentComponent: FC<P>,
-  helmetData: PageDataProps
+  helmetData: PageDataProps,
 ): FC<P> => {
   const WithLayout = (props: P) => {
     const isDesktop = useMediaQuery({
-      query: "(min-device-width: 861px)",
+      query: '(min-device-width: 861px)',
     });
 
     const isMobile = useMediaQuery({
-      query: "(max-device-width: 860px)",
+      query: '(max-device-width: 860px)',
     });
 
     const pageData: PageDataProps = {
-      title: `${helmetData.title || "Oops"} - Equippr`,
+      title: `${helmetData.title || 'Oops'} - Equippr`,
       metaDescription: `${
-        helmetData.metaDescription ||
-        "Equippr - What gear do popular influencers use for Social Media? Your number 1 source to check equipment"
+        helmetData.metaDescription
+        || 'Equippr - What gear do popular influencers use for Social Media? Your number 1 source to check equipment'
       }`,
       meta: helmetData.meta || [],
     };
@@ -53,9 +53,9 @@ const withLayout = <P extends Record<string, unknown>>(
         <Helmet>
           <title>{pageData.title}</title>
           {pageData.meta?.map((meta, i) => (
-            <meta key={i} name={meta.name} content={meta.content}></meta>
+            <meta key={i} name={meta.name} content={meta.content} />
           ))}
-          <meta name="description" content={pageData.metaDescription}></meta>
+          <meta name="description" content={pageData.metaDescription} />
         </Helmet>
         <DesktopHeader
           links={navigationLinks.header}

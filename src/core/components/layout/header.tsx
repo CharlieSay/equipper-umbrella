@@ -1,20 +1,20 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Headroom from "react-headroom";
-import { useLocation } from "react-router-dom";
-import { Turn as Hamburger } from "hamburger-react";
+import React, { Dispatch, SetStateAction, useState } from 'react';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Headroom from 'react-headroom';
+import { useLocation } from 'react-router-dom';
+import { Turn as Hamburger } from 'hamburger-react';
 
 import {
+  Divider,
   HeaderLinkActive,
   HeaderLinkStyled,
   HeaderRestrictor,
   MobileNavBackground,
   VisuallyHidden,
-} from "./header.styles";
-import Logo from "../../../assets/logo.svg";
-// import Hamburger from "../../../assets/hamburger.svg";
-import "./header.scss";
+} from './header.styles';
+import Logo from '../../../assets/logo.svg';
+import './header.scss';
 
 export interface HeaderFooterProps {
   links: Array<Link>;
@@ -63,11 +63,11 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
         <Navbar
           bg="primary"
           variant="dark"
-          style={{ width: `100vw`, justifyContent: `space-between` }}
+          style={{ width: '100vw', justifyContent: 'space-between' }}
         >
           <Navbar.Brand href="/">
             <img
-              alt={"Equipper Logo"}
+              alt="Equipper Logo"
               src={Logo}
               width="30"
               height="30"
@@ -84,7 +84,7 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
             {links.map((key, i) => (
               <Nav.Link
                 key={i}
-                href={`${key.stem}${key.params ? key.params : ""}`}
+                href={`${key.stem}${key.params ? key.params : ''}`}
               >
                 <HeaderLink stem={key.stem} displayText={key.displayText} />
               </Nav.Link>
@@ -101,7 +101,7 @@ const DesktopNavigation = (props: HeaderFooterProps) => {
   return (
     <Nav className="mr-auto">
       {links.map((key, i) => (
-        <Nav.Link key={i} href={`${key.stem}${key.params ? key.params : ""}`}>
+        <Nav.Link key={i} href={`${key.stem}${key.params ? key.params : ''}`}>
           <HeaderLink stem={key.stem} displayText={key.displayText} />
         </Nav.Link>
       ))}
@@ -119,7 +119,7 @@ const MobileNavigation = (props: MobileNavProps) => {
   return (
     <Nav>
       <Hamburger
-        color={"#dc3545"}
+        color="#dc3545"
         toggled={navOpen}
         onToggle={() => setNavOpen(!navOpen)}
       />

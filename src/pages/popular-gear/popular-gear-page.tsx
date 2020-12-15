@@ -1,28 +1,28 @@
-import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import styled from "styled-components";
+import React from 'react';
+import { Button, Col, Row } from 'react-bootstrap';
+import styled from 'styled-components';
 import {
   WideCard,
   Cards,
-} from "../../core/components/influencer-card/cards-styles";
+} from '../../core/components/influencer-card/cards-styles';
 
-import { ContainerConstrained } from "../../core/style/containers.styles";
+import { ContainerConstrained } from '../../core/style/containers.styles';
 import {
   ALinkSmallGray,
   HeroTitle,
   SectionH2,
   PNormal,
   PBold,
-} from "../../core/style/typography.styles";
+} from '../../core/style/typography.styles';
 
-import { getPopularGear } from "../../hooks/popular-gear-hooks";
+import { getPopularGear } from '../../hooks/popular-gear-hooks';
 
 const CommonGearPage = () => {
   const popularGear = getPopularGear();
 
   return (
     <ContainerConstrained>
-      <HeroTitle>{`Popular Gear`}</HeroTitle>
+      <HeroTitle>Popular Gear</HeroTitle>
       {popularGear.map((section, i) => (
         <Row key={i}>
           <div id={section.anchor}>
@@ -38,9 +38,9 @@ const CommonGearPage = () => {
                     <Col>
                       <PNormal>{`${equipment.part}`}</PNormal>
                       <PBold>{` ${equipment.friendlyName}`}</PBold>
-                      <div style={{ marginBottom: `8px` }}>
+                      <div style={{ marginBottom: '8px' }}>
                         <div>
-                          <PNormal>{`Used by`}</PNormal>
+                          <PNormal>Used by</PNormal>
                         </div>
                         <div>
                           {equipment.usedBy.map((influencer, i) => (
@@ -49,7 +49,7 @@ const CommonGearPage = () => {
                               href={`/influencer/${influencer.link}`}
                             >
                               {`${influencer.displayName}${
-                                i === equipment.usedBy.length - 1 ? "" : ","
+                                i === equipment.usedBy.length - 1 ? '' : ','
                               } `}
                             </ALinkSmallGray>
                           ))}
@@ -64,7 +64,9 @@ const CommonGearPage = () => {
                       variant="gray"
                       target="_blank"
                     >
-                      Click to buy from {affiliateSingular.vendor}
+                      Click to buy from
+                      {' '}
+                      {affiliateSingular.vendor}
                     </Button>
                   ))}
                 </WideCard>

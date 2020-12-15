@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { InfluencerPageModel } from "../core/models/influencer-page.model";
+import { useEffect, useState } from 'react';
+import { InfluencerPageModel } from '../core/models/influencer-page.model';
 
-import influencerPageData from "../core/data/influencer-page-data.json";
+import influencerPageData from '../core/data/influencer-page-data.json';
 
 interface SearchResultsInterface {
   isLoading: boolean;
@@ -18,8 +18,8 @@ const getSearch = (): SearchResultsInterface => {
         setIsLoading(false);
         setInfluencerData(influencerPageData);
       }, 1000);
-    }
-    //if you pass a value to array, like this [data] than clearTimeout will run every time this value changes (useEffect re-run)
+    },
+    // if you pass a value to array, like this [data] than clearTimeout will run every time this value changes (useEffect re-run)
   );
 
   return { isLoading, influencerPage: influencerData };
