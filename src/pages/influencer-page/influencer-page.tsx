@@ -1,36 +1,36 @@
-import React from 'react';
-import Badge from 'react-bootstrap/Badge';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Row from 'react-bootstrap/Row';
-import Table from 'react-bootstrap/Table';
-import styled from 'styled-components';
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
+import ListGroup from "react-bootstrap/ListGroup";
+import Row from "react-bootstrap/Row";
+import Table from "react-bootstrap/Table";
+import styled from "styled-components";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
-} from '../../core/style/containers.styles';
-import { EquipmentCard, ContentTableCard } from './influencer-page-styles';
+} from "../../core/style/containers.styles";
+import { EquipmentCard, ContentTableCard } from "./influencer-page-styles";
 import {
   ALinkSmallGray,
   HeroTitle,
   SubTitle,
   SectionH2,
-} from '../../core/style/typography.styles';
+} from "../../core/style/typography.styles";
 
-import getInfluencerPageData from '../../hooks/influencer-page-hooks';
-import InfluencerPageLoading from './influencer-page-loading';
-import { InfluencerPageModel } from '../../core/models/influencer-page.model';
-import InfluencerGroup from '../../core/components/popular-group/influencer-group';
-import './influencer-page.scss';
+import getInfluencerPageData from "../../hooks/influencer-page-hooks";
+import InfluencerPageLoading from "./influencer-page-loading";
+import { InfluencerPageModel } from "../../core/models/influencer-page.model";
+import InfluencerGroup from "../../core/components/popular-group/influencer-group";
+import "./influencer-page.scss";
 
 const SmallPrint = styled.small``;
 
 const InfluencerPageInternal = (props: InfluencerPageModel) => {
-  const {personalFacts, keyFacts, usedEquipment, similarCreators} = props;
+  const { personalFacts, keyFacts, usedEquipment, similarCreators } = props;
 
   const showSimilarCreator = similarCreators.length >= 3;
 
@@ -47,10 +47,8 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
             />
           </Row>
           <Row>
-            <Col style={{ marginBottom: '8px', paddingLeft: '0' }}>
-              <Link
-                to={`/category/${keyFacts.creatorType.toLowerCase()}`}
-              >
+            <Col style={{ marginBottom: "8px", paddingLeft: "0" }}>
+              <Link to={`/category/${keyFacts.creatorType.toLowerCase()}`}>
                 <Badge variant="red">{keyFacts.creatorType}</Badge>
               </Link>
             </Col>
@@ -106,7 +104,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                 {usedEquipment.map((equip) => (
                   <li key={equip.friendlySectionName}>
                     <a
-                      style={{ color: ' #283747', fontWeight: 'bold' }}
+                      style={{ color: " #283747", fontWeight: "bold" }}
                       href={`#${equip.anchor.toLowerCase()}`}
                     >
                       {`${equip.friendlySectionName}`}
@@ -120,7 +118,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
             <EquipmentCard
               key={equipmentVal.friendlySectionName}
               id={`${equipmentVal.anchor}`}
-              style={{ justifyContent: 'center' }}
+              style={{ justifyContent: "center" }}
             >
               <ListGroup.Item>
                 <HeroTitle>{equipmentVal.friendlySectionName}</HeroTitle>
@@ -136,25 +134,21 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                         thumbnail
                         rounded
                       />
-                      <Col style={{ paddingTop: '34px' }}>
-                        {equipmentDetail.affiliate.map(
-                          (affiliateSingular) => (
-                            <Button
-                              key={affiliateSingular.vendor}
-                              href={affiliateSingular.affiliateUrl}
-                              variant="gray"
-                              target="_blank"
-                            >
-                              Click to buy from
-                              {' '}
-                              {affiliateSingular.vendor}
-                            </Button>
-                          ),
-                        )}
+                      <Col style={{ paddingTop: "34px" }}>
+                        {equipmentDetail.affiliate.map((affiliateSingular) => (
+                          <Button
+                            key={affiliateSingular.vendor}
+                            href={affiliateSingular.affiliateUrl}
+                            variant="gray"
+                            target="_blank"
+                          >
+                            Click to buy from {affiliateSingular.vendor}
+                          </Button>
+                        ))}
                         <Row>
                           <SmallPrint>
                             <BaseUnitTopBottomPadding />
-                            {'Wrong item or not quite right? Let us know '}
+                            {"Wrong item or not quite right? Let us know "}
                             <ALinkSmallGray
                               href={`/submit?influencerName=${personalFacts.name}&equipmentName=${equipmentDetail.friendlyName}`}
                             >
@@ -206,6 +200,5 @@ const InfluencerPageUsingParams = () => {
     </>
   );
 };
-
 
 export default InfluencerPageUsingParams;

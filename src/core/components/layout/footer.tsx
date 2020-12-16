@@ -1,9 +1,9 @@
-import React from 'react';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import packageJson from '../../../../package.json';
-import { ContainerConstrained } from '../../style/containers.styles';
-import { SmallBold } from '../../style/typography.styles';
+import React from "react";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import packageJson from "../../../../package.json";
+import { ContainerConstrained } from "../../style/containers.styles";
+import { SmallBold } from "../../style/typography.styles";
 import {
   FooterColumn,
   FooterContainerFlexOnMobile,
@@ -13,9 +13,9 @@ import {
   FooterRoot,
   FooterSubLink,
   FooterUL,
-} from './footer.styles';
-import { HeaderFooterProps } from './header';
-import './footer.scss';
+} from "./footer.styles";
+import { HeaderFooterProps } from "./header";
+import "./footer.scss";
 
 const Footer = (links: HeaderFooterProps) => (
   <FooterRoot id="footer">
@@ -38,20 +38,20 @@ const Footer = (links: HeaderFooterProps) => (
               <FooterUL>
                 <li>
                   <FooterHeadLink href={link.stem}>
-                      {link.displayText}
-                    </FooterHeadLink>
+                    {link.displayText}
+                  </FooterHeadLink>
                 </li>
               </FooterUL>
-              {link.subHeaders
-                  && link.subHeaders.map((subLinks) => (
-                    <FooterUL key={subLinks.stem}>
-                      <li>
-                        <FooterSubLink href={subLinks.stem}>
-                          {subLinks.displayText}
-                        </FooterSubLink>
-                      </li>
-                    </FooterUL>
-                  ))}
+              {link.subHeaders &&
+                link.subHeaders.map((subLinks) => (
+                  <FooterUL key={subLinks.stem}>
+                    <li>
+                      <FooterSubLink href={subLinks.stem}>
+                        {subLinks.displayText}
+                      </FooterSubLink>
+                    </li>
+                  </FooterUL>
+                ))}
             </FooterColumn>
           ))}
         </Row>

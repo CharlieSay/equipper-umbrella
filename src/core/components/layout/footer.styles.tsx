@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FooterRoot = styled.footer`
   border-top: 1px solid ${(props) => props.theme.white} !important;

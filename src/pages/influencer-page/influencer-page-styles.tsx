@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const EquipmentCard = styled.div`
   background-color: white;

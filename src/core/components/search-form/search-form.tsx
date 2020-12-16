@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, FormControl, Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import { BaseUnitTopBottomPadding } from "../../style/containers.styles";
-import  getSearchQuery from "../../../hooks/storage-hooks";
+import getSearchQuery from "../../../hooks/storage-hooks";
 
 interface SearchFormProps {
   maxWidth: number;
@@ -29,7 +29,7 @@ const SearchForm = (props: SearchFormProps) => {
             type="text"
             placeholder={placeholderText || "Jake Paul, KSI, Molly Mae..."}
             style={{ maxWidth: `${maxWidth}px` }}
-            onChange={event => setSearchQuery(event.target.value)}
+            onChange={(event) => setSearchQuery(event.target.value)}
           />
           {!excludeButton && (
             <Button

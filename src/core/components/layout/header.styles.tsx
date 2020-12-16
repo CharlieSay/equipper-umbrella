@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderRestrictor = styled.header`
   margin: 0 auto;

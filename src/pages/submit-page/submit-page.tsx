@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Button, Form } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
-import queryString from 'query-string';
+import { Button, Form } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
+import queryString from "query-string";
 import {
   ContainerConstrained,
   BaseUnitTopBottomPadding,
-} from '../../core/style/containers.styles';
-import { HeroTitle } from '../../core/style/typography.styles';
+} from "../../core/style/containers.styles";
+import { HeroTitle } from "../../core/style/typography.styles";
 
 const SubmitPage = () => {
   const [validated, setValidated] = useState(false);
@@ -45,7 +45,7 @@ const SubmitPage = () => {
               defaultValue={
                 prefillFormData.influencerName
                   ? prefillFormData.influencerName
-                  : ''
+                  : ""
               }
               required
             />
@@ -60,7 +60,7 @@ const SubmitPage = () => {
               defaultValue={
                 prefillFormData.equipmentName
                   ? prefillFormData.equipmentName
-                  : ''
+                  : ""
               }
             />
           </Form.Group>

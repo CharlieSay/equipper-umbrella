@@ -1,9 +1,9 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Headroom from 'react-headroom';
-import { useLocation } from 'react-router-dom';
-import { Turn as Hamburger } from 'hamburger-react';
+import React, { Dispatch, SetStateAction, useState } from "react";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Headroom from "react-headroom";
+import { useLocation } from "react-router-dom";
+import { Turn as Hamburger } from "hamburger-react";
 
 import {
   HeaderLinkActive,
@@ -11,9 +11,9 @@ import {
   HeaderRestrictor,
   MobileNavBackground,
   VisuallyHidden,
-} from './header.styles';
-import Logo from '../../../assets/logo.svg';
-import './header.scss';
+} from "./header.styles";
+import Logo from "../../../assets/logo.svg";
+import "./header.scss";
 
 export interface HeaderFooterProps {
   links: Array<Link>;
@@ -41,7 +41,7 @@ interface HeaderLinkProps {
 }
 
 const HeaderLink = (props: HeaderLinkProps) => {
-  const {stem, displayText} = props;
+  const { stem, displayText } = props;
   const { pathname } = useLocation();
   const isActive = pathname === stem;
 
@@ -57,7 +57,10 @@ const DesktopNavigation = (props: HeaderFooterProps) => {
   return (
     <Nav className="mr-auto">
       {links.map((key) => (
-        <Nav.Link key={key.stem} href={`${key.stem}${key.params ? key.params : ''}`}>
+        <Nav.Link
+          key={key.stem}
+          href={`${key.stem}${key.params ? key.params : ""}`}
+        >
           <HeaderLink stem={key.stem} displayText={key.displayText} />
         </Nav.Link>
       ))}
@@ -93,7 +96,7 @@ const Header = (props: HeaderFooterProps) => {
         <Navbar
           bg="primary"
           variant="dark"
-          style={{ width: '100vw', justifyContent: 'space-between' }}
+          style={{ width: "100vw", justifyContent: "space-between" }}
         >
           <Navbar.Brand href="/">
             <img
@@ -114,7 +117,7 @@ const Header = (props: HeaderFooterProps) => {
             {links.map((key) => (
               <Nav.Link
                 key={key.stem}
-                href={`${key.stem}${key.params ? key.params : ''}`}
+                href={`${key.stem}${key.params ? key.params : ""}`}
               >
                 <HeaderLink stem={key.stem} displayText={key.displayText} />
               </Nav.Link>

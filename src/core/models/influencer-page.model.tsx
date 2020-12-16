@@ -1,4 +1,4 @@
-import { InfluencerSearchModel } from './influencer-search.model';
+import { InfluencerSearchModel } from "./influencer-search.model";
 
 export interface InfluencerPageModel {
   personalFacts: PersonalFacts;

@@ -1,15 +1,16 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import InfluencerGroup from '../../core/components/popular-group/influencer-group';
-import categoryBeauty from '../../core/data/category-beauty.json';
-import { ContainerConstrained } from '../../core/style/containers.styles';
+import React from "react";
+import { useParams } from "react-router-dom";
+import InfluencerGroup from "../../core/components/popular-group/influencer-group";
+import categoryBeauty from "../../core/data/category-beauty.json";
+import { ContainerConstrained } from "../../core/style/containers.styles";
 
 const CategoryPage = () => {
   const { influencerCategory } = useParams() as {
     influencerCategory: string;
   };
 
-  const influencerParsed = influencerCategory[0].toUpperCase() + influencerCategory.slice(1);
+  const influencerParsed =
+    influencerCategory[0].toUpperCase() + influencerCategory.slice(1);
 
   return (
     <ContainerConstrained>
