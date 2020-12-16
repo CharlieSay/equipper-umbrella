@@ -1,7 +1,7 @@
 import React from "react";
 import { InfluencerSearchModel } from "../../models/influencer-search.model";
 import {
-  Card,
+  InfluencerCard,
   CardContent,
   CardFooter,
   CardText,
@@ -15,11 +15,11 @@ interface CardType {
   key: string;
 }
 
-const InfluencerCard = (props: CardType) => {
+const Influencer = (props: CardType) => {
   const { influencer, key } = props;
 
   return (
-    <Card key={key} href={influencer.link}>
+    <InfluencerCard key={key} href={influencer.link}>
       <Image alt={`Picture of ${influencer.name}`} src={influencer.imgUrl} />
       <CardContent>
         <CardTitle>{influencer.name}</CardTitle>
@@ -32,8 +32,8 @@ const InfluencerCard = (props: CardType) => {
             : "This is broke"}
         </UpdatedBlurb>
       </CardFooter>
-    </Card>
+    </InfluencerCard>
   );
 };
 
-export default InfluencerCard;
+export default Influencer;

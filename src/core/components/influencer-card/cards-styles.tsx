@@ -18,7 +18,7 @@ export const CardContent = styled.div`
   padding: 1em;
 `;
 
-export const Card = styled.a`
+export const InfluencerCard = styled.a`
   flex: 1 0 260px;
   box-sizing: border-box;
   margin: 1rem 0.25em;
