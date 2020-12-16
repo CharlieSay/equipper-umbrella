@@ -17,6 +17,7 @@ const HeroTextAligner = styled.div`
 `;
 
 const HomePage = () => {
+  // eslint-disable-next-line no-console
   console.log(
     process.env.REACT_APP_MONGO_DB_P
       ? process.env.REACT_APP_MONGO_DB_P

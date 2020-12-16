@@ -1,4 +1,4 @@
-import { Equipment, UsedEquipment } from './influencer-page.model';
+import { Equipment } from './influencer-page.model';
 
 export interface UsedBy {
   displayName: string;

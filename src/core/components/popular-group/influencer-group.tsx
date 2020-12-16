@@ -16,20 +16,24 @@ interface InfluencerGroupProps {
   popularInfluencers: InfluencerSearchModel[];
 }
 
-const InfluencerGroup = (props: InfluencerGroupProps) => (
+const InfluencerGroup = (props: InfluencerGroupProps) => {
+  const {groupTitle, groupSubTitle, popularInfluencers} = props;
+
+  return (
   <>
     <DoubleBaseUnitTopBottomPadding />
-    <HeroTitleGray>{props.groupTitle}</HeroTitleGray>
-    <SubTitle primary>{props.groupSubTitle}</SubTitle>
+    <HeroTitleGray>{groupTitle}</HeroTitleGray>
+    <SubTitle primary>{groupSubTitle}</SubTitle>
     <BaseUnitTopBottomPadding />
     <Centered>
       <Cards>
-        {props.popularInfluencers.map((influencer, idx) => (
-          <InfluencerCard influencer={influencer} key={idx} />
+        {popularInfluencers.map((influencer) => (
+          <InfluencerCard influencer={influencer} key={influencer.name} />
         ))}
       </Cards>
     </Centered>
   </>
-);
+  )
+};
 
 export default InfluencerGroup;

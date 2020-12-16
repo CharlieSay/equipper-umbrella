@@ -27,6 +27,7 @@ const SubmitPage = () => {
       equipmentEvidence: target.formGridEquipmentEvidence.value,
       equipmentDetails: target.formGridDetails.value,
     };
+    // eslint-disable-next-line no-console
     console.log(builtFormSubmission);
     // Post to API here.
     setValidated(true);

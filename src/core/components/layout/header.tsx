@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom';
 import { Turn as Hamburger } from 'hamburger-react';
 
 import {
-  Divider,
   HeaderLinkActive,
   HeaderLinkStyled,
   HeaderRestrictor,
@@ -21,6 +20,10 @@ export interface HeaderFooterProps {
   isDesktop?: boolean;
   isMobile?: boolean;
   navOpen?: boolean;
+}
+interface MobileNavProps {
+  navOpen: boolean;
+  setNavOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 interface Link {
@@ -38,17 +41,44 @@ interface HeaderLinkProps {
 }
 
 const HeaderLink = (props: HeaderLinkProps) => {
+  const {stem, displayText} = props;
   const { pathname } = useLocation();
-  const isActive = pathname === props.stem;
+  const isActive = pathname === stem;
 
   if (isActive) {
-    return <HeaderLinkActive>{props.displayText}</HeaderLinkActive>;
+    return <HeaderLinkActive>{displayText}</HeaderLinkActive>;
   }
 
-  return <HeaderLinkStyled>{props.displayText}</HeaderLinkStyled>;
+  return <HeaderLinkStyled>{displayText}</HeaderLinkStyled>;
 };
 
-export const DesktopHeader = (props: HeaderFooterProps) => {
+const DesktopNavigation = (props: HeaderFooterProps) => {
+  const { links } = props;
+  return (
+    <Nav className="mr-auto">
+      {links.map((key) => (
+        <Nav.Link key={key.stem} href={`${key.stem}${key.params ? key.params : ''}`}>
+          <HeaderLink stem={key.stem} displayText={key.displayText} />
+        </Nav.Link>
+      ))}
+    </Nav>
+  );
+};
+
+const MobileNavigation = (props: MobileNavProps) => {
+  const { navOpen, setNavOpen } = props;
+  return (
+    <Nav>
+      <Hamburger
+        color="#dc3545"
+        toggled={navOpen}
+        onToggle={() => setNavOpen(!navOpen)}
+      />
+    </Nav>
+  );
+};
+
+const Header = (props: HeaderFooterProps) => {
   const { isDesktop, isMobile, links } = props;
   const [mobileNavOpen, setNavOpen] = useState(false);
   return (
@@ -81,9 +111,9 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
         </Navbar>
         {mobileNavOpen && (
           <MobileNavBackground>
-            {links.map((key, i) => (
+            {links.map((key) => (
               <Nav.Link
-                key={i}
+                key={key.stem}
                 href={`${key.stem}${key.params ? key.params : ''}`}
               >
                 <HeaderLink stem={key.stem} displayText={key.displayText} />
@@ -96,33 +126,4 @@ export const DesktopHeader = (props: HeaderFooterProps) => {
   );
 };
 
-const DesktopNavigation = (props: HeaderFooterProps) => {
-  const { links } = props;
-  return (
-    <Nav className="mr-auto">
-      {links.map((key, i) => (
-        <Nav.Link key={i} href={`${key.stem}${key.params ? key.params : ''}`}>
-          <HeaderLink stem={key.stem} displayText={key.displayText} />
-        </Nav.Link>
-      ))}
-    </Nav>
-  );
-};
-
-interface MobileNavProps {
-  navOpen: boolean;
-  setNavOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-const MobileNavigation = (props: MobileNavProps) => {
-  const { navOpen, setNavOpen } = props;
-  return (
-    <Nav>
-      <Hamburger
-        color="#dc3545"
-        toggled={navOpen}
-        onToggle={() => setNavOpen(!navOpen)}
-      />
-    </Nav>
-  );
-};
+export default Header;

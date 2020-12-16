@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, FormControl, Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import { BaseUnitTopBottomPadding } from "../../style/containers.styles";
-import { getSearchQuery } from "../../../hooks/storage-hooks";
+import  getSearchQuery from "../../../hooks/storage-hooks";
 
 interface SearchFormProps {
   maxWidth: number;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
-import styled from 'styled-components';
 import {
   WideCard,
   Cards,
@@ -15,7 +14,7 @@ import {
   PBold,
 } from '../../core/style/typography.styles';
 
-import { getPopularGear } from '../../hooks/popular-gear-hooks';
+import getPopularGear  from '../../hooks/popular-gear-hooks';
 
 const CommonGearPage = () => {
   const popularGear = getPopularGear();
@@ -23,16 +22,15 @@ const CommonGearPage = () => {
   return (
     <ContainerConstrained>
       <HeroTitle>Popular Gear</HeroTitle>
-      {popularGear.map((section, i) => (
-        <Row key={i}>
-          <div id={section.anchor}>
+      {popularGear.map((section) => (
+        <Row key={`${section.anchor}`} id={section.anchor}>
             <SectionH2>{section.friendlySectionName}</SectionH2>
             <Cards>
-              {section.equipment.map((equipment, i) => (
-                <WideCard key={i}>
+              {section.equipment.map((equipment) => (
+                <WideCard key={equipment.friendlyName}>
                   <Row>
                     <img
-                      alt={`Picture of ${equipment.friendlyName}`}
+                      alt={`${equipment.friendlyName}`}
                       src={equipment.thumbnail}
                     />
                     <Col>
@@ -45,7 +43,7 @@ const CommonGearPage = () => {
                         <div>
                           {equipment.usedBy.map((influencer, i) => (
                             <ALinkSmallGray
-                              key={i}
+                              key={`${influencer.displayName}`}
                               href={`/influencer/${influencer.link}`}
                             >
                               {`${influencer.displayName}${
@@ -57,9 +55,9 @@ const CommonGearPage = () => {
                       </div>
                     </Col>
                   </Row>
-                  {equipment.affiliate.map((affiliateSingular, i) => (
+                  {equipment.affiliate.map((affiliateSingular) => (
                     <Button
-                      key={i}
+                      key={affiliateSingular.vendor}
                       href={affiliateSingular.affiliateUrl}
                       variant="gray"
                       target="_blank"
@@ -72,7 +70,6 @@ const CommonGearPage = () => {
                 </WideCard>
               ))}
             </Cards>
-          </div>
         </Row>
       ))}
     </ContainerConstrained>

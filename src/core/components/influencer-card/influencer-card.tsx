@@ -12,7 +12,7 @@ import {
 
 interface CardType {
   influencer: InfluencerSearchModel;
-  key: number;
+  key: string;
 }
 
 const InfluencerCard = (props: CardType) => {

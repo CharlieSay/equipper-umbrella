@@ -17,7 +17,7 @@ import {
 import { HeaderFooterProps } from './header';
 import './footer.scss';
 
-export const Footer = (links: HeaderFooterProps) => (
+const Footer = (links: HeaderFooterProps) => (
   <FooterRoot id="footer">
     <ContainerConstrained>
       <FooterContainerFlexOnMobile>
@@ -33,8 +33,8 @@ export const Footer = (links: HeaderFooterProps) => (
               <SmallBold>{` ${packageJson.name} (${packageJson.version})`}</SmallBold>
             </Row>
           </Col>
-          {links.links.map((link, i) => (
-            <FooterColumn key={i}>
+          {links.links.map((link) => (
+            <FooterColumn key={link.displayText}>
               <FooterUL>
                 <li>
                   <FooterHeadLink href={link.stem}>
@@ -43,8 +43,8 @@ export const Footer = (links: HeaderFooterProps) => (
                 </li>
               </FooterUL>
               {link.subHeaders
-                  && link.subHeaders.map((subLinks, i) => (
-                    <FooterUL key={i}>
+                  && link.subHeaders.map((subLinks) => (
+                    <FooterUL key={subLinks.stem}>
                       <li>
                         <FooterSubLink href={subLinks.stem}>
                           {subLinks.displayText}
@@ -59,3 +59,5 @@ export const Footer = (links: HeaderFooterProps) => (
     </ContainerConstrained>
   </FooterRoot>
 );
+
+export default Footer;

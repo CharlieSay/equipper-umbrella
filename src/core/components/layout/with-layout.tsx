@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 import { Route, RouteProps } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { Helmet } from 'react-helmet-async';
-import { DesktopHeader } from './header';
-import { Footer } from './footer';
+import Header from './header';
+import Footer  from './footer';
 
 import navigationLinks from '../../data/header-footer-links.json';
 
@@ -52,12 +52,12 @@ const withLayout = <P extends Record<string, unknown>>(
       <>
         <Helmet>
           <title>{pageData.title}</title>
-          {pageData.meta?.map((meta, i) => (
-            <meta key={i} name={meta.name} content={meta.content} />
+          {pageData.meta?.map((meta) => (
+            <meta key={meta.name} name={meta.name} content={meta.content} />
           ))}
           <meta name="description" content={pageData.metaDescription} />
         </Helmet>
-        <DesktopHeader
+        <Header
           links={navigationLinks.header}
           isDesktop={isDesktop}
           isMobile={isMobile}
@@ -74,11 +74,12 @@ const withLayout = <P extends Record<string, unknown>>(
 };
 
 const PageRoute = (props: PageRouteProps) => {
-  const pageData = props.pageData || {};
+  const {pageData, component} = props;
+
+  const internalPageData = pageData || {};
   return (
     <Route
-      path={props.pageData.id}
-      component={withLayout(props.component, pageData)}
+      component={withLayout(component, internalPageData)}
     />
   );
 };

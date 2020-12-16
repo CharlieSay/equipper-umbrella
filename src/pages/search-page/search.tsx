@@ -34,8 +34,8 @@ const Search = () => {
       <Centered>
         <Cards>
           {searchResults
-            && searchResults.map((influencer, idx) => (
-              <InfluencerCard influencer={influencer} key={idx} />
+            && searchResults.map((influencer) => (
+              <InfluencerCard influencer={influencer} key={influencer.name} />
             ))}
         </Cards>
       </Centered>
