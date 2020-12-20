@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+import { PBold } from '../../core/style/typography.styles'
 
 export const EquipmentCard = styled.div`
   background-color: white;
@@ -11,7 +12,11 @@ export const EquipmentCard = styled.div`
     padding: 16px;
     text-align: center;
   }
-`;
+`
+
+export const PFriendlyEquipmentName = styled(PBold)`
+  font-size: 18px;
+`
 
 export const ContentTableCard = styled.div`
   background-color: white;
@@ -20,4 +25,4 @@ export const ContentTableCard = styled.div`
   margin: 16px 0 16px 0;
   padding: 16px 32px 16px 16px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.01), 0 15px 12px rgba(0, 0, 0, 0.01);
-`;
+`

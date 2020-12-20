@@ -13,9 +13,12 @@ import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
 } from '../../core/style/containers.styles'
-import { EquipmentCard, ContentTableCard } from './influencer-page-styles'
 import {
-  PBold,
+  EquipmentCard,
+  ContentTableCard,
+  PFriendlyEquipmentName,
+} from './influencer-page-styles'
+import {
   ALinkSmall,
   H1HeroTitleLightRed,
   H2TitleLightRed,
@@ -126,7 +129,9 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                 {equipmentVal.equipment.map((equipmentDetail) => (
                   <div key={equipmentDetail.friendlyName}>
                     <H2TitleLightRed>{`What ${equipmentDetail.part} does ${personalFacts.name} have?`}</H2TitleLightRed>
-                    <PBold>{equipmentDetail.friendlyName}</PBold>
+                    <PFriendlyEquipmentName>
+                      {equipmentDetail.friendlyName}
+                    </PFriendlyEquipmentName>
                     <BaseUnitTopBottomPadding />
                     <Row>
                       <ImageCom
