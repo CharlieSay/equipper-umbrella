@@ -5,7 +5,7 @@ import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
 } from "../../../core/style/containers.styles";
-import { HeroTitleGray, SubTitle } from "../../../core/style/typography.styles";
+import { H1HeroTitle, SubTitle } from "../../../core/style/typography.styles";
 
 const MiddleContainer = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const NotFound = () => (
         alt="Error kaboom"
         src="https://fansofdavid.com/wp-content/uploads/2014/05/kaboom.png"
       />
-      <HeroTitleGray>This page doesnt exist! 🤔</HeroTitleGray>
+      <H1HeroTitle>This page doesnt exist! 🤔</H1HeroTitle>
       <SubTitle primary>Were not quite sure what went wrong there.</SubTitle>
       <BaseUnitTopBottomPadding>
         <Button href="/" variant="red" target="_blank">

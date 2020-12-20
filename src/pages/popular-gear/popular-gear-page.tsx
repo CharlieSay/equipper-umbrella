@@ -7,9 +7,9 @@ import {
 
 import { ContainerConstrained } from "../../core/style/containers.styles";
 import {
-  ALinkSmallGray,
-  HeroTitle,
-  SectionH2,
+  ALinkSmall,
+  H1HeroTitle,
+  H2Title,
   PNormal,
   PBold,
 } from "../../core/style/typography.styles";
@@ -21,10 +21,10 @@ const CommonGearPage = () => {
 
   return (
     <ContainerConstrained>
-      <HeroTitle>Popular Gear</HeroTitle>
+      <H1HeroTitle>Popular Gear</H1HeroTitle>
       {popularGear.map((section) => (
         <Row key={`${section.anchor}`} id={section.anchor}>
-          <SectionH2>{section.friendlySectionName}</SectionH2>
+          <H2Title>{section.friendlySectionName}</H2Title>
           <Cards>
             {section.equipment.map((equipment) => (
               <WideCard key={equipment.friendlyName}>
@@ -42,14 +42,15 @@ const CommonGearPage = () => {
                       </div>
                       <div>
                         {equipment.usedBy.map((influencer, i) => (
-                          <ALinkSmallGray
+                          <ALinkSmall
+                            primary
                             key={`${influencer.displayName}`}
                             href={`/influencer/${influencer.link}`}
                           >
                             {`${influencer.displayName}${
                               i === equipment.usedBy.length - 1 ? "" : ","
                             } `}
-                          </ALinkSmallGray>
+                          </ALinkSmall>
                         ))}
                       </div>
                     </div>

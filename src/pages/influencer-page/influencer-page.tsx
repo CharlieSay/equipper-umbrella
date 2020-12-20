@@ -1,38 +1,42 @@
-import React from "react";
-import Badge from "react-bootstrap/Badge";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
-import ListGroup from "react-bootstrap/ListGroup";
-import Row from "react-bootstrap/Row";
-import Table from "react-bootstrap/Table";
-import styled from "styled-components";
-import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import React from 'react'
+import Badge from 'react-bootstrap/Badge'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
+import ListGroup from 'react-bootstrap/ListGroup'
+import Row from 'react-bootstrap/Row'
+import Table from 'react-bootstrap/Table'
+import styled from 'styled-components'
+import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
-} from "../../core/style/containers.styles";
-import { EquipmentCard, ContentTableCard } from "./influencer-page-styles";
+} from '../../core/style/containers.styles'
+import { EquipmentCard, ContentTableCard } from './influencer-page-styles'
 import {
-  ALinkSmallGray,
-  HeroTitle,
-  SubTitle,
-  SectionH2,
-} from "../../core/style/typography.styles";
+  PBold,
+  ALinkSmall,
+  H1HeroTitleLightRed,
+  H2TitleLightRed,
+} from '../../core/style/typography.styles'
 
-import getInfluencerPageData from "../../hooks/influencer-page-hooks";
-import InfluencerPageLoading from "./influencer-page-loading";
-import { InfluencerPageModel } from "../../core/models/influencer-page.model";
-import InfluencerGroup from "../../core/components/popular-group/influencer-group";
-import "./influencer-page.scss";
+import ImageCom from '../../core/components/image/image'
 
-const SmallPrint = styled.small``;
+import getInfluencerPageData from '../../hooks/influencer-page-hooks'
+import InfluencerPageLoading from './influencer-page-loading'
+import { InfluencerPageModel } from '../../core/models/influencer-page.model'
+import InfluencerGroup from '../../core/components/popular-group/influencer-group'
+import './influencer-page.scss'
+
+const SmallPrint = styled.small`
+  color: ${(props) => props.theme.darkBlue};
+`
 
 const InfluencerPageInternal = (props: InfluencerPageModel) => {
-  const { personalFacts, keyFacts, usedEquipment, similarCreators } = props;
+  const { personalFacts, keyFacts, usedEquipment, similarCreators } = props
 
-  const showSimilarCreator = similarCreators.length >= 3;
+  const showSimilarCreator = similarCreators.length >= 3
 
   return (
     <ContainerConstrained>
@@ -47,7 +51,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
             />
           </Row>
           <Row>
-            <Col style={{ marginBottom: "8px", paddingLeft: "0" }}>
+            <Col style={{ marginBottom: '8px', paddingLeft: '0' }}>
               <Link to={`/category/${keyFacts.creatorType.toLowerCase()}`}>
                 <Badge variant="red">{keyFacts.creatorType}</Badge>
               </Link>
@@ -99,12 +103,12 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
         <ListGroup variant="flush">
           <ContentTableCard>
             <ListGroup.Item>
-              <HeroTitle>{`${personalFacts.name}'s equipment`}</HeroTitle>
+              <H1HeroTitleLightRed>{`${personalFacts.name}'s equipment`}</H1HeroTitleLightRed>
               <ul>
                 {usedEquipment.map((equip) => (
                   <li key={equip.friendlySectionName}>
                     <a
-                      style={{ color: " #283747", fontWeight: "bold" }}
+                      style={{ color: ' #283747', fontWeight: 'bold' }}
                       href={`#${equip.anchor.toLowerCase()}`}
                     >
                       {`${equip.friendlySectionName}`}
@@ -118,23 +122,23 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
             <EquipmentCard
               key={equipmentVal.friendlySectionName}
               id={`${equipmentVal.anchor}`}
-              style={{ justifyContent: "center" }}
+              style={{ justifyContent: 'center' }}
             >
               <ListGroup.Item>
-                <HeroTitle>{equipmentVal.friendlySectionName}</HeroTitle>
+                <H1HeroTitleLightRed>
+                  {equipmentVal.friendlySectionName}
+                </H1HeroTitleLightRed>
                 {equipmentVal.equipment.map((equipmentDetail) => (
                   <div key={equipmentDetail.friendlyName}>
-                    <SectionH2>{`What ${equipmentDetail.part} does ${personalFacts.name} have?`}</SectionH2>
-                    <SubTitle primary>{equipmentDetail.friendlyName}</SubTitle>
+                    <H2TitleLightRed>{`What ${equipmentDetail.part} does ${personalFacts.name} have?`}</H2TitleLightRed>
+                    <PBold>{equipmentDetail.friendlyName}</PBold>
                     <BaseUnitTopBottomPadding />
                     <Row>
-                      <Image
+                      <ImageCom
+                        maxWidth="150px"
                         src={`${equipmentDetail.thumbnail}`}
-                        fluid
-                        thumbnail
-                        rounded
                       />
-                      <Col style={{ paddingTop: "34px" }}>
+                      <Col style={{ paddingTop: '34px' }}>
                         {equipmentDetail.affiliate.map((affiliateSingular) => (
                           <Button
                             key={affiliateSingular.vendor}
@@ -148,12 +152,13 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                         <Row>
                           <SmallPrint>
                             <BaseUnitTopBottomPadding />
-                            {"Wrong item or not quite right? Let us know "}
-                            <ALinkSmallGray
+                            {'Wrong item or not quite right? Let us know '}
+                            <ALinkSmall
+                              primary
                               href={`/submit?influencerName=${personalFacts.name}&equipmentName=${equipmentDetail.friendlyName}`}
                             >
                               here
-                            </ALinkSmallGray>
+                            </ALinkSmall>
                           </SmallPrint>
                         </Row>
                       </Col>
@@ -173,18 +178,18 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
         />
       )}
     </ContainerConstrained>
-  );
-};
+  )
+}
 
 const InfluencerPageUsingParams = () => {
-  const getInfluencerData = getInfluencerPageData();
+  const getInfluencerData = getInfluencerPageData()
 
   if (getInfluencerData.isLoading) {
     return (
       <ContainerConstrained>
         <InfluencerPageLoading />
       </ContainerConstrained>
-    );
+    )
   }
 
   return (
@@ -198,7 +203,7 @@ const InfluencerPageUsingParams = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default InfluencerPageUsingParams;
+export default InfluencerPageUsingParams

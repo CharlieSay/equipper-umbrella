@@ -7,7 +7,7 @@ import {
   ContainerConstrained,
   BaseUnitTopBottomPadding,
 } from "../../core/style/containers.styles";
-import { HeroTitle } from "../../core/style/typography.styles";
+import { H1HeroTitle } from "../../core/style/typography.styles";
 
 const SubmitPage = () => {
   const [validated, setValidated] = useState(false);
@@ -35,7 +35,7 @@ const SubmitPage = () => {
 
   return (
     <ContainerConstrained>
-      <HeroTitle>Let us know what to update</HeroTitle>
+      <H1HeroTitle>Let us know what to update</H1HeroTitle>
       <BaseUnitTopBottomPadding>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Group controlId="formGridName">

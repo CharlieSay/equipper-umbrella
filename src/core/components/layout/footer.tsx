@@ -1,9 +1,9 @@
-import React from "react";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import packageJson from "../../../../package.json";
-import { ContainerConstrained } from "../../style/containers.styles";
-import { SmallBold } from "../../style/typography.styles";
+import React from 'react'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import packageJson from '../../../../package.json'
+import { ContainerConstrained } from '../../style/containers.styles'
+import { PWhite } from '../../style/typography.styles'
 import {
   FooterColumn,
   FooterContainerFlexOnMobile,
@@ -13,9 +13,9 @@ import {
   FooterRoot,
   FooterSubLink,
   FooterUL,
-} from "./footer.styles";
-import { HeaderFooterProps } from "./header";
-import "./footer.scss";
+} from './footer.styles'
+import { HeaderFooterProps } from './header'
+import './footer.scss'
 
 const Footer = (links: HeaderFooterProps) => (
   <FooterRoot id="footer">
@@ -30,7 +30,7 @@ const Footer = (links: HeaderFooterProps) => (
               <FooterEmailSmall>hello@equippr.io</FooterEmailSmall>
             </Row>
             <Row>
-              <SmallBold>{` ${packageJson.name} (${packageJson.version})`}</SmallBold>
+              <PWhite>{` ${packageJson.name} (${packageJson.version})`}</PWhite>
             </Row>
           </Col>
           {links.links.map((link) => (
@@ -58,6 +58,6 @@ const Footer = (links: HeaderFooterProps) => (
       </FooterContainerFlexOnMobile>
     </ContainerConstrained>
   </FooterRoot>
-);
+)
 
-export default Footer;
+export default Footer

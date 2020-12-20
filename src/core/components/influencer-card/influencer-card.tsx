@@ -1,5 +1,5 @@
-import React from "react";
-import { InfluencerSearchModel } from "../../models/influencer-search.model";
+import React from 'react'
+import { InfluencerSearchModel } from '../../models/influencer-search.model'
 import {
   InfluencerCard,
   CardContent,
@@ -7,20 +7,21 @@ import {
   CardText,
   CardTitle,
   UpdatedBlurb,
-  Image,
-} from "./cards-styles";
+} from './cards-styles'
+
+import ImageCom from '../image/image'
 
 interface CardType {
-  influencer: InfluencerSearchModel;
-  key: string;
+  influencer: InfluencerSearchModel
+  key: string
 }
 
 const Influencer = (props: CardType) => {
-  const { influencer, key } = props;
+  const { influencer, key } = props
 
   return (
     <InfluencerCard key={key} href={influencer.link}>
-      <Image alt={`Picture of ${influencer.name}`} src={influencer.imgUrl} />
+      <ImageCom src={influencer.imgUrl} />
       <CardContent>
         <CardTitle>{influencer.name}</CardTitle>
         <CardText>{influencer.description}</CardText>
@@ -29,11 +30,11 @@ const Influencer = (props: CardType) => {
         <UpdatedBlurb>
           {influencer.lastUpdatedBlurb
             ? `Last updated ${influencer.lastUpdatedBlurb}`
-            : "This is broke"}
+            : 'This is broke'}
         </UpdatedBlurb>
       </CardFooter>
     </InfluencerCard>
-  );
-};
+  )
+}
 
-export default Influencer;
+export default Influencer

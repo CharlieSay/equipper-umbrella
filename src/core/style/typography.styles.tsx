@@ -1,62 +1,78 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const HeroTitle = styled.h1`
-  color: ${(props) => props.theme.lightRed};
+// H1
+export const H1HeroTitle = styled.h1`
   font-size: 2.2rem;
-  line-height: 1.1;
   font-weight: 600;
-`;
-
-export const HeroTitleGray = styled(HeroTitle)`
-  color: ${(props) => props.theme.darkBlue};
-`;
-
-export const SectionH2 = styled.h1`
-  font-size: 1.5em;
-  font-weight: 600;
-`;
-
-export const SectionH2Red = styled.h1`
-  font-size: 1.5em;
-  font-weight: 600;
+  color: ${(props) => props.theme.grey};
+`
+export const H1HeroTitleLightRed = styled(H1HeroTitle)`
   color: ${(props) => props.theme.lightRed};
-`;
+`
 
-export const SubTitle = styled("span")<{ primary: boolean }>`
+export const H1HeroTitlePurple = styled(H1HeroTitle)`
+  color: ${(props) => props.theme.purple};
+`
+
+// H2
+
+export const H2Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: ${(props) => props.theme.grey};
+`
+export const H2TitleLightRed = styled(H2Title)`
+  color: ${(props) => props.theme.lightRed};
+`
+
+export const H2TitlePurple = styled(H2Title)`
+  color: ${(props) => props.theme.purple};
+`
+
+// SUBTITLE
+
+export const SubTitle = styled('span')<{ primary: boolean }>`
   font-size: 0.9rem;
-  line-height: 1.1;
   font-weight: 400;
   color: ${(props) =>
     props.primary ? props.theme.darkBlue : props.theme.gray};
-`;
+`
 
-export const ALinkSmallGray = styled.a`
-  color: ${(props) => props.theme.darkBlue};
+// A
+
+export const ALinkSmall = styled('a')<{ primary: boolean }>`
+  color: ${(props) =>
+    props.primary ? props.theme.darkBlue : props.theme.darkRed};
   font-weight: bold;
   &:hover {
-    color: ${(props) => props.theme.lightRed};
+    color: ${(props) =>
+      props.primary ? props.theme.lightRed : props.theme.purple};
   }
-`;
+`
 
-export const SmallBold = styled.small`
-  color: ${(props) => props.theme.white};
-  font-weight: normal;
-`;
+// SPAN
+
+export const SpanBold = styled.span`
+  color: ${(props) => props.theme.grey};
+  font-weight: bold;
+`
+
+// P
 
 export const PNormal = styled.p`
   color: ${(props) => props.theme.darkBlue};
   font-size: 12px;
   font-weight: normal;
-  margin: 0;
-`;
+`
 
 export const PBold = styled.p`
   color: ${(props) => props.theme.darkBlue};
   font-size: 14px;
   font-weight: bold;
-`;
+`
 
-export const SmallBolder = styled.span`
-  color: ${(props) => props.theme.darkBlue};
-  font-weight: bold;
-`;
+export const PWhite = styled.p`
+  color: ${(props) => props.theme.white};
+  font-size: 11px;
+  font-weight: normal;
+`

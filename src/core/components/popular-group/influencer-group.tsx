@@ -4,7 +4,7 @@ import {
   BaseUnitTopBottomPadding,
   DoubleBaseUnitTopBottomPadding,
 } from '../../style/containers.styles'
-import { HeroTitleGray, SubTitle } from '../../style/typography.styles'
+import { H1HeroTitleLightRed, SubTitle } from '../../style/typography.styles'
 import InfluencerCard from '../influencer-card/influencer-card'
 import { Centered, Cards } from '../influencer-card/cards-styles'
 
@@ -22,7 +22,7 @@ const InfluencerGroup = (props: InfluencerGroupProps) => {
   return (
     <>
       <DoubleBaseUnitTopBottomPadding />
-      {groupTitle && <HeroTitleGray>{groupTitle}</HeroTitleGray>}
+      {groupTitle && <H1HeroTitleLightRed>{groupTitle}</H1HeroTitleLightRed>}
       {groupSubTitle && <SubTitle primary>{groupSubTitle}</SubTitle>}
       <BaseUnitTopBottomPadding />
       <Centered>

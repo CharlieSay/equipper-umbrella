@@ -1,55 +1,57 @@
-@import "~bootstrap/scss/bootstrap";
-@import "./.container.scss";
-@import "./.global-variables.scss";
-@import "./.typography.scss";
-@import "./.custom.scss";
+@import '~bootstrap/scss/bootstrap';
+@import './.container.scss';
+@import './.global-variables.scss';
+@import './.typography.scss';
+@import './.custom.scss';
 
 body {
-    margin: 0px;
-    font-family: $font-stack;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    background-color: $white;
-    max-width: 100%;
-    overflow-x: hidden;
-    text-rendering: optimizelegibility;
+  margin: 0px;
+  font-family: $font-stack;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $white;
+  max-width: 100%;
+  overflow-x: hidden;
+  text-rendering: optimizelegibility;
+  color: #e0e0e0;
+  line-height: 1.1;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .row {
-    margin-left: 0;
-    margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 .col {
-    margin-left: 0;
-    margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 main {
-    background-color: $white;
-    padding-bottom: $baseUnit * 2;
+  background-color: $white;
+  padding-bottom: $baseUnit * 2;
 }
 
 .header-footer-restrictor {
-    display: flex;
-    width: 100%;
-    margin-bottom: $baseUnit;
-    margin-top: $baseUnit;
+  display: flex;
+  width: 100%;
+  margin-bottom: $baseUnit;
+  margin-top: $baseUnit;
 }
 
 ul {
-    padding: 0;
-    list-style-type: none;
-    -webkit-padding-start: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-padding-start: 0;
 }
 
 *,
 *:after,
 *:before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input,
@@ -57,12 +59,12 @@ button,
 select,
 option,
 textarea {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 html {
-    scroll-behavior: smooth;
-    font-family: $font-stack;
+  scroll-behavior: smooth;
+  font-family: $font-stack;
 }
 
 h1,
@@ -70,7 +72,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 h1,
@@ -79,11 +81,11 @@ h3,
 h4,
 h5,
 li {
-    margin: 0 0 0.3em;
+  margin: 0 0 0.3em;
 }
 
 p,
 ul,
 ol {
-    margin: 0 0 1em;
+  margin: 0 0 1em;
 }
