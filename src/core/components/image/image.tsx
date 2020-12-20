@@ -1,17 +1,17 @@
-import React from 'react'
-import { Img } from 'react-image'
-import VisibilitySensor from 'react-visibility-sensor'
+import React from "react";
+import { Img } from "react-image";
+import VisibilitySensor from "react-visibility-sensor";
 
 interface ImageProps {
-  src: string
-  fallbacks?: string[]
-  maxWidth?: string
+  src: string;
+  fallbacks?: string[];
+  maxWidth?: string;
 }
 
 const ImageComponent = (props: ImageProps) => {
-  const { src, fallbacks = [], maxWidth } = props
+  const { src, fallbacks = [], maxWidth } = props;
 
-  const imageSrc = [src].concat(fallbacks)
+  const imageSrc = [src].concat(fallbacks);
 
   return (
     <VisibilitySensor>
@@ -21,7 +21,7 @@ const ImageComponent = (props: ImageProps) => {
         style={{ width: `100%`, height: `auto`, maxWidth }}
       />
     </VisibilitySensor>
-  )
-}
+  );
+};
 
-export default ImageComponent
+export default ImageComponent;
