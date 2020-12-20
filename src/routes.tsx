@@ -1,14 +1,14 @@
-import React from "react";
-import { BrowserRouter, Switch } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter, Switch } from 'react-router-dom'
 
-import PageRoute from "./core/components/layout/with-layout";
-import HomePage from "./pages/homepage/homepage";
-import NotFound from "./pages/utility-pages/error/not-found";
-import InfluencerPageUsingParams from "./pages/influencer-page/influencer-page";
-import CategoryPage from "./pages/category-page/category-page";
-import SearchPage from "./pages/search-page/search";
-import SubmitPage from "./pages/submit-page/submit-page";
-import PopularGearPage from "./pages/popular-gear/popular-gear-page";
+import PageRoute from './core/components/layout/with-layout'
+import HomePage from './pages/homepage/homepage'
+import NotFound from './pages/utility-pages/error/not-found'
+import InfluencerPageUsingParams from './pages/influencer-page/influencer-page'
+import CategoryPage from './pages/category-page/category-page'
+import SearchPage from './pages/search-page/search'
+import SubmitPage from './pages/submit-page/submit-page'
+import PopularGearPage from './pages/popular-gear/popular-gear-page'
 
 const Routes = () => (
   <BrowserRouter>
@@ -17,41 +17,41 @@ const Routes = () => (
         exact
         path="/"
         component={HomePage}
-        pageData={{ title: "Home" }}
+        pageData={{ title: 'Home' }}
       />
       <PageRoute
         exact
         path="/influencers/:id"
         component={InfluencerPageUsingParams}
-        pageData={{ title: "Influencer", id: "/influencers/:id" }}
+        pageData={{ title: 'Influencer' }}
       />
       <PageRoute
         exact
         path="/category/:influencerCategory"
         component={CategoryPage}
-        pageData={{ title: "Category", id: "/category/:influencerCategory" }}
+        pageData={{ title: 'Category' }}
       />
       <PageRoute
         exact
         path="/popular-gear"
         component={PopularGearPage}
-        pageData={{ title: "Popular Gear", id: "/popular-gear" }}
+        pageData={{ title: 'Popular Gear' }}
       />
       <PageRoute
         exact
         path="/search"
         component={SearchPage}
-        pageData={{ title: "Search", id: "/search" }}
+        pageData={{ title: 'Search' }}
       />
       <PageRoute
         exact
         path="/submit"
         component={SubmitPage}
-        pageData={{ title: "Submit", id: "/submit" }}
+        pageData={{ title: 'Submit' }}
       />
-      <PageRoute component={NotFound} pageData={{ title: "Not Found" }} />
+      <PageRoute component={NotFound} pageData={{ title: 'Not Found' }} />
     </Switch>
   </BrowserRouter>
-);
+)
 
-export default Routes;
+export default Routes
