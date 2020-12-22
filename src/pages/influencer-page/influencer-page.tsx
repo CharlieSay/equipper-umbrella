@@ -1,14 +1,13 @@
-import React from 'react'
-import Badge from 'react-bootstrap/Badge'
+import React, { Suspense } from 'react'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
-import Table from 'react-bootstrap/Table'
 import styled from 'styled-components'
 import { Helmet } from 'react-helmet-async'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { Badge, Spinner } from 'react-bootstrap'
 import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
@@ -16,12 +15,16 @@ import {
 import {
   EquipmentCard,
   ContentTableCard,
+  TopBar,
   PFriendlyEquipmentName,
+  MarginSixteenPixels,
 } from './influencer-page-styles'
 import {
   ALinkSmall,
+  Small,
   H1HeroTitleLightRed,
   H2TitleLightRed,
+  PBold,
 } from '../../core/style/typography.styles'
 
 import ImageCom from '../../core/components/image/image'
@@ -36,6 +39,16 @@ const SmallPrint = styled.small`
   color: ${(props) => props.theme.darkBlue};
 `
 
+const KeyFactEntry = (props: { key: string; value: string }) => {
+  const { key, value } = props
+  return (
+    <Row>
+      <PBold>{key}</PBold>
+      <PBold style={{ paddingLeft: `8px` }}> {value}</PBold>
+    </Row>
+  )
+}
+
 const InfluencerPageInternal = (props: InfluencerPageModel) => {
   const { personalFacts, keyFacts, usedEquipment, similarCreators } = props
 
@@ -43,64 +56,33 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
 
   return (
     <ContainerConstrained>
-      <Row className="key-facts-container">
-        <Col>
-          <Row>
-            <Image
-              src={personalFacts.ytBanner}
-              alt="First slide"
-              rounded
-              thumbnail
-            />
-          </Row>
-          <Row>
-            <Col style={{ marginBottom: '8px', paddingLeft: '0' }}>
-              <Link to={`/category/${keyFacts.creatorType.toLowerCase()}`}>
-                <Badge variant="red">{keyFacts.creatorType}</Badge>
-              </Link>
-            </Col>
-          </Row>
-          <Table striped bordered hover size="sm">
-            <tbody>
-              <tr>
-                <td>Name</td>
-                <td>{personalFacts.name}</td>
-              </tr>
-              <tr>
-                <td>Short Description</td>
-                <td>{personalFacts.description}</td>
-              </tr>
-              <tr>
-                <td>Real Name</td>
-                <td>{personalFacts.realName}</td>
-              </tr>
-              <tr>
-                <td>Date Of Birth</td>
-                <td>{personalFacts.dob}</td>
-              </tr>
-              <tr>
-                <td>Active Since</td>
-                <td>{keyFacts.activeSince}</td>
-              </tr>
-              <tr>
-                <td>Last updated </td>
-                <td>{keyFacts.lastUpdated}</td>
-              </tr>
-            </tbody>
-          </Table>
-        </Col>
-        <Col>
-          <div className="image-aligner">
-            <Row>
-              <ImageCom maxWidth="186px" src={personalFacts.ytTumbnail} />
-            </Row>
-          </div>
-        </Col>
+      <Row>
+        <TopBar>
+          <Badge style={{ maxHeight: `20px` }} variant="red">
+            {keyFacts.creatorType}
+          </Badge>
+          <Small>{`Last updated ${keyFacts.lastUpdated}`}</Small>
+        </TopBar>
+        <Image
+          style={{ width: `100%` }}
+          src={personalFacts.ytBanner}
+          alt="First slide"
+          thumbnail
+        />
+      </Row>
+      <Row>
+        <ContentTableCard>
+          <MarginSixteenPixels>
+            <H1HeroTitleLightRed>{personalFacts.name}</H1HeroTitleLightRed>
+            <KeyFactEntry key="Date Of Birth" value={personalFacts.dob} />
+            <KeyFactEntry key="BBBh" value={personalFacts.dob} />
+          </MarginSixteenPixels>
+        </ContentTableCard>
       </Row>
       <Row>
         <ListGroup variant="flush">
           <ContentTableCard>
-            <ListGroup.Item>
+            <ListGroup.Item style={{ padding: `16px` }}>
               <H1HeroTitleLightRed>{`${personalFacts.name}'s equipment`}</H1HeroTitleLightRed>
               <ul>
                 {usedEquipment.map((equip) => (
@@ -171,11 +153,13 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
         </ListGroup>
       </Row>
       {showSimilarCreator && (
-        <InfluencerGroup
-          popularInfluencers={similarCreators}
-          groupTitle="You may also want to look at"
-          groupSubTitle={`Similar creators to ${personalFacts.name}`}
-        />
+        <Suspense fallback={<Spinner animation="border" />}>
+          <InfluencerGroup
+            popularInfluencers={similarCreators}
+            groupTitle="You may also want to look at"
+            groupSubTitle={`Similar creators to ${personalFacts.name}`}
+          />
+        </Suspense>
       )}
     </ContainerConstrained>
   )

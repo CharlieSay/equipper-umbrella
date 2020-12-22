@@ -1,87 +1,87 @@
 {
-    "personalFacts": {
-        "name": "Wroteoshaw (W2S)",
-        "realName": "Harry Shaw",
-        "description": "lorem ipsum decorum sit amet.",
-        "dob": "24/08/96",
-        "ytBanner":"https://yt3.ggpht.com/y07Nvnv-iByaCNX8ubEvZuPEK6uW2sSOjFu80W30Q_BzMpbTScghWC3Or76JZn6XGe9UzUwm8g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
-        "ytTumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj",
-        "faceThumbnail": "https://static.wikia.nocookie.net/theultimatesidemen/images/7/7a/W2S.png/revision/latest/scale-to-width-down/310?cb=20200927112457"
-    },
-    "keyFacts": {
-        "activeSince": "Jan 2010",
-        "creatorType": "Vlogger",
-        "lastUpdated": "1 Minute ago",
-        "socialLinks": [
-            {
-                "socialNetwork": "youtube",
-                "link": "https://www.youtube.com/channel/UCZei-B_NaSRBFcLgUxx8zMA/"
-            }
-        ]
-    },
-    "usedEquipment": [
-        {
-            "friendlySectionName": "Cameras",
-            "anchor": "Cameras",
-            "equipment": [
-                {
-                    "friendlyName": "Canon Powershot G7X",
-                    "part": "Vlogging Camera",
-                    "thumbnail": "https://i.jessops.com/ce-images/PRODUCT/PRODUCT_REGULAR/ACANOCM095298480_003.jpg?image=600&blur",
-                    "affiliate": [
-                        {
-                            "vendor": "Amazon",
-                            "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "friendlySectionName": "Desktop / Computer",
-            "anchor": "desktop",
-            "equipment": [
-                {
-                    "friendlyName": "Intel Core i5-9400F 2.9 GHz 6-Core Processor",
-                    "part": "CPU",
-                    "thumbnail": "https://www.bhphotovideo.com/images/images150x150/1545154836000_1356633.jpg",
-                    "affiliate": [
-                        {
-                            "vendor": "Amazon",
-                            "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "similarCreators": [
-        {
-            "name": "Vikkstar123",
-            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
-            "link": "/influencers/vikkstar123",
-            "imgUrl": "https://yt3.ggpht.com/-GkxabB2r4Aw/AAAAAAAAAAI/AAAAAAAAAAA/rNwNMNQNcEI/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
-            "lastUpdatedBlurb": "60 Minutes ago"
-        },
-        {
-            "name": "Carli Bybel",
-            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
-            "link": "/influencers/carli-bybel",
-            "imgUrl": "https://yt3.ggpht.com/-n0IFDEsGM4g/AAAAAAAAAAI/AAAAAAAAAAA/RYuVWAoiR_U/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
-            "lastUpdatedBlurb": "8 days ago"
-        },
-        {
-            "name": "Jake Paul",
-            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
-            "link": "/influencers/jake-paul",
-            "imgUrl": "https://yt3.ggpht.com/-_z-GQp7DlaA/AAAAAAAAAAI/AAAAAAAAAAA/hPKjK-3CR5c/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
-            "lastUpdatedBlurb": "1 Minutes ago"
-        },
-        {
-            "name": "Vikkstar123",
-            "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
-            "link": "/influencers/vikkstar123",
-            "imgUrl": "https://yt3.ggpht.com/-GkxabB2r4Aw/AAAAAAAAAAI/AAAAAAAAAAA/rNwNMNQNcEI/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
-        }
+  "personalFacts": {
+    "name": "Wroteoshaw (W2S)",
+    "realName": "Harry Shaw",
+    "description": "lorem ipsum decorum sit amet.",
+    "dob": "24/08/96",
+    "ytBanner": "https://yt3.ggpht.com/y07Nvnv-iByaCNX8ubEvZuPEK6uW2sSOjFu80W30Q_BzMpbTScghWC3Or76JZn6XGe9UzUwm8g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+    "ytTumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj",
+    "faceThumbnail": "https://static.wikia.nocookie.net/theultimatesidemen/images/7/7a/W2S.png/revision/latest/scale-to-width-down/310?cb=20200927112457"
+  },
+  "keyFacts": {
+    "activeSince": "Jan 2010",
+    "creatorType": "Vlogger",
+    "lastUpdated": "1 minute ago",
+    "socialLinks": [
+      {
+        "socialNetwork": "youtube",
+        "link": "https://www.youtube.com/channel/UCZei-B_NaSRBFcLgUxx8zMA/"
+      }
     ]
+  },
+  "usedEquipment": [
+    {
+      "friendlySectionName": "Cameras",
+      "anchor": "Cameras",
+      "equipment": [
+        {
+          "friendlyName": "Canon Powershot G7X",
+          "part": "Vlogging Camera",
+          "thumbnail": "https://i.jessops.com/ce-images/PRODUCT/PRODUCT_REGULAR/ACANOCM095298480_003.jpg?image=600&blur",
+          "affiliate": [
+            {
+              "vendor": "Amazon",
+              "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "friendlySectionName": "Desktop / Computer",
+      "anchor": "desktop",
+      "equipment": [
+        {
+          "friendlyName": "Intel Core i5-9400F 2.9 GHz 6-Core Processor",
+          "part": "CPU",
+          "thumbnail": "https://www.bhphotovideo.com/images/images150x150/1545154836000_1356633.jpg",
+          "affiliate": [
+            {
+              "vendor": "Amazon",
+              "affiliateUrl": "http://www.amazon.co.uk/gp/product/B0117RGG8E/?tag=equippr-21"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "similarCreators": [
+    {
+      "name": "Vikkstar123",
+      "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+      "link": "/influencers/vikkstar123",
+      "imgUrl": "https://yt3.ggpht.com/-GkxabB2r4Aw/AAAAAAAAAAI/AAAAAAAAAAA/rNwNMNQNcEI/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "lastUpdatedBlurb": "60 Minutes ago"
+    },
+    {
+      "name": "Carli Bybel",
+      "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+      "link": "/influencers/carli-bybel",
+      "imgUrl": "https://yt3.ggpht.com/-n0IFDEsGM4g/AAAAAAAAAAI/AAAAAAAAAAA/RYuVWAoiR_U/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "lastUpdatedBlurb": "8 days ago"
+    },
+    {
+      "name": "Jake Paul",
+      "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+      "link": "/influencers/jake-paul",
+      "imgUrl": "https://yt3.ggpht.com/-_z-GQp7DlaA/AAAAAAAAAAI/AAAAAAAAAAA/hPKjK-3CR5c/s360-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "lastUpdatedBlurb": "1 Minutes ago"
+    },
+    {
+      "name": "Vikkstar123",
+      "description": "fasdfasdfasdf lorem ipsum decorum sit amet",
+      "link": "/influencers/vikkstar123",
+      "imgUrl": "https://yt3.ggpht.com/-GkxabB2r4Aw/AAAAAAAAAAI/AAAAAAAAAAA/rNwNMNQNcEI/s360-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    }
+  ]
 }

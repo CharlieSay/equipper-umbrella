@@ -26,3 +26,14 @@ export const ContentTableCard = styled.div`
   padding: 16px 32px 16px 16px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.01), 0 15px 12px rgba(0, 0, 0, 0.01);
 `
+
+export const TopBar = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: calc(${(props) => props.theme.defaultPadding} * 2);
+`
+
+export const MarginSixteenPixels = styled.div`
+  padding: 16px;
+`

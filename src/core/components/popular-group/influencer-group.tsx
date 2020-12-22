@@ -1,23 +1,23 @@
-import React from "react";
-import { InfluencerSearchModel } from "../../models/influencer-search.model";
+import React from 'react'
+import { InfluencerSearchModel } from '../../models/influencer-search.model'
 import {
   BaseUnitTopBottomPadding,
   DoubleBaseUnitTopBottomPadding,
-} from "../../style/containers.styles";
-import { H1HeroTitleLightRed, SubTitle } from "../../style/typography.styles";
-import InfluencerCard from "../influencer-card/influencer-card";
-import { Centered, Cards } from "../influencer-card/cards-styles";
+} from '../../style/containers.styles'
+import { H1HeroTitleLightRed, SubTitle } from '../../style/typography.styles'
+import InfluencerCard from '../influencer-card/influencer-card'
+import { Centered, Cards } from '../influencer-card/cards-styles'
 
-import "./influencer-group.scss";
+import './influencer-group.scss'
 
 interface InfluencerGroupProps {
-  groupTitle?: string;
-  groupSubTitle?: string;
-  popularInfluencers: InfluencerSearchModel[];
+  groupTitle?: string
+  groupSubTitle?: string
+  popularInfluencers: InfluencerSearchModel[]
 }
 
 const InfluencerGroup = (props: InfluencerGroupProps) => {
-  const { groupTitle, groupSubTitle, popularInfluencers } = props;
+  const { groupTitle, groupSubTitle, popularInfluencers } = props
 
   return (
     <>
@@ -33,7 +33,7 @@ const InfluencerGroup = (props: InfluencerGroupProps) => {
         </Cards>
       </Centered>
     </>
-  );
-};
+  )
+}
 
-export default InfluencerGroup;
+export default InfluencerGroup
