@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const H1HeroTitle = styled.h1`
   font-size: 2.2rem;
   font-weight: 600;
-  color: ${(props) => props.theme.grey};
+  color: ${(props) => props.theme.black};
 `
 export const H1HeroTitleLightRed = styled(H1HeroTitle)`
   color: ${(props) => props.theme.lightRed};

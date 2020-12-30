@@ -14,17 +14,18 @@ import {
 } from '../../core/style/containers.styles'
 import {
   EquipmentCard,
-  ContentTableCard,
   TopBar,
   PFriendlyEquipmentName,
-  MarginSixteenPixels,
+  KeyFactsKey,
+  KeyFactsValue,
+  KeyFactsCard,
 } from './influencer-page-styles'
 import {
   ALinkSmall,
   Small,
   H1HeroTitleLightRed,
   H2TitleLightRed,
-  PBold,
+  H1HeroTitle,
 } from '../../core/style/typography.styles'
 
 import ImageCom from '../../core/components/image/image'
@@ -39,12 +40,12 @@ const SmallPrint = styled.small`
   color: ${(props) => props.theme.darkBlue};
 `
 
-const KeyFactEntry = (props: { key: string; value: string }) => {
-  const { key, value } = props
+const KeyFactEntry = (props: { title: string; value: string }) => {
+  const { title, value } = props
   return (
     <Row>
-      <PBold>{key}</PBold>
-      <PBold style={{ paddingLeft: `8px` }}> {value}</PBold>
+      <KeyFactsKey>{title}</KeyFactsKey>
+      <KeyFactsValue style={{ paddingLeft: `8px` }}> {value}</KeyFactsValue>
     </Row>
   )
 }
@@ -70,34 +71,27 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
           thumbnail
         />
       </Row>
+      <KeyFactsCard>
+        <Row>
+          <Col style={{ width: `48%`, margin: `0` }}>
+            <H1HeroTitle>{`${personalFacts.name}`}</H1HeroTitle>
+            <KeyFactEntry
+              title="Description"
+              value={personalFacts.description}
+            />
+            <KeyFactEntry title="Real Name" value={personalFacts.realName} />
+            <KeyFactEntry title="Date Of Birth" value={personalFacts.dob} />
+            <KeyFactEntry title="Active Since" value={keyFacts.activeSince} />
+            <KeyFactEntry title="Last Updated" value={keyFacts.lastUpdated} />
+          </Col>
+
+          <Col style={{ width: `48%`, margin: `0` }}>
+            <Image src={personalFacts.ytTumbnail} alt="First slide" thumbnail />
+          </Col>
+        </Row>
+      </KeyFactsCard>
       <Row>
-        <ContentTableCard>
-          <MarginSixteenPixels>
-            <H1HeroTitleLightRed>{personalFacts.name}</H1HeroTitleLightRed>
-            <KeyFactEntry key="Date Of Birth" value={personalFacts.dob} />
-            <KeyFactEntry key="BBBh" value={personalFacts.dob} />
-          </MarginSixteenPixels>
-        </ContentTableCard>
-      </Row>
-      <Row>
-        <ListGroup variant="flush">
-          <ContentTableCard>
-            <ListGroup.Item style={{ padding: `16px` }}>
-              <H1HeroTitleLightRed>{`${personalFacts.name}'s equipment`}</H1HeroTitleLightRed>
-              <ul>
-                {usedEquipment.map((equip) => (
-                  <li key={equip.friendlySectionName}>
-                    <a
-                      style={{ color: ' #283747', fontWeight: 'bold' }}
-                      href={`#${equip.anchor.toLowerCase()}`}
-                    >
-                      {`${equip.friendlySectionName}`}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </ListGroup.Item>
-          </ContentTableCard>
+        <ListGroup style={{ width: `100%` }}>
           {usedEquipment.map((equipmentVal) => (
             <EquipmentCard
               key={equipmentVal.friendlySectionName}
@@ -128,7 +122,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                             variant="gray"
                             target="_blank"
                           >
-                            Click to buy from {affiliateSingular.vendor}
+                            Buy on {affiliateSingular.vendor}
                           </Button>
                         ))}
                         <Row>
