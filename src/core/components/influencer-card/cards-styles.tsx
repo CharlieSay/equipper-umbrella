@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Cards = styled.section`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const Centered = styled.div`
