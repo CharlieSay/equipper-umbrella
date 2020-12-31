@@ -1,58 +1,65 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import { Button, Form } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
-import queryString from "query-string";
+import { Button, Form } from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
+import queryString from 'query-string'
 import {
   ContainerConstrained,
   BaseUnitTopBottomPadding,
-} from "../../core/style/containers.styles";
-import { H1HeroTitle } from "../../core/style/typography.styles";
+} from '../../core/style/containers.styles'
+import {
+  H1HeroTitleLightRed,
+  H2TitleLightRed,
+} from '../../core/style/typography.styles'
 
 const SubmitPage = () => {
-  const [validated, setValidated] = useState(false);
-  const prefillFormData = queryString.parse(useLocation().search);
+  const [validated, setValidated] = useState(false)
+  const prefillFormData = queryString.parse(useLocation().search)
 
   const handleSubmit = (event: React.SyntheticEvent) => {
-    event.preventDefault();
+    event.preventDefault()
     const target = event.target as typeof event.target & {
-      formGridName: { value: string };
-      formGridEquipmentName: { value: string };
-      formGridEquipmentEvidence: { value: string };
-      formGridDetails: { value: string };
-    };
+      formGridName: { value: string }
+      formGridEquipmentName: { value: string }
+      formGridEquipmentEvidence: { value: string }
+      formGridDetails: { value: string }
+    }
     const builtFormSubmission = {
       influencerName: target.formGridName.value, // typechecks!
       equipmentName: target.formGridEquipmentName.value,
       equipmentEvidence: target.formGridEquipmentEvidence.value,
       equipmentDetails: target.formGridDetails.value,
-    };
+    }
     // eslint-disable-next-line no-console
-    console.log(builtFormSubmission);
+    console.log(builtFormSubmission)
     // Post to API here.
-    setValidated(true);
-  };
+    setValidated(true)
+  }
 
   return (
     <ContainerConstrained>
-      <H1HeroTitle>Let us know what to update</H1HeroTitle>
+      <H1HeroTitleLightRed>Let us know what to update</H1HeroTitleLightRed>
       <BaseUnitTopBottomPadding>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Group controlId="formGridName">
-            <Form.Label>Influencer Name</Form.Label>
+            <Form.Label>
+              <H2TitleLightRed>Influencer Name</H2TitleLightRed>
+            </Form.Label>
             <Form.Control
               placeholder="Vikkstar, Molly Mae..."
               defaultValue={
                 prefillFormData.influencerName
                   ? prefillFormData.influencerName
-                  : ""
+                  : ''
               }
               required
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
           <Form.Group controlId="formGridEquipmentName">
-            <Form.Label>Equipment Name</Form.Label>
+            <Form.Label>
+              <H2TitleLightRed>Equipment Name</H2TitleLightRed>
+            </Form.Label>
             <Form.Control
               type="equipment"
               placeholder="Canon Powershot G7X..."
@@ -60,12 +67,14 @@ const SubmitPage = () => {
               defaultValue={
                 prefillFormData.equipmentName
                   ? prefillFormData.equipmentName
-                  : ""
+                  : ''
               }
             />
           </Form.Group>
           <Form.Group controlId="formGridEquipmentEvidence">
-            <Form.Label>Evidence of equipment</Form.Label>
+            <Form.Label>
+              <H2TitleLightRed>Evidence of equipment</H2TitleLightRed>
+            </Form.Label>
             <Form.Control
               type="equipment"
               placeholder="YouTube link, instagram link etc..."
@@ -73,7 +82,9 @@ const SubmitPage = () => {
             />
           </Form.Group>
           <Form.Group controlId="formGridDetails">
-            <Form.Label>Details</Form.Label>
+            <Form.Label>
+              <H2TitleLightRed>Details</H2TitleLightRed>
+            </Form.Label>
             <Form.Control as="textarea" rows={3} />
           </Form.Group>
           <Button variant="red" type="submit">
@@ -82,7 +93,7 @@ const SubmitPage = () => {
         </Form>
       </BaseUnitTopBottomPadding>
     </ContainerConstrained>
-  );
-};
+  )
+}
 
-export default SubmitPage;
+export default SubmitPage
