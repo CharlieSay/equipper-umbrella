@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { PBold, Small } from '../../core/style/typography.styles'
+import { PBold } from '../../core/style/typography.styles'
 
 export const EquipmentCard = styled.div`
   background-color: white;
@@ -13,10 +13,6 @@ export const EquipmentCard = styled.div`
     padding: 16px;
     text-align: center;
   }
-`
-
-export const Description = styled(Small)`
-  line-height: 6px;
 `
 
 export const WideCard = styled(EquipmentCard)`

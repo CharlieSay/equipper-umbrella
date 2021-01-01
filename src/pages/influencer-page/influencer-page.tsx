@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row'
 import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 import { Badge, Spinner } from 'react-bootstrap'
+import TextWithSeeMore from '../../core/components/text/see-more'
+import Disclaimer from '../../core/components/text/disclaimer'
 import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
@@ -17,7 +19,6 @@ import {
   KeyFactsKey,
   KeyFactsValue,
   WideCard,
-  Description,
   SmallPrint,
 } from './influencer-page-styles'
 import {
@@ -90,7 +91,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
         </Row>
         <Row>
           <Col>
-            <Description>{personalFacts.description}</Description>
+            <TextWithSeeMore text={personalFacts.description} limit={100} />
           </Col>
         </Row>
       </WideCard>
@@ -158,6 +159,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
           />
         </Suspense>
       )}
+      <Disclaimer />
     </ContainerConstrained>
   )
 }
