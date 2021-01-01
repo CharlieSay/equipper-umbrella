@@ -1,30 +1,32 @@
-import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import React from 'react'
+import { Button, Col, Row } from 'react-bootstrap'
 import {
   WideCard,
   Cards,
-} from "../../core/components/influencer-card/cards-styles";
+} from '../../core/components/influencer-card/cards-styles'
 
-import { ContainerConstrained } from "../../core/style/containers.styles";
+import { ContainerConstrained } from '../../core/style/containers.styles'
 import {
   ALinkSmall,
-  H1HeroTitle,
-  H2Title,
+  H1HeroTitleLightRed,
+  H2TitlePurple,
   PNormal,
   PBold,
-} from "../../core/style/typography.styles";
+} from '../../core/style/typography.styles'
 
-import getPopularGear from "../../hooks/popular-gear-hooks";
+import getPopularGear from '../../hooks/popular-gear-hooks'
 
 const CommonGearPage = () => {
-  const popularGear = getPopularGear();
+  const popularGear = getPopularGear()
 
   return (
     <ContainerConstrained>
-      <H1HeroTitle>Popular Gear</H1HeroTitle>
+      <H1HeroTitleLightRed>Popular Gear</H1HeroTitleLightRed>
       {popularGear.map((section) => (
         <Row key={`${section.anchor}`} id={section.anchor}>
-          <H2Title>{section.friendlySectionName}</H2Title>
+          <Row style={{ width: `100%` }}>
+            <H2TitlePurple>{section.friendlySectionName}</H2TitlePurple>
+          </Row>
           <Cards>
             {section.equipment.map((equipment) => (
               <WideCard key={equipment.friendlyName}>
@@ -36,7 +38,7 @@ const CommonGearPage = () => {
                   <Col>
                     <PNormal>{`${equipment.part}`}</PNormal>
                     <PBold>{` ${equipment.friendlyName}`}</PBold>
-                    <div style={{ marginBottom: "8px" }}>
+                    <div style={{ marginBottom: '8px' }}>
                       <div>
                         <PNormal>Used by</PNormal>
                       </div>
@@ -48,7 +50,7 @@ const CommonGearPage = () => {
                             href={`/influencer/${influencer.link}`}
                           >
                             {`${influencer.displayName}${
-                              i === equipment.usedBy.length - 1 ? "" : ","
+                              i === equipment.usedBy.length - 1 ? '' : ','
                             } `}
                           </ALinkSmall>
                         ))}
@@ -63,7 +65,7 @@ const CommonGearPage = () => {
                     variant="gray"
                     target="_blank"
                   >
-                    Click to buy from {affiliateSingular.vendor}
+                    Buy on {affiliateSingular.vendor}
                   </Button>
                 ))}
               </WideCard>
@@ -72,7 +74,7 @@ const CommonGearPage = () => {
         </Row>
       ))}
     </ContainerConstrained>
-  );
-};
+  )
+}
 
-export default CommonGearPage;
+export default CommonGearPage
