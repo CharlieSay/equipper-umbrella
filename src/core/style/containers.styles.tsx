@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: block;
@@ -7,7 +7,7 @@ export const Container = styled.div`
   position: relative;
   padding-top: 16px;
   padding-bottom: 16px;
-`;
+`
 
 export const ContainerConstrained = styled(Container)`
   margin: 0 auto 72px;
@@ -21,23 +21,29 @@ export const ContainerConstrained = styled(Container)`
   @media (min-width: (360px) + (32px)) {
     margin: 0 auto 48px;
   }
-`;
+`
 
 export const ContainerFixedWide = styled(Container)`
   margin: 0 auto 72px;
   width: 1224px;
-`;
+`
 
 export const BaseUnitTopBottomPadding = styled.div`
   padding-top: 8px;
   padding-bottom: 8px;
-`;
+`
 
 export const DoubleBaseUnitTopBottomPadding = styled.div`
   padding-top: 8px;
   padding-bottom: 8px;
-`;
+`
 
 export const Flex = styled.div`
   display: flex;
-`;
+`
+
+export const MiddleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

@@ -23,6 +23,11 @@
       "value": "Harry Shaw"
     },
     {
+      "identifier": "shortDec",
+      "fact": "summary",
+      "value": "lorem ipsum decorum sit amet."
+    },
+    {
       "identifier": "activeSince",
       "fact": "Active Since",
       "value": "Jan 2010"
@@ -32,12 +37,7 @@
       "fact": "Last Updated",
       "value": "1 Minute ago"
     },
-    { "identifier": "dob", "fact": "Date Of Birth", "value": "24/08/96" },
-    {
-      "identifier": "shortDec",
-      "fact": "summary",
-      "value": "lorem ipsum decorum sit amet."
-    }
+    { "identifier": "dob", "fact": "Date Of Birth", "value": "24/08/96" }
   ],
   "usedEquipment": [
     {

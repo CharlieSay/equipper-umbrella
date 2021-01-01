@@ -9,6 +9,7 @@ import CategoryPage from './pages/category-page/category-page'
 import SearchPage from './pages/search-page/search'
 import SubmitPage from './pages/submit-page/submit-page'
 import PopularGearPage from './pages/popular-gear/popular-gear-page'
+import DisclaimerPage from './pages/utility-pages/disclaimer/disclaimer-page'
 
 const Routes = () => (
   <BrowserRouter>
@@ -48,6 +49,12 @@ const Routes = () => (
         path="/submit"
         component={SubmitPage}
         pageData={{ title: 'Submit' }}
+      />
+      <PageRoute
+        exact
+        path="/disclaimer"
+        component={DisclaimerPage}
+        pageData={{ title: 'Disclaimer' }}
       />
       <PageRoute component={NotFound} pageData={{ title: 'Not Found' }} />
     </Switch>

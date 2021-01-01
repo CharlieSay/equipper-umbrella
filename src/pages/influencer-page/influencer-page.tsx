@@ -91,7 +91,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
         </Row>
         <Row>
           <Col>
-            <TextWithSeeMore text={personalFacts.description} limit={100} />
+            <TextWithSeeMore text={personalFacts.description} limit={200} />
           </Col>
         </Row>
       </WideCard>
