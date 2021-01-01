@@ -10,8 +10,6 @@ import {
   Image,
 } from './cards-styles'
 
-import ImageCom from '../image/image'
-
 interface CardType {
   influencer: InfluencerSearchModel
   key: string

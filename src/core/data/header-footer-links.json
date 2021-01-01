@@ -1,89 +1,99 @@
 {
-    "header": [
+  "header": [
+    {
+      "displayText": "Home",
+      "stem": "/"
+    },
+    {
+      "displayText": "Popular Influencers",
+      "stem": "/search",
+      "params": "?sort=popular"
+    },
+    {
+      "displayText": "Popular Gear",
+      "stem": "/popular-gear"
+    },
+    {
+      "displayText": "Add a new influencer",
+      "stem": "/submit",
+      "params": "?newInfluencer=true"
+    }
+  ],
+  "footer": [
+    {
+      "displayText": "Popular Influencers",
+      "stem": "/",
+      "subHeaders": [
         {
-            "displayText": "Home",
-            "stem": "/"
+          "displayText": "Logan Paul",
+          "stem": "/influencers/jake-paul"
         },
         {
-            "displayText": "Popular Influencers",
-            "stem": "/search",
-            "params":"?sort=popular"
+          "displayText": "KSI",
+          "stem": "/influencers/ksi"
         },
         {
-            "displayText": "Popular Gear",
-            "stem": "/popular-gear"
+          "displayText": "Pewdiepie",
+          "stem": "/influencers/pewdiepie"
+        },
+        {
+          "displayText": "James Charles",
+          "stem": "/influencers/james-charles"
         }
-    ],
-    "footer": [
+      ]
+    },
+    {
+      "displayText": "Categories",
+      "stem": "/categories",
+      "subHeaders": [
         {
-            "displayText": "Popular Influencers",
-            "stem": "/",
-            "subHeaders": [
-                {
-                    "displayText": "Logan Paul",
-                    "stem": "/influencers/jake-paul"
-                },
-                {
-                    "displayText": "KSI",
-                    "stem": "/influencers/ksi"
-                },
-                {
-                    "displayText": "Pewdiepie",
-                    "stem": "/influencers/pewdiepie"
-                },
-                {
-                    "displayText": "James Charles",
-                    "stem": "/influencers/james-charles"
-                }
-            ]
+          "displayText": "Vloggers",
+          "stem": "/category/vloggers"
         },
         {
-            "displayText": "Categories",
-            "stem": "/categories",
-            "subHeaders": [
-                {
-                    "displayText": "Vloggers",
-                    "stem": "/category/vloggers"
-                },
-                {
-                    "displayText": "Gamers",
-                    "stem": "/category/gamers"
-                },
-                {
-                    "displayText": "Beauty",
-                    "stem": "/category/beauty"
-                },
-                {
-                    "displayText": "Lifestyle",
-                    "stem": "/category/lifestyle"
-                },
-                {
-                    "displayText": "Podcasts",
-                    "stem": "/category/podcasts"
-                }
-            ]
+          "displayText": "Gamers",
+          "stem": "/category/gamers"
         },
         {
-            "displayText": "Help",
-            "stem": "/help",
-            "subHeaders": [
-                {
-                    "displayText": "Contact us",
-                    "stem": "/help/contact"
-                },
-                {
-                    "displayText": "FAQ",
-                    "stem": "/help/faq"
-                },
-                {
-                    "displayText": "Privacy Policy",
-                    "stem": "/privacy-policy"
-                },
-                {
-                    "displayText": "About us",
-                    "stem": "/about-us"
-                }
-            ]
+          "displayText": "Beauty",
+          "stem": "/category/beauty"
+        },
+        {
+          "displayText": "Lifestyle",
+          "stem": "/category/lifestyle"
+        },
+        {
+          "displayText": "Podcasts",
+          "stem": "/category/podcasts"
         }
-    ]
+      ]
+    },
+    {
+      "displayText": "Help",
+      "stem": "/help",
+      "subHeaders": [
+        {
+          "displayText": "Add a new influencer",
+          "stem": "/submit",
+          "params": "?newInfluencer=true"
+        },
+        {
+          "displayText": "Contact us",
+          "stem": "/help/contact"
+        },
+        {
+          "displayText": "FAQ",
+          "stem": "/help/faq"
+        },
+        {
+          "displayText": "Privacy Policy",
+          "stem": "/privacy-policy"
+        },
+        {
+          "displayText": "About us",
+          "stem": "/about-us"
+        }
+      ]
+    }
+  ]
 }

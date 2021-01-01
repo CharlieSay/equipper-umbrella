@@ -7,7 +7,10 @@ import {
   ContainerConstrained,
   BaseUnitTopBottomPadding,
 } from '../../core/style/containers.styles'
-import { H2TitleLightRed, HeroTitle } from '../../core/style/typography.styles'
+import {
+  H2TitleLightRed,
+  H1HeroTitle,
+} from '../../core/style/typography.styles'
 
 const SubmitPage = () => {
   const [validated, setValidated] = useState(false)
@@ -16,8 +19,8 @@ const SubmitPage = () => {
   const { newInfluencer } = prefillFormData
 
   const formTitle = newInfluencer
-    ? 'handleSubmitForNew'
-    : 'handleSubmitForUpdate'
+    ? 'Submit new influencer'
+    : 'Update details of influencer'
 
   const handleSubmitForNew = (event: React.SyntheticEvent) => {
     event.preventDefault()
@@ -71,7 +74,7 @@ const SubmitPage = () => {
 
   return (
     <ContainerConstrained>
-      <HeroTitle>{formTitle}</HeroTitle>
+      <H1HeroTitle>{formTitle}</H1HeroTitle>
       <BaseUnitTopBottomPadding>
         <Form
           noValidate
@@ -97,7 +100,9 @@ const SubmitPage = () => {
             return (
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridEquipmentName">
-                  <Form.Label>Equipment Name</Form.Label>
+                  <Form.Label>
+                    <H2TitleLightRed>Equipment Name</H2TitleLightRed>
+                  </Form.Label>
                   <Form.Control
                     type="equipment"
                     placeholder="Canon Powershot G7X..."
@@ -110,11 +115,16 @@ const SubmitPage = () => {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridEquipmentEvidence">
-                  <Form.Label>Evidence of equipment</Form.Label>
-                  <Form.Control type="equipment" />
+                  <Form.Label>
+                    <H2TitleLightRed>Evidence of equipment</H2TitleLightRed>
+                  </Form.Label>
+                  <Form.Control
+                    type="equipment"
+                    placeholder="YouTube link, instgram link etc..."
+                  />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridEquipmentEvidence">
-                  <Form.Control>
+                  <div style={{ paddingTop: `43px` }}>
                     <Button
                       variant="red"
                       style={{ height: `38px` }}
@@ -125,11 +135,12 @@ const SubmitPage = () => {
                     <Button
                       variant="red"
                       style={{ height: `38px` }}
+                      disabled={newEquipmentRowCount === 1}
                       onClick={handleRemoveLine}
                     >
                       -
                     </Button>
-                  </Form.Control>
+                  </div>
                 </Form.Group>
               </Form.Row>
             )
