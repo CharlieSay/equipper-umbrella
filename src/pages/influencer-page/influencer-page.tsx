@@ -76,7 +76,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
       </Row>
       <WideCard>
         <Row>
-          <Col style={{ width: `48%`, margin: `0` }}>
+          <Col style={{ width: `100%`, margin: `0` }}>
             <H1HeroTitle>{`${personalFacts.name}`}</H1HeroTitle>
             {keyFacts.map((keyFact) => (
               <KeyFactEntry
@@ -85,9 +85,9 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
               />
             ))}
           </Col>
-          <Col style={{ width: `48%`, margin: `0` }}>
+          {/* <Col style={{ width: `48%`, margin: `0` }}>
             <Image src={media.ytTumbnail} alt="First slide" thumbnail />
-          </Col>
+          </Col> */}
         </Row>
         <Row>
           <Col>
