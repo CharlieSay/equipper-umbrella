@@ -1,24 +1,44 @@
 {
   "personalFacts": {
     "name": "Wroteoshaw (W2S)",
-    "realName": "Harry Shaw",
-    "description": "lorem ipsum decorum sit amet.",
-    "dob": "24/08/96",
-    "ytBanner": "https://yt3.ggpht.com/y07Nvnv-iByaCNX8ubEvZuPEK6uW2sSOjFu80W30Q_BzMpbTScghWC3Or76JZn6XGe9UzUwm8g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
-    "ytTumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj",
-    "faceThumbnail": "https://static.wikia.nocookie.net/theultimatesidemen/images/7/7a/W2S.png/revision/latest/scale-to-width-down/310?cb=20200927112457"
-  },
-  "keyFacts": {
-    "activeSince": "Jan 2010",
     "creatorType": "Vlogger",
-    "lastUpdated": "1 minute ago",
+    "lastUpdated": "1 Minute ago",
     "socialLinks": [
       {
         "socialNetwork": "youtube",
         "link": "https://www.youtube.com/channel/UCZei-B_NaSRBFcLgUxx8zMA/"
       }
-    ]
+    ],
+    "description": "Harry was born in Alderney - one of the Channel Islands - and lived there until his family moved to Guernsey in 2004. He has a younger brother, Josh, and a younger sister, Rosie. They all attended Guernsey Grammar School. The Sidemen often use the Guernsey stereotype as a joke against Harry, regularly referring to him as inbred and having an incestuous relationship with his family."
   },
+  "media": {
+    "ytBanner": "https://yt3.ggpht.com/y07Nvnv-iByaCNX8ubEvZuPEK6uW2sSOjFu80W30Q_BzMpbTScghWC3Or76JZn6XGe9UzUwm8g=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+    "ytTumbnail": "https://yt3.ggpht.com/a/AATXAJwsR7GaxBZRnb3t0VUoD7uWovLxUcfrLAYLHPobvA=s176-c-k-c0x00ffffff-no-rj",
+    "faceThumbnail": "https://static.wikia.nocookie.net/theultimatesidemen/images/7/7a/W2S.png/revision/latest/scale-to-width-down/310?cb=20200927112457"
+  },
+  "keyFacts": [
+    {
+      "identifier": "realName",
+      "fact": "Real Name",
+      "value": "Harry Shaw"
+    },
+    {
+      "identifier": "activeSince",
+      "fact": "Active Since",
+      "value": "Jan 2010"
+    },
+    {
+      "identifier": "lastUpdated",
+      "fact": "Last Updated",
+      "value": "1 Minute ago"
+    },
+    { "identifier": "dob", "fact": "Date Of Birth", "value": "24/08/96" },
+    {
+      "identifier": "shortDec",
+      "fact": "summary",
+      "value": "lorem ipsum decorum sit amet."
+    }
+  ],
   "usedEquipment": [
     {
       "friendlySectionName": "Cameras",

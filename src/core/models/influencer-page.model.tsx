@@ -1,55 +1,60 @@
-import { InfluencerSearchModel } from "./influencer-search.model";
+import { InfluencerSearchModel } from './influencer-search.model'
 
 export interface InfluencerPageModel {
-  personalFacts: PersonalFacts;
-  keyFacts: KeyFacts;
-  usedEquipment: UsedEquipment[];
-  similarCreators: InfluencerSearchModel[];
+  personalFacts: PersonalFacts
+  media: Media
+  keyFacts: KeyFact[]
+  usedEquipment: UsedEquipment[]
+  similarCreators: InfluencerSearchModel[]
 }
 
-export interface KeyFacts {
-  activeSince: string;
-  creatorType: string;
-  lastUpdated: string;
-  socialLinks: SocialLinks[];
+export interface KeyFact {
+  identifier: string
+  fact: string
+  value: string
 }
 
-export interface SocialLinks {
-  socialNetwork: string;
-  link: string;
+export interface Media {
+  ytBanner: string
+  ytTumbnail: string
+  faceThumbnail: string
 }
 
 export interface PersonalFacts {
-  name: string;
-  realName: string;
-  description: string;
-  dob: string;
-  ytTumbnail: string;
-  ytBanner: string;
-  faceThumbnail: string;
+  name: string
+  creatorType: string
+  lastUpdated: string
+  description: string
+  socialLinks: SocialLink[]
+}
+
+export interface SocialLink {
+  socialNetwork: string
+  link: string
 }
 
 export interface SimilarCreator {
-  creatorName: string;
-  creatorType: string;
-  link: string;
-  thumbnail: string;
+  name: string
+  description: string
+  link: string
+  imgUrl: string
+  lastUpdatedBlurb?: string
 }
 
 export interface UsedEquipment {
-  friendlySectionName: string;
-  anchor: string;
-  equipment: Equipment[];
+  friendlySectionName: string
+  anchor: string
+  equipment: Equipment[]
 }
 
 export interface Equipment {
-  friendlyName: string;
-  part: string;
-  thumbnail: string;
-  affiliate: Affiliate[];
+  friendlyName: string
+  part: string
+  thumbnail: string
+  affiliate: Affiliate[]
 }
 
 export interface Affiliate {
-  vendor: string;
-  affiliateUrl: string;
+  vendor: string
+  affiliateUrl: string
 }

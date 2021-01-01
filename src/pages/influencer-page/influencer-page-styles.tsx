@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { PBold } from '../../core/style/typography.styles'
+import { PBold, Small } from '../../core/style/typography.styles'
 
 export const EquipmentCard = styled.div`
   background-color: white;
@@ -15,7 +15,11 @@ export const EquipmentCard = styled.div`
   }
 `
 
-export const KeyFactsCard = styled(EquipmentCard)`
+export const Description = styled(Small)`
+  line-height: 6px;
+`
+
+export const WideCard = styled(EquipmentCard)`
   width: 100%;
 `
 
@@ -50,4 +54,8 @@ export const TopBar = styled.div`
 
 export const MarginSixteenPixels = styled.div`
   padding: 16px;
+`
+
+export const SmallPrint = styled.small`
+  color: ${(props) => props.theme.darkBlue};
 `

@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
-import styled from 'styled-components'
 import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 import { Badge, Spinner } from 'react-bootstrap'
@@ -13,21 +12,22 @@ import {
   ContainerConstrained,
 } from '../../core/style/containers.styles'
 import {
-  EquipmentCard,
   TopBar,
   PFriendlyEquipmentName,
   KeyFactsKey,
   KeyFactsValue,
-  KeyFactsCard,
+  WideCard,
+  Description,
+  SmallPrint,
 } from './influencer-page-styles'
 import {
   ALinkSmall,
-  Small,
   H1HeroTitleLightRed,
   H2TitleLightRed,
   H1HeroTitle,
+  Small,
 } from '../../core/style/typography.styles'
-
+import convertToTitleCase from '../../utils/format-utils'
 import ImageCom from '../../core/components/image/image'
 
 import getInfluencerPageData from '../../hooks/influencer-page-hooks'
@@ -35,10 +35,6 @@ import InfluencerPageLoading from './influencer-page-loading'
 import { InfluencerPageModel } from '../../core/models/influencer-page.model'
 import InfluencerGroup from '../../core/components/popular-group/influencer-group'
 import './influencer-page.scss'
-
-const SmallPrint = styled.small`
-  color: ${(props) => props.theme.darkBlue};
-`
 
 const KeyFactEntry = (props: { title: string; value: string }) => {
   const { title, value } = props
@@ -51,7 +47,13 @@ const KeyFactEntry = (props: { title: string; value: string }) => {
 }
 
 const InfluencerPageInternal = (props: InfluencerPageModel) => {
-  const { personalFacts, keyFacts, usedEquipment, similarCreators } = props
+  const {
+    personalFacts,
+    keyFacts,
+    usedEquipment,
+    media,
+    similarCreators,
+  } = props
 
   const showSimilarCreator = similarCreators.length >= 3
 
@@ -60,45 +62,46 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
       <Row>
         <TopBar>
           <Badge style={{ maxHeight: `20px` }} variant="red">
-            {keyFacts.creatorType}
+            {personalFacts.creatorType}
           </Badge>
-          <Small>{`Last updated ${keyFacts.lastUpdated}`}</Small>
+          <Small>{`Last updated ${personalFacts.lastUpdated}`}</Small>
         </TopBar>
         <Image
           style={{ width: `100%` }}
-          src={personalFacts.ytBanner}
+          src={media.ytBanner}
           alt="First slide"
           thumbnail
         />
       </Row>
-      <KeyFactsCard>
+      <WideCard>
         <Row>
           <Col style={{ width: `48%`, margin: `0` }}>
             <H1HeroTitle>{`${personalFacts.name}`}</H1HeroTitle>
-            <KeyFactEntry
-              title="Description"
-              value={personalFacts.description}
-            />
-            <KeyFactEntry title="Real Name" value={personalFacts.realName} />
-            <KeyFactEntry title="Date Of Birth" value={personalFacts.dob} />
-            <KeyFactEntry title="Active Since" value={keyFacts.activeSince} />
-            <KeyFactEntry title="Last Updated" value={keyFacts.lastUpdated} />
+            {keyFacts.map((keyFact) => (
+              <KeyFactEntry
+                title={convertToTitleCase(keyFact.fact)}
+                value={keyFact.value}
+              />
+            ))}
           </Col>
-
           <Col style={{ width: `48%`, margin: `0` }}>
-            <Image src={personalFacts.ytTumbnail} alt="First slide" thumbnail />
+            <Image src={media.ytTumbnail} alt="First slide" thumbnail />
           </Col>
         </Row>
-      </KeyFactsCard>
+        <Row>
+          <Col>
+            <Description>{personalFacts.description}</Description>
+          </Col>
+        </Row>
+      </WideCard>
       <Row>
         <ListGroup style={{ width: `100%` }}>
           {usedEquipment.map((equipmentVal) => (
-            <EquipmentCard
+            <WideCard
               key={equipmentVal.friendlySectionName}
-              id={`${equipmentVal.anchor}`}
-              style={{ justifyContent: 'center' }}
+              id={`${equipmentVal.anchor.toLowerCase()}`}
             >
-              <ListGroup.Item>
+              <ListGroup.Item style={{ padding: `8px` }}>
                 <H1HeroTitleLightRed>
                   {equipmentVal.friendlySectionName}
                 </H1HeroTitleLightRed>
@@ -142,7 +145,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                   </div>
                 ))}
               </ListGroup.Item>
-            </EquipmentCard>
+            </WideCard>
           ))}
         </ListGroup>
       </Row>
