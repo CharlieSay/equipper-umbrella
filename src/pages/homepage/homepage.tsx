@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import InfluencerGroup from "../../core/components/popular-group/influencer-group";
-import SearchForm from "../../core/components/search-form/search-form";
-import { H1HeroTitleLightRed } from "../../core/style/typography.styles";
-import { ContainerConstrained } from "../../core/style/containers.styles";
+import React from 'react'
+import styled from 'styled-components'
+import InfluencerGroup from '../../core/components/popular-group/influencer-group'
+import SearchForm from '../../core/components/search-form/search-form'
+import { H1HeroTitleLightRed } from '../../core/style/typography.styles'
+import { ContainerConstrained } from '../../core/style/containers.styles'
 
-import popularInfluecers from "../../core/data/homepage-popular-data.json";
-import { CardAsDiv } from "../../core/components/influencer-card/cards-styles";
+import popularInfluecers from '../../core/data/homepage-popular-data.json'
+import { CardAsDiv } from '../../core/components/influencer-card/cards-styles'
 
 const HeroTextAligner = styled.div`
   display: flex;
@@ -14,15 +14,15 @@ const HeroTextAligner = styled.div`
   padding: 20px;
   flex-direction: column;
   text-align: center;
-`;
+`
 
 const HomePage = () => {
   // eslint-disable-next-line no-console
   console.log(
     process.env.REACT_APP_MONGO_DB_P
       ? process.env.REACT_APP_MONGO_DB_P
-      : "No MongoDB VAR"
-  );
+      : 'No MongoDB VAR',
+  )
   return (
     <ContainerConstrained>
       <CardAsDiv>
@@ -30,7 +30,7 @@ const HomePage = () => {
           <H1HeroTitleLightRed>
             So who is your favourite influencer?
           </H1HeroTitleLightRed>
-          <SearchForm maxWidth={600} />
+          <SearchForm />
         </HeroTextAligner>
       </CardAsDiv>
       <InfluencerGroup
@@ -39,7 +39,7 @@ const HomePage = () => {
         popularInfluencers={popularInfluecers}
       />
     </ContainerConstrained>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

@@ -1,6 +1,7 @@
 import React from 'react'
 import queryString from 'query-string'
 import { useLocation } from 'react-router-dom'
+import styled from 'styled-components'
 import getSearch from '../../hooks/search-hooks'
 import {
   BaseUnitTopBottomPadding,
@@ -57,6 +58,14 @@ const Search = () => {
   )
 }
 
+const HeroTextAligner = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  text-align: center;
+`
+
 const SearchWrapper = () => {
   const queryFromStorage = queryString.parse(useLocation().search)
   const queryName = convertToTitleCase(
@@ -70,8 +79,10 @@ const SearchWrapper = () => {
   return (
     <ContainerConstrained>
       <CardAsDiv>
-        <H1HeroTitleLightRed>Search for more</H1HeroTitleLightRed>
-        <SearchForm maxWidth={600} placeholderText={queryName} />
+        <HeroTextAligner>
+          <H1HeroTitleLightRed>Search for more</H1HeroTitleLightRed>
+          <SearchForm placeholderText={queryName} />
+        </HeroTextAligner>
       </CardAsDiv>
       <hr />
       {queryName && (

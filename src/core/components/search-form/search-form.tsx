@@ -1,49 +1,53 @@
-import React, { useState } from "react";
-import { Form, FormControl, Button } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
-import { BaseUnitTopBottomPadding } from "../../style/containers.styles";
-import getSearchQuery from "../../../hooks/storage-hooks";
+import React, { useState } from 'react'
+import { Form, Button, Row } from 'react-bootstrap'
+import { Redirect } from 'react-router-dom'
+import { BaseUnitTopBottomPadding } from '../../style/containers.styles'
+import getSearchQuery from '../../../hooks/storage-hooks'
 
 interface SearchFormProps {
-  maxWidth: number;
-  excludeButton?: boolean;
-  placeholderText?: string;
+  excludeButton?: boolean
+  placeholderText?: string
 }
 
 const SearchForm = (props: SearchFormProps) => {
-  const { maxWidth, excludeButton, placeholderText } = props;
-  const [toSearch, setToSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const { excludeButton, placeholderText } = props
+  const [toSearch, setToSearch] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
   return (
     <>
       {toSearch ? (
         <Redirect to={`/search${getSearchQuery(searchQuery)}`} />
       ) : null}
-      <Form
-        onSubmit={() => setToSearch(true)}
-        style={{ width: "100%", display: "inline" }}
-        inline
-      >
-        <BaseUnitTopBottomPadding>
-          <FormControl
-            type="text"
-            placeholder={placeholderText || "Jake Paul, KSI, Molly Mae..."}
-            style={{ maxWidth: `${maxWidth}px` }}
-            onChange={(event) => setSearchQuery(event.target.value)}
-          />
+      <BaseUnitTopBottomPadding>
+        <Form
+          onSubmit={() => setToSearch(true)}
+          style={{ display: 'flex', justifyContent: 'center' }}
+        >
+          <Row style={{ maxWidth: `50%` }}>
+            <Form.Control
+              onChange={(event) => setSearchQuery(event.target.value)}
+              type="text"
+              placeholder={placeholderText || 'Jake Paul, KSI, Molly Mae...'}
+            />
+            <Form.Text className="text-muted">Enter your query</Form.Text>
+          </Row>
           {!excludeButton && (
             <Button
               variant="red"
               type="submit"
-              style={{ width: "100%", maxWidth: "150px" }}
+              style={{
+                marginLeft: `8px`,
+                maxWidth: '150px',
+                maxHeight: `38px`,
+              }}
             >
               Search
             </Button>
           )}
-        </BaseUnitTopBottomPadding>
-      </Form>
+        </Form>
+      </BaseUnitTopBottomPadding>
     </>
-  );
-};
+  )
+}
 
-export default SearchForm;
+export default SearchForm
