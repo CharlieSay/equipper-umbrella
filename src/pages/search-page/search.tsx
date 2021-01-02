@@ -71,11 +71,6 @@ const SearchWrapper = () => {
   const queryName = convertToTitleCase(
     queryFromStorage?.query ? queryFromStorage.query.toString() : '',
   )
-  const heroTitle =
-    queryName === ''
-      ? 'This is all the influencers we have got'
-      : `Search results ${queryName}`
-
   return (
     <ContainerConstrained>
       <CardAsDiv>
@@ -87,7 +82,10 @@ const SearchWrapper = () => {
       <hr />
       {queryName && (
         <>
-          <H1HeroTitle>{heroTitle}</H1HeroTitle>
+          <div style={{ display: `flex` }}>
+            <H1HeroTitle>Search results for</H1HeroTitle>{' '}
+            <H1HeroTitleLightRed>{`${queryName}`}</H1HeroTitleLightRed>
+          </div>
           <Search />
         </>
       )}

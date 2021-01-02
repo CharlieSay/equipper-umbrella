@@ -37,7 +37,7 @@ const SearchForm = (props: SearchFormProps) => {
               type="submit"
               style={{
                 marginLeft: `8px`,
-                maxWidth: '150px',
+                maxWidth: `150px`,
                 maxHeight: `38px`,
               }}
             >
