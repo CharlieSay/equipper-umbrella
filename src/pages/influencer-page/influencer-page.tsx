@@ -12,6 +12,7 @@ import Disclaimer from '../../core/components/text/disclaimer'
 import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
+  MiddleContainer,
 } from '../../core/style/containers.styles'
 import {
   TopBar,
@@ -27,6 +28,7 @@ import {
   H2TitleLightRed,
   H1HeroTitle,
   Small,
+  PBold,
 } from '../../core/style/typography.styles'
 import convertToTitleCase from '../../utils/format-utils'
 import ImageCom from '../../core/components/image/image'
@@ -85,9 +87,6 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
               />
             ))}
           </Col>
-          {/* <Col style={{ width: `48%`, margin: `0` }}>
-            <Image src={media.ytTumbnail} alt="First slide" thumbnail />
-          </Col> */}
         </Row>
         <Row>
           <Col>
@@ -150,6 +149,19 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
           ))}
         </ListGroup>
       </Row>
+      <MiddleContainer>
+        <PBold>Social Media</PBold>
+        {personalFacts.socialLinks.map((links) => (
+          <ALinkSmall
+            primary
+            target="_blank"
+            rel="noreferrer"
+            href={links.link}
+          >
+            {convertToTitleCase(links.socialNetwork)}
+          </ALinkSmall>
+        ))}
+      </MiddleContainer>
       {showSimilarCreator && (
         <Suspense fallback={<Spinner animation="border" />}>
           <InfluencerGroup

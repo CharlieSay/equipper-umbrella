@@ -42,7 +42,7 @@ export const SubTitle = styled('span')<{ primary: boolean }>`
 
 export const ALinkSmall = styled('a')<{ primary: boolean }>`
   color: ${(props) =>
-    props.primary ? props.theme.darkBlue : props.theme.darkRed};
+    props.primary ? props.theme.darkBlue : props.theme.lightRed};
   font-weight: bold;
   &:hover {
     color: ${(props) =>
