@@ -19,7 +19,7 @@ export const H1HeroTitlePurple = styled(H1HeroTitle)`
 export const H2Title = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${(props) => props.theme.grey};
+  color: ${(props) => props.theme.black};
 `
 export const H2TitleLightRed = styled(H2Title)`
   color: ${(props) => props.theme.lightRed};

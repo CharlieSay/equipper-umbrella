@@ -9,7 +9,7 @@ import { ContainerConstrained } from '../../core/style/containers.styles'
 import {
   ALinkSmall,
   H1HeroTitleLightRed,
-  H2TitlePurple,
+  H2TitleLightRed,
   PNormal,
   PBold,
 } from '../../core/style/typography.styles'
@@ -25,7 +25,7 @@ const CommonGearPage = () => {
       {popularGear.map((section) => (
         <Row key={`${section.anchor}`} id={section.anchor}>
           <Row style={{ width: `100%` }}>
-            <H2TitlePurple>{section.friendlySectionName}</H2TitlePurple>
+            <H2TitleLightRed>{section.friendlySectionName}</H2TitleLightRed>
           </Row>
           <Cards>
             {section.equipment.map((equipment) => (

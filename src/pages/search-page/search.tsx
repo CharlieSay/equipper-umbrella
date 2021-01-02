@@ -8,6 +8,7 @@ import {
 } from '../../core/style/containers.styles'
 import {
   H1HeroTitle,
+  H1HeroTitleLightRed,
   PNormal,
   SubTitle,
 } from '../../core/style/typography.styles'
@@ -69,7 +70,7 @@ const SearchWrapper = () => {
   return (
     <ContainerConstrained>
       <CardAsDiv>
-        <H1HeroTitle>Search for more</H1HeroTitle>
+        <H1HeroTitleLightRed>Search for more</H1HeroTitleLightRed>
         <SearchForm maxWidth={600} placeholderText={queryName} />
       </CardAsDiv>
       <hr />
