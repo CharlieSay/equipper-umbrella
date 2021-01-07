@@ -12,6 +12,7 @@ import Disclaimer from '../../core/components/text/disclaimer'
 import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
+  Flex,
   MiddleContainer,
 } from '../../core/style/containers.styles'
 import {
@@ -22,6 +23,7 @@ import {
   WideCard,
   SmallPrint,
 } from './influencer-page-styles'
+import { SocialImage } from '../../core/components/image/social-image'
 import {
   ALinkSmall,
   H1HeroTitleLightRed,
@@ -64,9 +66,15 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
     <ContainerConstrained>
       <Row>
         <TopBar>
-          <Badge style={{ maxHeight: `20px` }} variant="red">
-            {personalFacts.creatorType}
-          </Badge>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={`/category/${personalFacts.creatorType.toLowerCase()}`}
+          >
+            <Badge style={{ maxHeight: `20px` }} variant="red">
+              {personalFacts.creatorType}
+            </Badge>
+          </a>
           <Small>{`Last updated ${personalFacts.lastUpdated}`}</Small>
         </TopBar>
         <Image
@@ -151,16 +159,11 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
       </Row>
       <MiddleContainer>
         <PBold>Social Media</PBold>
-        {personalFacts.socialLinks.map((links) => (
-          <ALinkSmall
-            primary
-            target="_blank"
-            rel="noreferrer"
-            href={links.link}
-          >
-            {convertToTitleCase(links.socialNetwork)}
-          </ALinkSmall>
-        ))}
+        <Flex>
+          {personalFacts.socialLinks.map((links) => (
+            <SocialImage link={links.link} name={links.socialNetwork} />
+          ))}
+        </Flex>
       </MiddleContainer>
       {showSimilarCreator && (
         <Suspense fallback={<Spinner animation="border" />}>

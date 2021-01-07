@@ -75,7 +75,7 @@ const SubmitPage = () => {
       evidenceArray,
     }
     // Post to API here.
-    console.log(builtFormSubmission)
+    console.log(JSON.stringify(builtFormSubmission))
     setSubmitted(true)
   }
 

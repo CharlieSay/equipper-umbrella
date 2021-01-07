@@ -6,7 +6,23 @@
     "socialLinks": [
       {
         "socialNetwork": "youtube",
-        "link": "https://www.youtube.com/channel/UCZei-B_NaSRBFcLgUxx8zMA/"
+        "link": "//www.youtube.com/channel/UCZei-B_NaSRBFcLgUxx8zMA/"
+      },
+      {
+        "socialNetwork": "tiktok",
+        "link": "//www.tiktok.com/@w2s.tiktok?lang=en"
+      },
+      {
+        "socialNetwork": "facebook",
+        "link": "//www.facebook.com/W2S-430915580332017"
+      },
+      {
+        "socialNetwork": "instagram",
+        "link": "//www.instagram.com/wroetoshaw/"
+      },
+      {
+        "socialNetwork": "twitter",
+        "link": "//twitter.com/wroetoshaw"
       }
     ],
     "description": "Harry was born in Alderney - one of the Channel Islands - and lived there until his family moved to Guernsey in 2004. He has a younger brother, Josh, and a younger sister, Rosie. They all attended Guernsey Grammar School. The Sidemen often use the Guernsey stereotype as a joke against Harry, regularly referring to him as inbred and having an incestuous relationship with his family."

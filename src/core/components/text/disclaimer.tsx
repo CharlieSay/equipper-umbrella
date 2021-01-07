@@ -17,7 +17,7 @@ const Disclaimer = () => {
         retailers linked on this site. This compensation does not affect what
         products or prices are displayed, or the order of prices listed. Learn
         more{' '}
-        <ALinkSmall primary href="/disclaimer">
+        <ALinkSmall primary target="_blank" href="/disclaimer">
           here.
         </ALinkSmall>
       </WholeText>
