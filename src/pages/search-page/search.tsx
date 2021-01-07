@@ -84,7 +84,7 @@ const SearchWrapper = () => {
         <>
           <div style={{ display: `flex` }}>
             <H1HeroTitle>Search results for</H1HeroTitle>{' '}
-            <H1HeroTitleLightRed>{`${queryName}`}</H1HeroTitleLightRed>
+            <H1HeroTitleLightRed>{` ${queryName}`}</H1HeroTitleLightRed>
           </div>
           <Search />
         </>

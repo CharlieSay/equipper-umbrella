@@ -27,7 +27,11 @@ const NotFound = () => (
       <H1HeroTitlePurple>This page doesnt exist! 🤔</H1HeroTitlePurple>
       <SubTitle primary>Were not quite sure what went wrong there.</SubTitle>
       <BaseUnitTopBottomPadding>
-        <Button href="/" variant="red" target="_blank">
+        <Button
+          href="/search?query=all&sort=popular"
+          variant="red"
+          target="_blank"
+        >
           Search for influencers
         </Button>
       </BaseUnitTopBottomPadding>

@@ -93,6 +93,7 @@ const Header = (props: HeaderFooterProps) => {
           OTransition: 'all .5s ease-in-out',
           transition: 'all .5s ease-in-out',
         }}
+        onUnfix={() => setNavOpen(false)}
       >
         <VisuallyHidden href="#content" rel="external">
           Skip to content
