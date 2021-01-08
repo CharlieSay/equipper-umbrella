@@ -120,7 +120,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                       {equipmentDetail.friendlyName}
                     </PFriendlyEquipmentName>
                     <BaseUnitTopBottomPadding />
-                    <Row>
+                    <Row style={{ display: 'flex', justifyContent: 'center' }}>
                       <ImageCom
                         maxWidth="150px"
                         src={`${equipmentDetail.thumbnail}`}
