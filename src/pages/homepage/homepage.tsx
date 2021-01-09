@@ -1,12 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
+import { gql, useQuery } from '@apollo/client'
+import { Spinner } from 'react-bootstrap'
 import InfluencerGroup from '../../core/components/popular-group/influencer-group'
 import SearchForm from '../../core/components/search-form/search-form'
 import { H1HeroTitleLightRed } from '../../core/style/typography.styles'
 import { ContainerConstrained } from '../../core/style/containers.styles'
-
-import popularInfluecers from '../../core/data/homepage-popular-data.json'
 import { CardAsDiv } from '../../core/components/influencer-card/cards-styles'
+
+const POPULAR_INFLUENCERS = gql`
+  # Write your query or mutation here
+  query popularInfluencers {
+    popularInfluencers {
+      name
+      description
+      link
+      imgUrl
+      lastUpdatedBlurb
+    }
+  }
+`
 
 const HeroTextAligner = styled.div`
   display: flex;
@@ -23,6 +36,11 @@ const HomePage = () => {
       ? process.env.REACT_APP_MONGO_DB_P
       : 'No MongoDB VAR',
   )
+
+  console.log(process.env.NODE_ENV)
+
+  const { loading, data } = useQuery(POPULAR_INFLUENCERS)
+
   return (
     <ContainerConstrained>
       <CardAsDiv>
@@ -33,11 +51,17 @@ const HomePage = () => {
           <SearchForm />
         </HeroTextAligner>
       </CardAsDiv>
-      <InfluencerGroup
-        groupTitle="Popular Influencers"
-        groupSubTitle="The most popular influencers, and all the equipment they use."
-        popularInfluencers={popularInfluecers}
-      />
+      {!loading ? (
+        <InfluencerGroup
+          groupTitle="Popular Influencers"
+          groupSubTitle="The most popular influencers, and all the equipment they use."
+          popularInfluencers={data.popularInfluencers}
+        />
+      ) : (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      )}
     </ContainerConstrained>
   )
 }

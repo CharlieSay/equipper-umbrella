@@ -1,30 +1,40 @@
-import { useEffect, useState } from "react";
-import { InfluencerSearchModel } from "../core/models/influencer-search.model";
-
-import popularData from "../core/data/search-result-data.json";
+import { ApolloError, gql, useQuery } from '@apollo/client'
+import { InfluencerSearchModel } from '../core/models/influencer-search.model'
 
 interface SearchResultsInterface {
-  isLoading: boolean;
-  searchResults: InfluencerSearchModel[];
+  isLoading: boolean
+  error?: ApolloError
+  searchResults: InfluencerSearchModel[]
 }
 
-const getSearch = (): SearchResultsInterface => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchResultData, setSearchResultData] = useState<
-    InfluencerSearchModel[]
-  >([]);
+interface SearchHookProps {
+  sort: string
+  query: string
+}
 
-  useEffect(
-    () => {
-      setTimeout(() => {
-        setIsLoading(false);
-        setSearchResultData(popularData);
-      }, 1000);
+const SEARCH = gql`
+  query search($sort: String!, $query: String!) {
+    searchResults(sort: $sort, query: $query) {
+      name
+      description
+      link
+      imgUrl
+      lastUpdatedBlurb
     }
-    // if you pass a value to array, like this [data] than clearTimeout will run every time this value changes (useEffect re-run)
-  );
+  }
+`
 
-  return { isLoading, searchResults: searchResultData };
-};
+const getSearch = (props: SearchHookProps): SearchResultsInterface => {
+  const { sort, query } = props
+  const { loading, error, data } = useQuery(SEARCH, {
+    variables: { sort, query },
+  })
 
-export default getSearch;
+  return {
+    isLoading: loading,
+    error,
+    searchResults: loading ? [] : data.searchResults,
+  }
+}
+
+export default getSearch

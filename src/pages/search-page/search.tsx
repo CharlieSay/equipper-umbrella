@@ -25,11 +25,27 @@ import SearchForm from '../../core/components/search-form/search-form'
 import InfluencerGroup from '../../core/components/popular-group/influencer-group'
 import popularInfluencers from '../../core/data/homepage-popular-data.json'
 
-const Search = () => {
-  const { isLoading, searchResults } = getSearch()
+const HeroTextAligner = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  text-align: center;
+`
+
+const Search = (props: { query: string; sort: string }) => {
+  const { query, sort } = props
+  const { isLoading, error, searchResults } = getSearch({
+    query,
+    sort,
+  })
 
   if (isLoading) {
     return <MyLoader />
+  }
+
+  if (error) {
+    return <h1>ERRORRRRR</h1>
   }
 
   if (searchResults.length === 0) {
@@ -58,14 +74,6 @@ const Search = () => {
   )
 }
 
-const HeroTextAligner = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  flex-direction: column;
-  text-align: center;
-`
-
 const SearchWrapper = () => {
   const queryFromStorage = queryString.parse(useLocation().search)
   const queryName = convertToTitleCase(
@@ -86,7 +94,7 @@ const SearchWrapper = () => {
             <H1HeroTitle>Search results for</H1HeroTitle>{' '}
             <H1HeroTitleLightRed>{` ${queryName}`}</H1HeroTitleLightRed>
           </div>
-          <Search />
+          <Search query={queryName} sort="popular" />
         </>
       )}
     </ContainerConstrained>
