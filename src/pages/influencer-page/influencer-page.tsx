@@ -2,11 +2,12 @@ import React, { Suspense } from 'react'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
+import { useParams } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
 import { Helmet } from 'react-helmet-async'
-import { useParams } from 'react-router-dom'
 import { Badge, Spinner } from 'react-bootstrap'
+import { useQuery } from '@apollo/client'
 import TextWithSeeMore from '../../core/components/text/see-more'
 import Disclaimer from '../../core/components/text/disclaimer'
 import {
@@ -34,8 +35,7 @@ import {
 } from '../../core/style/typography.styles'
 import convertToTitleCase from '../../utils/format-utils'
 import ImageCom from '../../core/components/image/image'
-
-import getInfluencerPageData from '../../hooks/influencer-page-hooks'
+import PAGE_QUERY from './influencer-page-query'
 import InfluencerPageLoading from './influencer-page-loading'
 import { InfluencerPageModel } from '../../core/models/influencer-page.model'
 import InfluencerGroup from '../../core/components/popular-group/influencer-group'
@@ -59,8 +59,6 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
     media,
     similarCreators,
   } = props
-
-  const showSimilarCreator = similarCreators.length >= 3
 
   return (
     <ContainerConstrained>
@@ -165,29 +163,25 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
           ))}
         </Flex>
       </MiddleContainer>
-      {showSimilarCreator && (
-        <Suspense fallback={<Spinner animation="border" />}>
-          <InfluencerGroup
-            popularInfluencers={similarCreators}
-            groupTitle="You may also want to look at"
-            groupSubTitle={`Similar creators to ${personalFacts.name}`}
-          />
-        </Suspense>
-      )}
+      <Suspense fallback={<Spinner animation="border" />}>
+        <InfluencerGroup
+          popularInfluencers={similarCreators}
+          groupTitle="You may also want to look at"
+          groupSubTitle={`Similar creators to ${personalFacts.name}`}
+        />
+      </Suspense>
       <Disclaimer />
     </ContainerConstrained>
   )
 }
 
-interface RouteParams {
-  id: string
-}
-
 const InfluencerPageUsingParams = () => {
-  const params = useParams<RouteParams>()
-  const getInfluencerData = getInfluencerPageData()
-  console.log(`hi${params.id}`)
-  if (getInfluencerData.isLoading) {
+  const params = useParams<{ id: string }>()
+  const { loading, data, error } = useQuery(PAGE_QUERY, {
+    variables: { influencerName: params.id },
+  })
+
+  if (loading) {
     return (
       <ContainerConstrained>
         <InfluencerPageLoading />
@@ -195,14 +189,22 @@ const InfluencerPageUsingParams = () => {
     )
   }
 
+  if (error) {
+    return (
+      <ContainerConstrained>
+        <h1>WOOOOOPS SOMETHING WENT WRONG?!</h1>
+      </ContainerConstrained>
+    )
+  }
+
   return (
     <>
-      {getInfluencerData.influencerPage && (
+      {data.influencerResult && (
         <div>
           <Helmet>
-            <title>{`${getInfluencerData.influencerPage.personalFacts.name} - Equippr`}</title>
+            <title>{`${data.influencerResult.personalFacts.name} - Equippr`}</title>
           </Helmet>
-          <InfluencerPageInternal {...getInfluencerData.influencerPage} />
+          <InfluencerPageInternal {...data.influencerResult} />
         </div>
       )}
     </>

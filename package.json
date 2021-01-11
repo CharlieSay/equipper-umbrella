@@ -1,6 +1,6 @@
 {
   "name": "equippr",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.3.3",
@@ -34,6 +34,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-prod-data": "NODE_ENV=prod react-scripts start",
     "build": "CI= react-scripts build && echo '/* /index.html 200' | cat >build/_redirects",
     "format": "prettier --eslint-config-path ./.eslintrc.js --write '*/**/*.{js,ts,tsx}'",
     "test": "react-scripts test",

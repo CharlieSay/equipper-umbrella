@@ -55,7 +55,7 @@ const HomePage = () => {
         <InfluencerGroup
           groupTitle="Popular Influencers"
           groupSubTitle="The most popular influencers, and all the equipment they use."
-          popularInfluencers={data.popularInfluencers}
+          popularInfluencers={data ? data.popularInfluencers : []}
         />
       ) : (
         <Spinner animation="border" role="status">

@@ -23,7 +23,7 @@ import {
 import convertToTitleCase from '../../utils/format-utils'
 import SearchForm from '../../core/components/search-form/search-form'
 import InfluencerGroup from '../../core/components/popular-group/influencer-group'
-import popularInfluencers from '../../core/data/homepage-popular-data.json'
+import backupCreators from '../../core/data/backup-four-creators.json'
 
 const HeroTextAligner = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ const Search = (props: { query: string; sort: string }) => {
       <>
         <SubTitle primary>Nothing found, try to refine your search</SubTitle>
         <PNormal>Here is some influencers you may be interested in</PNormal>
-        <InfluencerGroup popularInfluencers={popularInfluencers} />
+        <InfluencerGroup popularInfluencers={backupCreators} />
       </>
     )
   }
