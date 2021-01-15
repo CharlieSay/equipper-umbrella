@@ -53,7 +53,9 @@ const Search = (props: { query: string; sort: string }) => {
       <>
         <SubTitle primary>Nothing found, try to refine your search</SubTitle>
         <PNormal>Here is some influencers you may be interested in</PNormal>
-        <InfluencerGroup popularInfluencers={backupCreators} />
+        <InfluencerGroup
+          popularInfluencers={backupCreators.popularInfluencers}
+        />
       </>
     )
   }

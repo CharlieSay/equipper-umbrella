@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { gql, useQuery } from '@apollo/client'
 import { Spinner } from 'react-bootstrap'
+import BackupJson from '../../core/data/backup-four-creators.json'
 import InfluencerGroup from '../../core/components/popular-group/influencer-group'
 import SearchForm from '../../core/components/search-form/search-form'
 import { H1HeroTitleLightRed } from '../../core/style/typography.styles'
@@ -37,9 +38,13 @@ const HomePage = () => {
       : 'No MongoDB VAR',
   )
 
-  console.log(process.env.NODE_ENV)
+  const { loading, data } =
+    process.env.REACT_APP_msm === 'true'
+      ? { loading: false, data: BackupJson }
+      : useQuery(POPULAR_INFLUENCERS)
 
-  const { loading, data } = useQuery(POPULAR_INFLUENCERS)
+  console.log(loading)
+  console.log(data)
 
   return (
     <ContainerConstrained>
