@@ -1,5 +1,6 @@
 import { ApolloError, gql, useQuery } from '@apollo/client'
 import { InfluencerSearchModel } from '../core/models/influencer-search.model'
+import BackupJson from '../core/data/backup-four-creators.json'
 
 interface SearchResultsInterface {
   isLoading: boolean
@@ -26,14 +27,23 @@ const SEARCH = gql`
 
 const getSearch = (props: SearchHookProps): SearchResultsInterface => {
   const { sort, query } = props
-  const { loading, error, data } = useQuery(SEARCH, {
-    variables: { sort, query },
-  })
+
+  const { loading, data, error } =
+    process.env.REACT_APP_msm === 'true'
+      ? { loading: false, data: BackupJson, error: undefined }
+      : useQuery(SEARCH, {
+          variables: { sort, query },
+        })
 
   return {
     isLoading: loading,
     error,
-    searchResults: loading ? [] : data.searchResults,
+    // eslint-disable-next-line no-nested-ternary
+    searchResults: loading
+      ? []
+      : process.env.REACT_APP_msm === 'true'
+      ? BackupJson.popularInfluencers
+      : data.searchResults,
   }
 }
 
