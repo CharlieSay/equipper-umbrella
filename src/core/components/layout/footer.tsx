@@ -32,6 +32,19 @@ const Footer = (links: HeaderFooterProps) => (
             <Row>
               <PWhite>{` ${packageJson.name} (${packageJson.version})`}</PWhite>
             </Row>
+            <Row>
+              <a
+                rel="noreferrer"
+                href="https://www.buymeacoffee.com/charliesay"
+                target="_blank"
+              >
+                <img
+                  src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+                  alt="Buy Me A Coffee"
+                  style={{ height: '30px', width: '103.5px' }}
+                />
+              </a>
+            </Row>
           </Col>
           {links.links.map((link) => (
             <FooterColumn key={link.displayText}>
