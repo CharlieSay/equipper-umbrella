@@ -76,7 +76,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
           <Small>{`Last updated ${personalFacts.lastUpdated}`}</Small>
         </TopBar>
         <Image
-          style={{ width: `100%` }}
+          style={{ width: `100%`, objectFit: 'cover' }}
           src={media.ytBanner}
           alt="First slide"
           thumbnail
@@ -85,7 +85,9 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
       <WideCard>
         <Row>
           <Col style={{ width: `100%`, margin: `0` }}>
-            <H1HeroTitle>{`${personalFacts.name}`}</H1HeroTitle>
+            <H1HeroTitle>{`${convertToTitleCase(
+              personalFacts.name,
+            )}`}</H1HeroTitle>
             {keyFacts.map((keyFact) => (
               <KeyFactEntry
                 title={convertToTitleCase(keyFact.fact)}

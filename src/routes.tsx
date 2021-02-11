@@ -9,7 +9,12 @@ import CategoryPage from './pages/category-page/category-page'
 import SearchPage from './pages/search-page/search'
 import SubmitPage from './pages/submit-page/submit-page'
 import PopularGearPage from './pages/popular-gear/popular-gear-page'
+import HelpPage from './pages/help-page/help-page'
+import FaqPage from './pages/help-page/faq-page'
+import ContactUsPage from './pages/help-page/contact-us-page'
 import DisclaimerPage from './pages/utility-pages/disclaimer/disclaimer-page'
+import PrivacyPolicyPage from './pages/utility-pages/privacy-policy/privacy-policy-page'
+import AboutUsPage from './pages/about-page/about-us-page'
 
 const Routes = () => (
   <BrowserRouter>
@@ -55,6 +60,33 @@ const Routes = () => (
         path="/disclaimer"
         component={DisclaimerPage}
         pageData={{ title: 'Disclaimer' }}
+      />
+      <PageRoute
+        exact
+        path="/help"
+        component={HelpPage}
+        pageData={{ title: 'Support' }}
+      />
+      <PageRoute
+        path="/help/contact"
+        component={ContactUsPage}
+        pageData={{ title: 'Contact Us' }}
+      />
+      <PageRoute
+        path="/help/faq"
+        component={FaqPage}
+        pageData={{ title: 'FAQ' }}
+      />
+      <PageRoute
+        exact
+        path="/about-us"
+        component={AboutUsPage}
+        pageData={{ title: 'About Us' }}
+      />
+      <PageRoute
+        path="/privacy-policy"
+        component={PrivacyPolicyPage}
+        pageData={{ title: 'Privacy Policy' }}
       />
       <PageRoute component={NotFound} pageData={{ title: 'Not Found' }} />
     </Switch>
