@@ -121,6 +121,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                     <Row style={{ display: 'flex', justifyContent: 'center' }}>
                       <ImageCom
                         maxWidth="150px"
+                        maxHeight="150px"
                         src={`${equipmentDetail.thumbnail}`}
                       />
                       <Col style={{ paddingTop: '34px' }}>
