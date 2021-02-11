@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
 import { useParams } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
@@ -75,11 +74,10 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
           </a>
           <Small>{`Last updated ${personalFacts.lastUpdated}`}</Small>
         </TopBar>
-        <Image
-          style={{ width: `100%`, objectFit: 'cover' }}
+        <img
+          style={{ objectFit: 'contain', width: '100%' }}
           src={media.ytBanner}
           alt="First slide"
-          thumbnail
         />
       </Row>
       <WideCard>
