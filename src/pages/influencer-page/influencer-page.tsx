@@ -203,7 +203,9 @@ const InfluencerPageUsingParams = () => {
       {data.influencerResult && (
         <div>
           <Helmet>
-            <title>{`${data.influencerResult.personalFacts.name} - Equippr`}</title>
+            <title>{`${convertToTitleCase(
+              data.influencerResult.personalFacts.name,
+            )} - Equippr`}</title>
           </Helmet>
           <InfluencerPageInternal {...data.influencerResult} />
         </div>
