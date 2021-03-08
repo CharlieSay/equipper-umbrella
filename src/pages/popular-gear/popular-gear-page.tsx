@@ -1,18 +1,18 @@
 import React from 'react'
-import { Button, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import {
   WideCard,
   Cards,
 } from '../../core/components/influencer-card/cards-styles'
-
+import PopularGearBold from './popular-gear-styles'
 import { ContainerConstrained } from '../../core/style/containers.styles'
 import {
   ALinkSmall,
   H1HeroTitleLightRed,
   H2TitleLightRed,
   PNormal,
-  PBold,
 } from '../../core/style/typography.styles'
+import AffiliateCard from '../../core/components/affiliate-card/affiliate-card'
 
 import getPopularGear from '../../hooks/popular-gear-hooks'
 
@@ -30,14 +30,14 @@ const CommonGearPage = () => {
           <Cards>
             {section.equipment.map((equipment) => (
               <WideCard key={equipment.friendlyName}>
-                <Row>
+                <Row style={{ paddingBottom: `8px` }}>
                   <img
                     alt={`${equipment.friendlyName}`}
                     src={equipment.thumbnail}
+                    style={{ width: `170px`, height: `170px` }}
                   />
                   <Col>
-                    <PNormal>{`${equipment.part}`}</PNormal>
-                    <PBold>{` ${equipment.friendlyName}`}</PBold>
+                    <PopularGearBold>{`${equipment.friendlyName}`}</PopularGearBold>
                     <div style={{ marginBottom: '8px' }}>
                       <div>
                         <PNormal>Used by</PNormal>
@@ -59,14 +59,12 @@ const CommonGearPage = () => {
                   </Col>
                 </Row>
                 {equipment.affiliate.map((affiliateSingular) => (
-                  <Button
-                    key={affiliateSingular.vendor}
+                  <AffiliateCard
                     href={affiliateSingular.affiliateUrl}
+                    style={{ width: `100%` }}
                     variant="gray"
-                    target="_blank"
-                  >
-                    Buy on {affiliateSingular.vendor}
-                  </Button>
+                    vendor={affiliateSingular.vendor}
+                  />
                 ))}
               </WideCard>
             ))}

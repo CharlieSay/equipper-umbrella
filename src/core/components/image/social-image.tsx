@@ -6,6 +6,7 @@ import Snapchat from '../../../assets/socials/snapchat.svg'
 import TikTok from '../../../assets/socials/tik-tok.svg'
 import Twitter from '../../../assets/socials/twitter.svg'
 import YouTube from '../../../assets/socials/youtube.svg'
+import Amazon from '../../../assets/affiliates/amazon-mini.svg'
 
 export interface SocialSVGProps {
   name: string
@@ -50,19 +51,34 @@ export const SocialImage = (props: SocialSVGProps) => {
       svgPath = YouTube
       break
     }
+    case 'amazon': {
+      svgPath = Amazon
+      break
+    }
     default: {
       svgPath = ''
     }
   }
 
+  if (link) {
+    return (
+      <a href={link} style={{ padding: `0 8px 0 8px` }}>
+        <SocialImageHover
+          height={(constraint && constraint.height) || 30}
+          width={(constraint && constraint.width) || 30}
+          src={svgPath}
+          alt={name}
+        />
+      </a>
+    )
+  }
+
   return (
-    <a href={link} style={{ padding: `0 8px 0 8px` }}>
-      <SocialImageHover
-        height={(constraint && constraint.height) || 30}
-        width={(constraint && constraint.width) || 30}
-        src={svgPath}
-        alt={name}
-      />
-    </a>
+    <SocialImageHover
+      height={(constraint && constraint.height) || 30}
+      width={(constraint && constraint.width) || 30}
+      src={svgPath}
+      alt={name}
+    />
   )
 }
