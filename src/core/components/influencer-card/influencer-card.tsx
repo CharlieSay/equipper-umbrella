@@ -1,4 +1,5 @@
 import React from 'react'
+import { Badge } from 'react-bootstrap'
 import { InfluencerSearchModel } from '../../models/influencer-search.model'
 import {
   InfluencerCard,
@@ -29,8 +30,13 @@ const Influencer = (props: CardType) => {
         <UpdatedBlurb>
           {influencer.lastUpdatedBlurb
             ? `Last updated ${influencer.lastUpdatedBlurb}`
-            : 'This is broke'}
+            : ''}
         </UpdatedBlurb>
+        {influencer.popular && (
+          <Badge style={{ maxHeight: `20px` }} variant="purple">
+            POPULAR
+          </Badge>
+        )}
       </CardFooter>
     </InfluencerCard>
   )

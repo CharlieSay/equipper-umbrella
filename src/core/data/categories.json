@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "displayText": "Vloggers",
+      "stem": "/category/vloggers"
+    },
+    {
+      "displayText": "Gamers",
+      "stem": "/category/gamers"
+    },
+    {
+      "displayText": "Beauty",
+      "stem": "/category/beauty"
+    },
+    {
+      "displayText": "Lifestyle",
+      "stem": "/category/lifestyle"
+    },
+    {
+      "displayText": "Podcasts",
+      "stem": "/category/podcasts"
+    }
+  ]
+}

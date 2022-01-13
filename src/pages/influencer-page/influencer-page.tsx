@@ -138,12 +138,12 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
                         <Row>
                           <SmallPrint>
                             <BaseUnitTopBottomPadding />
-                            {'Wrong item or not quite right? Let us know '}
+                            Wrong item or not quite right? Let us know
                             <ALinkSmall
                               primary
                               href={`/submit?influencerName=${personalFacts.name}&equipmentName=${equipmentDetail.friendlyName}`}
                             >
-                              here
+                              &nbsp;here
                             </ALinkSmall>
                           </SmallPrint>
                         </Row>

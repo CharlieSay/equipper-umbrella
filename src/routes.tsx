@@ -6,6 +6,7 @@ import HomePage from './pages/homepage/homepage'
 import NotFound from './pages/utility-pages/error/not-found'
 import InfluencerPageUsingParams from './pages/influencer-page/influencer-page'
 import CategoryPage from './pages/category-page/category-page'
+import CategoryListPage from './pages/category-page/category-list-page'
 import SearchPage from './pages/search-page/search'
 import SubmitPage from './pages/submit-page/submit-page'
 import PopularGearPage from './pages/popular-gear/popular-gear-page'
@@ -36,6 +37,12 @@ const Routes = () => (
         path="/category/:influencerCategory"
         component={CategoryPage}
         pageData={{ title: 'Category' }}
+      />
+      <PageRoute
+        exact
+        path="/categories"
+        component={CategoryListPage}
+        pageData={{ title: 'Categories' }}
       />
       <PageRoute
         exact

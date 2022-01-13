@@ -1,12 +1,20 @@
 import React from 'react'
-import { ContainerConstrained } from '../../core/style/containers.styles'
-import { H1HeroTitle } from '../../core/style/typography.styles'
+import {
+  ContainerConstrained,
+  DoubleBaseUnitTopBottomPadding,
+  MiddleContainer,
+} from '../../core/style/containers.styles'
+import { H1HeroTitlePurple } from '../../core/style/typography.styles'
 
 const AboutUsPage = () => {
   return (
-    <ContainerConstrained>
-      <H1HeroTitle>ABOUT US</H1HeroTitle>
-    </ContainerConstrained>
+    <DoubleBaseUnitTopBottomPadding>
+      <ContainerConstrained>
+        <MiddleContainer>
+          <H1HeroTitlePurple>About us</H1HeroTitlePurple>
+        </MiddleContainer>
+      </ContainerConstrained>
+    </DoubleBaseUnitTopBottomPadding>
   )
 }
 
