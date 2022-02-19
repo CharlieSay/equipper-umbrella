@@ -4,14 +4,14 @@ import {
   DoubleBaseUnitTopBottomPadding,
   MiddleContainer,
 } from '../../core/style/containers.styles'
-import { H1HeroTitlePurple } from '../../core/style/typography.styles'
+import { H1HeroTitleLightRed } from '../../core/style/typography.styles'
 
 const FaqPage = () => {
   return (
     <DoubleBaseUnitTopBottomPadding>
       <ContainerConstrained>
         <MiddleContainer>
-          <H1HeroTitlePurple>FAQs</H1HeroTitlePurple>
+          <H1HeroTitleLightRed>FAQs</H1HeroTitleLightRed>
         </MiddleContainer>
       </ContainerConstrained>
     </DoubleBaseUnitTopBottomPadding>

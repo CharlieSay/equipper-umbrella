@@ -21,6 +21,7 @@ import {
   KeyFactsKey,
   KeyFactsValue,
   WideCard,
+  Banner,
   SmallPrint,
 } from './influencer-page-styles'
 import { SocialImage } from '../../core/components/image/social-image'
@@ -74,11 +75,7 @@ const InfluencerPageInternal = (props: InfluencerPageModel) => {
           </a>
           <Small>{`Last updated ${personalFacts.lastUpdated}`}</Small>
         </TopBar>
-        <img
-          style={{ objectFit: 'contain', width: '100%' }}
-          src={media.ytBanner}
-          alt="First slide"
-        />
+        <Banner src={media.ytBanner} alt="First slide" />
       </Row>
       <WideCard>
         <Row>

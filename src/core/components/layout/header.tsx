@@ -28,7 +28,7 @@ interface MobileNavProps {
 
 interface Link {
   displayText: string
-  stem: string
+  stem?: string
   params?: string
   isActive?: boolean
   isDivider?: boolean
@@ -61,7 +61,10 @@ const DesktopNavigation = (props: HeaderFooterProps) => {
           key={key.stem}
           href={`${key.stem}${key.params ? key.params : ''}`}
         >
-          <HeaderLink stem={key.stem} displayText={key.displayText} />
+          {key.stem && (
+            <HeaderLink stem={key.stem} displayText={key.displayText} />
+          )}
+          {!key.stem && <HeaderLinkActive>{key.displayText}</HeaderLinkActive>}
         </Nav.Link>
       ))}
     </Nav>
@@ -127,7 +130,12 @@ const Header = (props: HeaderFooterProps) => {
                 key={key.stem}
                 href={`${key.stem}${key.params ? key.params : ''}`}
               >
-                <HeaderLink stem={key.stem} displayText={key.displayText} />
+                {key.stem && (
+                  <HeaderLink stem={key.stem} displayText={key.displayText} />
+                )}
+                {!key.stem && (
+                  <HeaderLinkActive>{key.displayText}</HeaderLinkActive>
+                )}
               </Nav.Link>
             ))}
           </MobileNavBackground>

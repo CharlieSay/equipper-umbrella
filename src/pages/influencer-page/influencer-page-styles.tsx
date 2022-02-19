@@ -15,6 +15,11 @@ export const EquipmentCard = styled.div`
   }
 `
 
+export const Banner = styled.img`
+  object-fit: contain;
+  width: 100%;
+`
+
 export const WideCard = styled(EquipmentCard)`
   width: 100%;
 `

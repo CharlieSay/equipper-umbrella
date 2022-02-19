@@ -22,7 +22,6 @@
   "footer": [
     {
       "displayText": "Popular Influencers",
-      "stem": "/",
       "subHeaders": [
         {
           "displayText": "Logan Paul",
@@ -44,8 +43,11 @@
     },
     {
       "displayText": "Categories",
-      "stem": "/categories",
       "subHeaders": [
+        {
+          "displayText": "All",
+          "stem": "/categories"
+        },
         {
           "displayText": "Vloggers",
           "stem": "/category/vloggers"
@@ -70,7 +72,6 @@
     },
     {
       "displayText": "Help",
-      "stem": "/help",
       "subHeaders": [
         {
           "displayText": "Add a new influencer",

@@ -4,14 +4,14 @@ import {
   ContainerConstrained,
   DoubleBaseUnitTopBottomPadding,
 } from '../../../core/style/containers.styles'
-import { H1HeroTitlePurple } from '../../../core/style/typography.styles'
+import { H1HeroTitleLightRed } from '../../../core/style/typography.styles'
 
 const DisclaimerPage = () => {
   return (
     <DoubleBaseUnitTopBottomPadding>
       <ContainerConstrained>
         <MiddleContainer>
-          <H1HeroTitlePurple>Disclaimer</H1HeroTitlePurple>
+          <H1HeroTitleLightRed>Disclaimer</H1HeroTitleLightRed>
           <p>
             Equippr, receives compensation through affiliate relationships with
             affliates listed on this site. Please know that this in no way

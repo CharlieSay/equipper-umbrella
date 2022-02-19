@@ -93,7 +93,7 @@ const SearchWrapper = () => {
       {queryName && (
         <>
           <div style={{ display: `flex` }}>
-            <H1HeroTitle>Search results for&nbsp;</H1HeroTitle>{' '}
+            <H1HeroTitle>Results matching&nbsp;</H1HeroTitle>{' '}
             <H1HeroTitleLightRed>{` ${queryName}`}</H1HeroTitleLightRed>
           </div>
           <Search query={queryName} sort="popular" />

@@ -32,11 +32,7 @@ const Influencer = (props: CardType) => {
             ? `Last updated ${influencer.lastUpdatedBlurb}`
             : ''}
         </UpdatedBlurb>
-        {influencer.popular && (
-          <Badge style={{ maxHeight: `20px` }} variant="purple">
-            POPULAR
-          </Badge>
-        )}
+        {influencer.popular && <Badge variant="purple">POPULAR</Badge>}
       </CardFooter>
     </InfluencerCard>
   )
