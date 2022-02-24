@@ -39,7 +39,7 @@ const HomePage = () => {
   )
 
   const { loading, data } =
-    process.env.REACT_APP_msm === 'true'
+    process.env.REACT_APP_mock_data === 'true'
       ? { loading: false, data: BackupJson }
       : useQuery(POPULAR_INFLUENCERS)
 

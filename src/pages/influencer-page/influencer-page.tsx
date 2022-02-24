@@ -1,14 +1,18 @@
+import { useQuery } from '@apollo/client'
 import React, { Suspense } from 'react'
+import { Badge, Spinner } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
-import { useParams } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
 import { Helmet } from 'react-helmet-async'
-import { Badge, Spinner } from 'react-bootstrap'
-import { useQuery } from '@apollo/client'
-import TextWithSeeMore from '../../core/components/text/see-more'
+import { useParams } from 'react-router-dom'
+import ImageCom from '../../core/components/image/image'
+import { SocialImage } from '../../core/components/image/social-image'
+import InfluencerGroup from '../../core/components/popular-group/influencer-group'
 import Disclaimer from '../../core/components/text/disclaimer'
+import TextWithSeeMore from '../../core/components/text/see-more'
+import { InfluencerPageModel } from '../../core/models/influencer-page.model'
 import {
   BaseUnitTopBottomPadding,
   ContainerConstrained,
@@ -16,29 +20,27 @@ import {
   MiddleContainer,
 } from '../../core/style/containers.styles'
 import {
-  TopBar,
-  PFriendlyEquipmentName,
-  KeyFactsKey,
-  KeyFactsValue,
-  WideCard,
-  Banner,
-  SmallPrint,
-} from './influencer-page-styles'
-import { SocialImage } from '../../core/components/image/social-image'
-import {
   ALinkSmall,
+  H1HeroTitle,
   H1HeroTitleLightRed,
   H2TitleLightRed,
-  H1HeroTitle,
-  Small,
   PBold,
+  Small,
+  SubTitle,
 } from '../../core/style/typography.styles'
 import convertToTitleCase from '../../utils/format-utils'
-import ImageCom from '../../core/components/image/image'
-import PAGE_QUERY from './influencer-page-query'
 import InfluencerPageLoading from './influencer-page-loading'
-import { InfluencerPageModel } from '../../core/models/influencer-page.model'
-import InfluencerGroup from '../../core/components/popular-group/influencer-group'
+import PAGE_QUERY from './influencer-page-query'
+import {
+  Banner,
+  ErrorMessageAligner,
+  KeyFactsKey,
+  KeyFactsValue,
+  PFriendlyEquipmentName,
+  SmallPrint,
+  TopBar,
+  WideCard,
+} from './influencer-page-styles'
 import './influencer-page.scss'
 
 const KeyFactEntry = (props: { title: string; value: string }) => {
@@ -188,9 +190,21 @@ const InfluencerPageUsingParams = () => {
   }
 
   if (error) {
+    console.log(error)
     return (
       <ContainerConstrained>
-        <h1>WOOOOOPS SOMETHING WENT WRONG?!</h1>
+        <WideCard>
+          <Col style={{ width: `100%`, margin: `0` }}>
+            <ErrorMessageAligner>
+              <H1HeroTitle>5😱😱</H1HeroTitle>
+              <SubTitle primary>Well this is embarassing...</SubTitle>
+              <Small>
+                Something went wrong our end, try again! Or if this keeps
+                happening please let us know!
+              </Small>
+            </ErrorMessageAligner>
+          </Col>
+        </WideCard>
       </ContainerConstrained>
     )
   }

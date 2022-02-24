@@ -29,7 +29,7 @@ const getSearch = (props: SearchHookProps): SearchResultsInterface => {
   const { sort, query } = props
 
   const { loading, data, error } =
-    process.env.REACT_APP_msm === 'true'
+    process.env.REACT_APP_mock_data === 'true'
       ? { loading: false, data: BackupJson, error: undefined }
       : useQuery(SEARCH, {
           variables: { sort, query },
@@ -41,7 +41,7 @@ const getSearch = (props: SearchHookProps): SearchResultsInterface => {
     // eslint-disable-next-line no-nested-ternary
     searchResults: loading
       ? []
-      : process.env.REACT_APP_msm === 'true'
+      : process.env.REACT_APP_mock_data === 'true'
       ? BackupJson.popularInfluencers
       : data.searchResults,
   }
